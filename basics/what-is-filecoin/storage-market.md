@@ -6,7 +6,7 @@ description: >-
 
 # Storage market
 
-### Deal making
+## Deal making
 
 The lifecycle for a deal within the storage market contains four distinct phases:
 
@@ -15,7 +15,7 @@ The lifecycle for a deal within the storage market contains four distinct phases
 * Publishing: the deal is published on-chain.
 * Handoff: the deal is added into a sector where data storage can be proven by the SP.
 
-### Filecoin plus
+## Filecoin plus
 
 The mission of Filecoin Plus (Fil+) is to maximize the amount of useful storage on the Filecoin network. The aim is to bring more meaningful and valuable data into the Filecoin network by offering verified clients cheap, or even free, storage. This mechanism is designed and operates around datacap, the storage quota allocated to verified clients to store data and boost incentives for storage providers.
 
@@ -25,7 +25,7 @@ Verified clients can onboard data into Filecoin using datacap, which they apply 
 * Notaries: community-selected notaries govern the program by verifying storage clients and allocating datacap tokens to verified clients.
 * Verified clients: clients are active network participants with datacap allocation for their data storage.
 
-### Storage on-ramps
+## Storage on-ramps
 
 To simplify the process of storing data on the network, there are many storage helpers to provide an easier way to integrate Filecoin storage as well as IPFS into your applications or smart contracts.
 
