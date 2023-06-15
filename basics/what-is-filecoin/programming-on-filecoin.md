@@ -29,11 +29,11 @@ The FVM enables compute-over-states on the Filecoin network and allows developer
 
 FVM can create a new kind of organization – one built around datasets of various kinds.
 
-**Data DAO and tokenized datasets**
+#### Data DAO and tokenized datasets
 
 The FVM enables the creation and management of data-based decentralized and autonomous organizations – data DAOs. The FVM allows a group of individuals, or organizations, to curate and preserve data collection. Data DAOs can govern and monetize data access and pool the returns into a shared treasury to fund the collections preservation and long-term growth. One could even exchange those data tokens between peers and request computation services on that data, such as validation, joins, analysis, feature detection, and extraction, moving into machine learning.
 
-**Perpetual storage**
+#### Perpetual storage
 
 FVM allows users to store once and have repair and replication bots manage the repetitive storage deal creation tasks so that data can be stored perpetually. Using a smart contract, users can provision a wallet with FIL, and storage providers can use that to fund data storage permanently. Repair bots can monitor the storage deals and replicate the data with other storage providers when necessary. This process gives users long-term storage permanence.
 
@@ -41,11 +41,11 @@ FVM allows users to store once and have repair and replication bots manage the r
 
 FVM can provide a variety of financial services for storage providers. The needs of these SPs are unique to the Filecoin ecosystem.
 
-**Lending and staking protocols**
+#### Lending and staking protocols
 
 Users can lend out Filecoin to storage providers to use it as storage collateral and receive interest in return. These loans can be undercollateralized based on the on-chain storage history of past storage provider performance. Community members can use this history to generate reputation scores, enabling everyone to identify good borrowers. On top of that, loans can be automatically paid back to investors by using a multisig as the storage provider’s owner address, including lenders and a third party, to help negotiate payback. New FVM-enabled smart contracts give every FIL token holder access to new yield opportunities on their holdings while also benefiting the whole Filecoin economy by allowing entry ramps for providing storage on the network.
 
-**Insurance**
+#### Insurance
 
 SPs need to have financial products that help protect them from the risk they are undertaking in creating more storage solutions. Certain characteristics such as payment history, length of operation, and availability can be used to craft insurance policies just as they can be used to underwrite loans to SPs. This can protect them from the financial consequences of active faulting or token price drops.
 
@@ -53,15 +53,13 @@ SPs need to have financial products that help protect them from the risk they ar
 
 We expect that FVM will gain feature parity with other chains that persist. This is required for any EVM chain to operate but is not necessarily tied to storage primitives.
 
-**Decentralized exchanges**
+#### Decentralized exchanges
 
 Users on FVM need to be able to exchange FIL for other tokens issued on-chain. This may be a decentralized exchange such as a fork of Uniswap or Sushi or involve building a decentralized order book similar to Serum on Solana.
 
-**Token bridges**
+#### Token bridges
 
 While not immediately on the roadmap, bridges are needed from EVM chains, Move chains, and Cosmos chains to bring wrapped tokens from other ecosystems into the fold. With the current launch, we are more focused internally since the value proposition of Filecoin is unique enough that it does not need to bootstrap TVL from other chains. However, in the long run, we expect FVM to be part of a broader family of blockchains.
-
-***
 
 Besides these, there are a lot more use cases that the FVM could enable, such as data access control ([Medusa](https://cryptonet.org/projects/project-medusa-scalable-threshold-network-on-chain)), retrieval and trustless reputation systems, replication workers, storage bounties, and L2 networks. To learn more about what you can build on top of FVM, check out our [Request for Startup](https://protocollabs.notion.site/Request-for-Startups-FVM-edition-8cd3e76982d14e29b33335ca458fb087) post.
 
