@@ -11,11 +11,11 @@ When someone sends cryptocurrency to your wallet address, the transaction is rec
 
 There are various types of cryptocurrency wallets, including desktop, mobile, hardware, and web-based wallets, each with its own unique features and levels of security. It’s important to choose a reputable and secure wallet to ensure the safety of your digital assets.
 
-### Compatible wallets
+## Compatible wallets
 
 We do not provide technical support for any of these wallets. Please use caution when researching and using the wallets listed below. Wallets that have conducted third-party audits of their open-source code by a reputable security auditor are marked _recommended_ below.
 
-Note: If you are already running your own lotus node, you can also [manage FIL wallets from the command line](https://lotus.filecoin.io/lotus/manage/manage-fil/).
+If you are already running your own lotus node, you can also [manage FIL wallets from the command line](https://lotus.filecoin.io/lotus/manage/manage-fil/).
 
 | Name                                                                                           | Description                                                                                                           | Audited |
 | ---------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ------- |
@@ -27,19 +27,19 @@ Note: If you are already running your own lotus node, you can also [manage FIL w
 | [FoxWallet](https://foxwallet.com/)                                                            | A multi-currency mobile wallet by [Filfox](https://filfox.info/en).                                                   | Yes     |
 | FilSnap MetaMask plugin                                                                        | MetaMask has a plugin system called [Snaps](https://github.com/MetaMask/metamask-snaps-beta/wiki), currently in beta. | No      |
 
-#### Hot versus cold
+### Hot versus cold
 
 A hot wallet refers to any wallet that is permanently connected to the internet. They can be mobile, desktop, or browser-based. Hot wallets make it faster and easier to access digital assets but could be vulnerable to online attacks. Therefore, it is recommended to keep large balances in cold wallets and only use hot wallets to hold funds that need to be accessed frequently.
 
 Cold wallets most commonly refer to hardware wallet devices shaped like a USB stick. They are typically offline and only connected to the internet for transactions. Accessing a cold wallet typically requires physical possession of the device plus knowledge of the private key, which makes them more resistant to theft. Cold wallets can be less convenient and are most useful for storing larger balances securely.
 
-#### Security
+### Security
 
 Wallets that have gone through an audit have had their codebase checked by a recognized security firm for security vulnerabilities and potential leaks. However, just because a wallet has had an audit does not mean that it’s 100% bug-proof. Be incredibly cautious when using unaudited wallets.
 
 Never share your seed phrase, password, or private keys. Bad actors will often use social engineering tactics such as phishing emails or posing as customer service or tech support to lure users into handing over their private key or seed phrase.
 
-#### Add a wallet to our list
+### Add a wallet to our list
 
 If you know of a wallet that supports Filecoin, you can submit a pull request to this page and add it!
 

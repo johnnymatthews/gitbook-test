@@ -7,7 +7,7 @@ description: >-
 
 # Metamask setup
 
-### Using Chainlist
+## Using Chainlist
 
 Chainlist is a website that lets users easily connect their wallets to EVM-compatible blockchains. Chainlist is managed by [DeFi Llama](https://defillama.com/). Chainlist is the simplest way to add the Filecoin network to your MetaMask wallet.
 
@@ -50,18 +50,18 @@ You can now use MetaMask to interact with the Filecoin network.
 {% endtab %}
 {% endtabs %}
 
-### Manual process
+## Manual process
 
 If you can’t or don’t want to use Chainlist, you can add the Filecoin network to your MetaMask manually.
 
-#### Prerequisites
+### Prerequisites
 
 Before we get started, you’ll need the following:
 
 * A [Chromium-based browser](https://en.wikipedia.org/wiki/Chromium\_web\_browser#Browsers\_based\_on\_Chromium), or [Firefox](https://www.mozilla.org/en-CA/firefox/products/).
 * A browser with [MetaMask](https://metamask.io/) installed.
 
-#### Steps
+### Steps
 
 The process for configuring MetaMask to use Filecoin is fairly simple, but has some very specific variables that you must copy exactly.
 

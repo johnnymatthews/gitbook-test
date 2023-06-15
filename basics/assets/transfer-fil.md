@@ -9,8 +9,8 @@ description: >-
 
 Etheruem-style addresses start with `0x`. Filecoin addresses start with `f`. There are four paths for transferring funds across the Filecoin network depending on which address type you are transferring from and to:
 
-|                             | From an Eth-style address                                                                                                             | From a Filecoin address                                                                                             |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+|   | From an Eth-style address | From a Filecoin address |
+| --- | --- | --- |
 | **To an Eth-style address** | [Eth-style address to Eth-style address](https://docs.filecoin.io/basics/assets/transfer-fil/#eth-style-address-to-eth-style-address) | [Filecoin to Eth-style address](https://docs.filecoin.io/basics/assets/transfer-fil/#filecoin-to-eth-style-address) |
 | **To a Filecoin address**   | [Eth-style address to Filecoin](https://docs.filecoin.io/basics/assets/transfer-fil/#eth-style-address-to-filecoin)                   | [Filecoin to Filecoin](https://docs.filecoin.io/basics/assets/transfer-fil/#filecoin-to-filecoin)                   |
 
