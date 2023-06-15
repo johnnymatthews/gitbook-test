@@ -27,9 +27,6 @@ Actor ID addresses are not _robust_, in the sense that they do depend on chain s
 
 For example, the mainnet burn account ID address, `f099`, is structured as follows:
 
-```
-```
-
 ```plaintext
   Address type
   |

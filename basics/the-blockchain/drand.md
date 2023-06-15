@@ -12,9 +12,6 @@ This page covers how Drand is used within the Filecoin network. For more informa
 
 By polling the appropriate endpoint, a Filecoin node will get back a Drand value formatted as follows:
 
-```
-```
-
 ```json
 {
   "round": 367,

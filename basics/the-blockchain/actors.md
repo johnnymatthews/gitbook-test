@@ -69,27 +69,27 @@ The 11 different types of built-in actors are as follows:
 * [VerifiedRegistryActor](https://docs.filecoin.io/basics/the-blockchain/actors/#verifiedregistryactor)
 * [SystemActor](https://docs.filecoin.io/basics/the-blockchain/actors/#systemactor)
 
-**CronActor**
+#### CronActor
 
 The `CronActor` sends messages to the `StoragePowerActor` and `StorageMarketActor` at the end of each epoch. The messages sent by `CronActor` indicate to StoragePowerActor and StorageMarketActor how they should maintain internal state and process deferred events. This system actor is instantiated in the genesis block, and interacts directly with the FVM.
 
-**InitActor**
+#### InitActor
 
 The `InitActor` can initialize new actors on the Filecoin network. This system actor is instantiated in the genesis block, and maintains a table resolving a public key and temporary actor addresses to their canonical ID addresses. The `InitActor` interacts directly with the FVM.
 
-**AccountActor**
+#### AccountActor
 
 The `AccountActor` is responsible for user accounts. Account actors are not created by the `InitActor`, but by sending a message to a public-key style address. The account actor updates the state tree with new actor address, and interacts directly with the FVM.
 
-**RewardActor**
+#### RewardActor
 
 The `RewardActor` manages unminted Filecoin tokens, and distributes rewards directly to miner actors, where they are locked for vesting. The reward value used for the current epoch is updated at the end of an epoch. The `RewardActor` interacts directly with the FVM.
 
-**StorageMarketActor**
+#### StorageMarketActor
 
 The `StorageMarketActor` is responsible for processing and managing on-chain deals. This is also the entry point of all storage deals and data into the system. This actor keeps track of storage deals, and the of locked balances of both the client storing data and the storage provider. When a deal is posted on chain through the `StorageMarketActor`, the actor will first check if both transacting parties have sufficient balances locked up and include the deal on chain. Additionally, the `StorageMarketActor` holds _Storage Deal Collateral_ provided by the storage provider to collateralize deals. This collateral is returned to the storage provider when all deals in the sector successfully conclude. This actor does not interact directly with the FVM.
 
-**StorageMinerActor**
+#### StorageMinerActor
 
 The `StorageMinerActor` is created by the `StoragePowerActor`, and is responsible for storage mining operations and the collection of mining proofs. This actor is a key part of the Filecoin storage mining subsystem, which ensures a storage miner can effectively commit storage to the Filecoin, handles the following:
 
@@ -100,23 +100,23 @@ The `StorageMinerActor` is created by the `StoragePowerActor`, and is responsibl
 
 This actor does not interact directly with the FVM.
 
-**MultisigActor**
+#### MultisigActor
 
 The `MultisigActor` is responsible for dealing with operations involving the Filecoin wallet, and represents a group of transaction signers, with a maximum of 256. Signers may be external users or the `MultisigActor` itself. This actor does not interact directly with the FVM.
 
-**PaymentChannelActor**
+#### PaymentChannelActor
 
 The `PaymentChannelActor` creates and manages _payment channels_, a mechanism for off-chain microtransactions for Filecoin dApps to be reconciled on-chain at a later time with less overhead than a standard on-chain transaction, and no gas costs. Payment channels are uni-directional and can be funded by adding to their balance. To create a payment channel and deposit fund, a user calls the `PaymentChannelActor`. This actor does not interact directly with the FVM.
 
-**StoragePowerActor**
+#### StoragePowerActor
 
 The `StoragePowerActor` is responsible for keeping track of the storage power allocated to each storage miner, and has the ability to create a `StorageMinerActor`. This actor does not interact directly with the FVM.
 
-**VerifiedRegistryActor**
+#### VerifiedRegistryActor
 
 The `VerifiedRegistryActor` is responsible for managing Filecoin Plus (Fil+) clients. This actor can add a verified client to the Fil+ program, remove and reclaim expired DataCap allocations and manage claims. This actor does not interact directly with the FVM.
 
-**SystemActor**
+#### SystemActor
 
 For more information on `SystemActor`, see the [source code](https://github.com/filecoin-project/specs-actors/blob/master/actors/builtin/system/system\_actor.go).
 
