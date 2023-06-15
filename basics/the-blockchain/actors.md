@@ -12,7 +12,7 @@ For those familiar with the Ethereum virtual machine (EVM), _actors_ work simila
 * [_Built-in actors_](https://docs.filecoin.io/basics/the-blockchain/actors/#built-in-actors): Hardcoded programs, written ahead of time by network engineers that manage and orchestrate key subprocesses and subsystems in the Filecoin network.
 * [_User actors_](https://docs.filecoin.io/basics/the-blockchain/actors/#user-actors-smart-contracts): Code implemented by **any developer** that interacts with the Filecoin Virtual Machine (FVM).
 
-### Built-in actors
+## Built-in actors
 
 Built-in actors are how the Filecoin network manages and updates _global state_. The _global state_ of the network at a given epoch can be thought of as the set of blocks agreed upon via network consensus in that epoch. This global state is represented as a _state tree_, which maps an actor to an _actor state_. An _actor state_ describes the current conditions for an individual actor, such as its FIL balance and its nonce. In Filecoin, actors trigger a _state transition_ by sending a _message_. Each block in the chain can be thought of as a **proposed** global state, where the block selected by network consensus sets the **new** global state. Each block contains a series of messages, and a checkpoint of the current global state after the application of those messages. The Filecoin Virtual Machine (FVM) is the Filecoin network component that is in charge of execution of all actor code.
 
@@ -24,7 +24,7 @@ A basic example of how actors are used in Filecoin is the process by which stora
 4. During block validation, the `StoragePowerActor`’s state, which includes information on storage power allocated to each storage provider, is read.
 5. Using the state information, the consensus mechanism randomly awards blocks to the storage providers with the most power, and the [`RewardActor`](https://docs.filecoin.io/basics/the-blockchain/actors/#rewardactor) sends FIL to storage providers.
 
-#### Blocks
+### Blocks
 
 Each block in the Filecoin chain contains:
 
@@ -32,14 +32,14 @@ Each block in the Filecoin chain contains:
 * A pointer ([CID](https://docs.filecoin.io/reference/general/glossary/#content-identifier-cid)) to the current state tree.
 * A pointer ([CID](https://docs.filecoin.io/reference/general/glossary/#content-identifier-cid)) to the set of messages that, when applied to the network, generated the current state tree.
 
-#### State tree
+### State tree
 
 A [Merkle Directed Acyclic Graph (Merkle DAG)](https://docs.filecoin.io/reference/general/glossary/#merkle-directed-acyclic-graph) is used to map the state tree and the set of messages. Nodes in the state tree contain information on:
 
 * Actors, like FIL balance, nonce and a pointer (CID) to actor state data.
 * Messages in the current block
 
-#### Messages
+### Messages
 
 Like the state tree, a Merkle Directed Acyclic Graph (Merkle DAG) is used to map the set of messages for a given block. Nodes in the messages map contain information on:
 
@@ -49,11 +49,11 @@ Like the state tree, a Merkle Directed Acyclic Graph (Merkle DAG) is used to map
 * A cryptographic signature for verification
 * The amount of FIL transferred between actors
 
-#### Actor code
+### Actor code
 
 The code that defines an actor in the Filecoin network is separated into different methods. Messages sent to an actor contain information on which method(s) to call, and the input parameters for those methods. Additionally, actor code interacts with a _runtime_ object, which contains information on the general state of network, such as the current epoch, and cryptographic signatures and proof validations. Like smart contracts in other blockchains, actors must pay a _gas fee_, which is some predetermined amount of FIL to offset the cost (network resources used, etc.) of a transaction. Every actor has a Filecoin balance attributed to it, a state pointer, a code which tells the system what type of actor it is, and a nonce, which tracks the number of messages sent by this actor
 
-#### Types of built-in actors
+### Types of built-in actors
 
 The 11 different types of built-in actors are as follows:
 
@@ -120,7 +120,7 @@ The `VerifiedRegistryActor` is responsible for managing Filecoin Plus (Fil+) cli
 
 For more information on `SystemActor`, see the [source code](https://github.com/filecoin-project/specs-actors/blob/master/actors/builtin/system/system\_actor.go).
 
-### User actors (smart contracts)
+## User actors (smart contracts)
 
 A _user actor_ is code defined by **any developer** that can interact FVM, otherwise known as a _smart contract_.
 

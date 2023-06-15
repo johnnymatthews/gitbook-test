@@ -29,7 +29,7 @@ In Filecoin, this process is known as _Proof-of-Storage_, and consists of two di
 * [Proof of Replication (PoRep)](https://docs.filecoin.io/basics/the-blockchain/proofs/#proof-of-replication-porep): a procedure used at the time of initial data storage to validate that an SP has _created and stored_ a unique copy of some piece of data.
 * [Proof of Spacetime (PoST)](https://docs.filecoin.io/basics/the-blockchain/proofs/#proof-of-spacetime-post): a procedure to validate that an SP is _continuing to store_ a unique copy of some piece of data.
 
-### Proof-of-Replication (PoRep)
+## Proof-of-Replication (PoRep)
 
 In the Filecoin storage lifecycle process, _Proof-of-Replication (PoRep)_ is used when an SP agrees to store data on behalf of a client and receives a piece of client data. In this process:
 
@@ -39,7 +39,7 @@ In the Filecoin storage lifecycle process, _Proof-of-Replication (PoRep)_ is use
 4. The proof is compressed.
 5. The result of the compression is submitted to the network as certification of storage.
 
-#### Sealing as proof
+### Sealing as proof
 
 The unique encoding created during the sealing process is generated using the following pieces of information:
 
@@ -49,7 +49,7 @@ The unique encoding created during the sealing process is generated using the fo
 
 Because of the principles of cryptographic hashing, a new encoding will be generated if the data changes, the storage provider sealing the data changes, or the time of sealing changes. This encoding is unique and can be used to verify that a specific storage provider did, in fact, store a particular piece of client data at a specific time.
 
-### Proof-of-Spacetime (PoSt)
+## Proof-of-Spacetime (PoSt)
 
 After a storage provider has proved that they have replicated a copy of the data that they agreed to store, the SP must continue to prove to the network that:
 
@@ -62,7 +62,7 @@ Because this method is concerned with proving that data is being stored in a par
 * [WinningPoSt](https://docs.filecoin.io/basics/the-blockchain/proofs/#winningpost) is used to prove that an SP selected using an election process has a replica of the data at the specific time that they were asked and is used in the block consensus process.
 * [WindowPoSt](https://docs.filecoin.io/basics/the-blockchain/proofs/#windowpost) is used to prove that, for any and all SPs in the network, a copy of the data that was agreed to be stored is being continuously maintained over time and is used to audit SPs continuously.
 
-#### WinningPoSt
+### WinningPoSt
 
 _WinningPoSt_ is used to prove that an SP selected via election has a replica of the data at the specific time that they were asked and is specifically used in Filecoin to determine which SPs may add blocks to the Filecoin blockchain.
 
@@ -73,7 +73,7 @@ At the beginning of each [epoch](https://docs.filecoin.io/basics/the-blockchain/
 
 If an SP misses the submission deadline, no penalty is incurred, but the SP misses the opportunity to mine a block and receive the block reward.
 
-#### WindowPoSt
+### WindowPoSt
 
 _WindowPoSt_ is used to prove that, for any and all SPs in the network, a copy of the data that was agreed to be stored is being continuously maintained over time and is used to audit SPs continuously. In WindowPoSt, all SPs must demonstrate the availability of all sectors claimed every [proving period](https://docs.filecoin.io/basics/the-blockchain/proofs/) . Sector availability is not proved individually; rather, SPs must prove a whole [partition](https://docs.filecoin.io/basics/the-blockchain/proofs/) at once, and that sector must be proved by the deadline assigned (a 30 minute interval in the proving period).
 

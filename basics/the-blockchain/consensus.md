@@ -7,11 +7,11 @@ description: >-
 
 # Consensus
 
-### Overview
+## Overview
 
 In the Filecoin blockchain, network [_consensus_](https://docs.filecoin.io/basics/the-blockchain/consensus/) is achieved using the Expected Consensus (EC) algorithm, a probabilistic, [_Byzantine fault-tolerant_](https://docs.filecoin.io/basics/the-blockchain/consensus/) consensus protocol. At a high-level, EC achieves consensus by running a secret, fair and verifiable _leader election_ at every [epoch](https://docs.filecoin.io/basics/the-blockchain/consensus/) where a set number of participants may become eligible to submit a block to the chain based on fair and verifiable criteria.
 
-### Properties
+## Properties
 
 Expected Consensus (EC) has the following properties:
 
@@ -21,7 +21,7 @@ Expected Consensus (EC) has the following properties:
 * A block producer can be verified by any participant in the network.
 * The identity of a block producer is anonymous until they release their block to the network.
 
-### Steps
+## Steps
 
 In summary, EC involves the following steps at each [_epoch_](https://docs.filecoin.io/basics/the-blockchain/consensus/) :
 

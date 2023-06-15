@@ -8,7 +8,7 @@ description: >-
 
 This page covers how Drand is used within the Filecoin network. For more information on Drand generally, [take a look at the project’s documentation](https://drand.love/about/).
 
-### Randomness outputs
+## Randomness outputs
 
 By polling the appropriate endpoint, a Filecoin node will get back a Drand value formatted as follows:
 
@@ -29,7 +29,7 @@ By polling the appropriate endpoint, a Filecoin node will get back a Drand value
 
 The message signed is the concatenation of the round number treated as a uint64 and the previous signature. At the moment, Drand uses BLS signatures on the BLS12-381 curve with the latest v7 RFC of hash-to-curve and the signature is made over G1
 
-### Polling the network
+## Polling the network
 
 Filecoin nodes fetch the Drand entry from the distribution network of the selected Drand network.
 
@@ -49,11 +49,11 @@ Thereafter, the Filecoin client can call Drand’s endpoints:
 * `/public/latest` to get the latest randomness value produced by the beacon.
 * `/public/<round>` to get the randomness value produced by the beacon at a given round.
 
-### Using Drand
+## Using Drand
 
 Drand is used as a randomness beacon for leader election in Filecoin. While Drand returns multiple values with every call to the beacon (see above), Filecoin blocks need only store a subset of these in order to track a full Drand chain. This information can then be mixed with on-chain data for use in Filecoin.
 
-### Edge cases and outages
+## Edge cases and outages
 
 Any Drand beacon outage will effectively halt Filecoin block production. Given that new randomness is not produced, Filecoin miners cannot generate new blocks. Specifically, any call to the Drand network for a new randomness entry during an outage should be blocking in Filecoin.
 
