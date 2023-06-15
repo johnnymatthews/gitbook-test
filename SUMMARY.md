@@ -128,7 +128,22 @@
 
 ## Networks
 
-* [Networks](networks/networks.md)
+* [Mainnet](networks/mainnet/README.md)
+  * [Details](networks/mainnet/details.md)
+  * [Explorers](networks/mainnet/explorers.md)
+  * [RPCs](networks/mainnet/rpcs.md)
+  * [Network performance](networks/mainnet/network-performance.md)
+* [Calibration](networks/calibration/README.md)
+  * [Details](networks/calibration/details.md)
+  * [Explorers](networks/calibration/explorers.md)
+  * [RPCs](networks/calibration/rpcs.md)
+* [Spacenet](networks/spacenet/README.md)
+  * [Details](networks/spacenet/details.md)
+  * [RPCs](networks/spacenet/rpcs.md)
+  * [Get test tokens](networks/spacenet/get-test-tokens.md)
+* [Local testnet](networks/local-testnet/README.md)
+  * [Setup](networks/local-testnet/setup.md)
+  * [Get test tokens](networks/local-testnet/get-test-tokens.md)
 
 ## Reference
 
