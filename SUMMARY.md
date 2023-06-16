@@ -47,7 +47,6 @@
 ## Storage providers
 
 * [Basics](storage-providers/basics/README.md)
-  * [Becoming a storage provider](storage-providers/basics/becoming-a-storage-provider.md)
   * [Quickstart guide](storage-providers/basics/quickstart-guide.md)
 * [Filecoin economics](storage-providers/filecoin-economics/README.md)
   * [Storage proving](storage-providers/filecoin-economics/storage-proving.md)
