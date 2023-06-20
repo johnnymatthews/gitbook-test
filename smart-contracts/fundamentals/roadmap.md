@@ -6,7 +6,7 @@ description: >-
 
 # Roadmap
 
-### Goal
+## Goal
 
 The goal of the FVM project is to add general programmability to the Filecoin blockchain. Doing so will give developers all kinds of creative options, including:
 
@@ -19,7 +19,7 @@ The goal of the FVM project is to add general programmability to the Filecoin bl
 
 Filecoin was the first network deploying programmability, post-genesis, to ensure that layer 0 of the Filecoin blockchain was stable and fully functional. Due to the large amounts of capital already secured within the Filecoin network, the development of the FVM needs to be careful and gradual.
 
-### Roadmap
+## Roadmap
 
 The FVM roadmap is split into three initiatives:
 
@@ -27,7 +27,7 @@ The FVM roadmap is split into three initiatives:
 * Milestone 2: Enable the deployment of Ethereum virtual machine (EVM) compatible smart contracts onto the FVM. Also, allow developers to create and deploy their own native actors to the FVM.
 * Milestone 3: Continue to enhance programmability on FVM.
 
-#### ✅ Milestone 0
+### ✅ Milestone 0
 
 **✅ Lotus mainnet canaries with FVM support**
 
@@ -35,7 +35,7 @@ _Completed in February 2022_
 
 The reference FVM implementation has been integrated into a fork of Lotus (the Filecoin reference client). A fleet of canary nodes have been launched on mainnet, running WASM-compiled built-in actors on the FVM. The canaries are monitored for consensus faults and to gather telemetry. This milestone is a testing milestone that’s critical to collect raw execution data to feed into the overhaul of the gas model, in preparation for user-programmability. It implies no network upgrade.
 
-#### ✅ Milestone 0.5
+### ✅ Milestone 0.5
 
 **✅ Ability to run FVM node and sync mainnet**
 
@@ -43,7 +43,7 @@ _Completed in March 2022_
 
 Any node operator can sync the Filecoin Mainnet using the FVM and Rust built-in actors, integrated in Lotus, Venus, Forest, and Fuhon implementations. It implies no network upgrade.
 
-#### ✅ Milestone 1
+### ✅ Milestone 1
 
 **✅ Introduction of non-programmable WASM-based FVM**
 
@@ -57,7 +57,7 @@ _Completed in November 2022_
 
 An initial set of protocol refactors targeting built-in actors, including the ability to introduce new storage markets via user-defined smart contracts.
 
-#### ✅ Milestone 2.1
+### ✅ Milestone 2.1
 
 **✅ Ability to deploy EVM contracts to mainnet (FEVM)**
 
@@ -77,7 +77,7 @@ _Completed on March 14th 2023_
 
 The Filecoin EVM runtime is deployed on Filecoin mainnet via the [Filecoin nv18 Hygge upgrade](https://github.com/filecoin-project/community/discussions/74?sort=new#discussioncomment-4313888).
 
-#### 🔄 Milestone 2.2
+### 🔄 Milestone 2.2
 
 **🔄 Ability to deploy Wasm actors to mainnet**
 
@@ -85,7 +85,7 @@ _To complete midway through 2023_
 
 Developers will be able to deploy custom smart contracts written in Rust, AssemblyScript, or Go, and compiled to WASM bytecode. SDKs, tutorials, and other developer materials will be generally available. This milestone requires a network upgrade.
 
-#### 🔮 Milestone 3+
+### 🔮 Milestone 3+
 
 **🔮 Further incremental protocol refactors to enhance programmability**
 

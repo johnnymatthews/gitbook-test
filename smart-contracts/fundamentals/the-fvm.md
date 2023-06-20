@@ -7,53 +7,53 @@ description: >-
 
 # The FVM
 
-### Features
+## Features
 
 The Filecoin virtual machine (FVM) was created to enable developers to build new use cases on top of the Filecoin network. Data access control, data DAOs, perpetual storage, collateral leasing, and Ethereum-compatible fungible and non-fungible tokens are just some of the use-cases for the FVM.
 
-#### Data access control
+### Data access control
 
 The FVM allows Filecoin network participants to limit individual access to certain data sets, an advantage previously only available using centralized storage solutions.
 
-#### Data DAO
+### Data DAO
 
 FVM data access control enables the creation and management of data centered decentralized-autonomous-organizations, which can govern and monetize data access and pool returns into a shared treasury.
 
-#### Perpetual storage
+### Perpetual storage
 
 The FVM allows users to store data permanently, managed by repair and replication bots, which also benefit from Filecoin’s verifiable storage proofs.
 
-#### Leasing
+### Leasing
 
 FIL token holders can use their holdings to provide storage collateral and receive leasing fees. Community-generated reputation scores enable everyone to identify good borrowers.
 
-#### Ethereum compatibility
+### Ethereum compatibility
 
 The FVM is fully EVM-compatible, allowing new ERC-20 tokens to be launched on the Filecoin network and enabling layer two networks to leverage its storage power and security. The majority of EVM tooling can also be used within the Filecoin ecosystem.
 
-### Use-cases
+## Use-cases
 
 The FVM can be used for the creation of a new class of [web3](https://docs.filecoin.io/smart-contracts/fundamentals/the-filecoin-virtual-machine/) [dApps](https://docs.filecoin.io/smart-contracts/fundamentals/the-filecoin-virtual-machine/) , many of which will have the potential to become 10x improvements to the network’s functionality and beyond. The FVM team and members of the Filecoin community have discussed what can be built with the FVM. Some ideas are:
 
-#### Tokenized datasets and Data DAOs
+### Tokenized datasets and Data DAOs
 
 Kickstart the dataset economy by tokenizing dataset and representing the value of those datasets to society. Exchange those data tokens between peers and request computation services on that data, such as validation, joins, analysis, feature detection, and extraction.
 
-#### Trustless reputation systems
+### Trustless reputation systems
 
 Imagine an overlay network of nodes that could patrol the network performing random deals with storage providers (SPs) in order to gauge key metrics like quality of service guarantees, performance, latency, and region details. These nodes can then store SP reputation scores on-chain, making them traceable and verifiable while enabling users to decide on the terms of service of the SPs that they want to use for their data.
 
-#### Replication workers
+### Replication workers
 
 Imagine anyone is able to write a new smart contract that makes new deals to maintain a specific level of replication of that dataset in the network. You could ensure the resiliency of your data by ensuring it is always stored n times automatically.
 
 The smart contract could also be able to transfer your data just once into the Filecoin network and have a trustless actor replicate and send that n times to multiple storage locations. You could even create a user-defined policy of rules for that data to obey - specifying things like region and location, latency, and even price. This can all be built right into the smart contract flow in FVM.
 
-#### Smarter storage markets
+### Smarter storage markets
 
 Imagine richer functionality in storage markets with features like auto-renewal of deals or self-repairing deals in the event of sector issues. Other possibilities are time-locked or event-driven data deals where retrieval only occurs under a specified time frame or event trigger.
 
-#### The list goes on
+### The list goes on
 
 There are many more use cases to unlock with FVM. Some other projects include:
 
@@ -65,11 +65,11 @@ There are many more use cases to unlock with FVM. Some other projects include:
 
 If you have a great idea or suggestion, join the discussion on the [FVM forum](https://fvm-forum.filecoin.io).
 
-### Project blueprints
+## Project blueprints
 
 Here is a collection of blueprint examples that developers can use to design and create their projects on Filecoin.
 
-#### Data DAO solution
+### Data DAO solution
 
 A Data DAO enables the creation of a dataset economy where users can capture and represent the value of those datasets to society. It’s even possible to exchange those data tokens between peers and request computation services on that data, such as validation, joins, analysis, feature detection, and extraction.
 
@@ -122,7 +122,7 @@ Instead of letting contract admins decide which CIDs to preserve, the Data DAO c
 
 The Data DAO contract can decide how to incentivize SPs by implementing their business logic about how to distribute $DATA or introduce tokenomics such as staking.
 
-#### Perpetual Storage
+### Perpetual Storage
 
 There are many use cases in the world that need perpetual storage. For example, the safe and indefinite storage of NFTs would greatly assist the NFT marketplace.
 
@@ -165,7 +165,7 @@ I highly recommend that you [read through the “Core Idea” section in this RE
   * You can handle this callback by exposing a `handle_filecoin_method(uint64, uint64, bytes)` Solidity method, which is how the FEVM runtime routes inbound FRC42 calls. [See this example](https://github.com/lotus-web3/client-contract/blob/8b53caadd9f7b028f897dfcd28ec2ca9ae98b9e3/src/DealClient.sol#LL49).
   * The PerpetualStorage contract should check if this replication is valid and send FIL to the storage provider if it successfully creates the deal.
 
-#### Collateral Leasing
+### Collateral Leasing
 
 Storage providers (SPs) have to post collateral (in FIL) to onboard storage capacity to the network and to accept storage deals. This collateral incentivizes the storage provider to behave correctly by presenting timely proofs of the health of the data (PoRep, PoSt), or they risk getting slashed.
 

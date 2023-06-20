@@ -12,11 +12,11 @@ We’re going to install a browser-based wallet called MetaMask, create a new wa
 If you’re an Ethereum developer, check out the [FEVM Hardhat kit](https://docs.filecoin.io/smart-contracts/developing-contracts/hardhat/).
 {% endhint %}
 
-### Accounts and assets
+## Accounts and assets
 
 We’re going to be using MetaMask, a cryptocurrency wallet that lives in your browser making it very easy for users to interact with web3-based sites!
 
-#### Create a wallet
+### Create a wallet
 
 Before we can interact with the Filecoin network, we need funds. But before we can get any funds, we need somewhere to put them!
 
@@ -37,7 +37,7 @@ Before we can interact with the Filecoin network, we need funds. But before we c
 
     ![Default MetaMask page.](https://docs.filecoin.io/smart-contracts/fundamentals/erc-20-quickstart/metamask-default-page\_huf0cf1610c1311b796ca76739af126df8\_125149\_1440x0\_resize\_q75\_h2\_box\_3.webp)
 
-#### Switch networks
+### Switch networks
 
 You may notice that we are currently connected to the **Ethereum Mainnet**. We need to point MetaMask to the Filecoin network, specifically the [Calibration testnet](https://docs.filecoin.io/networks/calibration/details/). We’ll use a website called [chainlist.org](https://chainlist.org/) to give MetaMask the information it needs quickly.
 
@@ -69,7 +69,7 @@ You may notice that we are currently connected to the **Ethereum Mainnet**. We n
 
 Nice! Now we’ve got the Filecoin Calibration testnet set up within MetaMask. You’ll notice that our MetaMask window shows `0 TFIL`. Test-filecoin (`TFIL`) is `FIL` that has no value in the _real world_, and developers use it for testing. We’ll grab some `TFIL` next.
 
-#### Get some funds
+### Get some funds
 
 1.  In your browser, open MetaMask and copy your address to your clipboard:
 
@@ -92,11 +92,11 @@ Nice! Now we’ve got the Filecoin Calibration testnet set up within MetaMask. Y
 
 That’s all there is to it! Getting `tFil` is easy!
 
-### Contract creation
+## Contract creation
 
 The development environment we’re going to be using is called Remix, viewable at [remix.ethereum.org](https://remix.ethereum.org/). Remix is an incredibly sophisticated tool, and there’s a lot you can play around with! In this tutorial however, we’re going to stick to the very basics. If you want to learn more, check out [the Remix documentation](https://remix-ide.readthedocs.io/en/latest/).
 
-#### Create a workspace
+### Create a workspace
 
 In Remix, workspaces are where you can create a contract, or group of contracts, for each project. Let’s create a new workspace to create our new ERC-20 token.
 
@@ -111,7 +111,7 @@ In Remix, workspaces are where you can create a contract, or group of contracts,
 
     ![Set workspace details.](https://docs.filecoin.io/smart-contracts/fundamentals/erc-20-quickstart/create-a-workspace-details\_hube86baae893ca7489237727aa1192243\_224220\_1440x0\_resize\_q75\_h2\_box\_3.webp)
 
-#### Customize the contract
+### Customize the contract
 
 The contract template we’re using is pretty simple. We just need to modify a couple of variables.
 
@@ -127,7 +127,7 @@ The contract template we’re using is pretty simple. We just need to modify a c
 
 That’s all we need to change within this contract. You can see on line 4 that this contract is importing another contract from `@openzeppelin` for us, meaning that we can keep our custom token contract simple.
 
-#### Compile
+### Compile
 
 1.  Click the green play symbol at the top of the workspace to compile your contract. You can also press `CMD` + `s` on MacOS or `CTRL` + `s` on Linux and Windows.
 
@@ -136,7 +136,7 @@ That’s all we need to change within this contract. You can see on line 4 that 
 
     ![Compile and get the dependencies](https://docs.filecoin.io/smart-contracts/fundamentals/erc-20-quickstart/compile-deps\_hu91fca83f29d2c07e42bb219cc12af660\_213060\_1440x0\_resize\_q75\_h2\_box\_3.webp)
 
-#### Deploy
+### Deploy
 
 Now that we’ve successfully compiled our contract, we need to deploy it somewhere! This is where our previous MetaMask setup comes into play.
 
@@ -174,11 +174,11 @@ Now that we’ve successfully compiled our contract, we need to deploy it somewh
 
 On the Filecoin network, a new set of blocks, also called a tipset, is created every thirty seconds. When deploying a contract, the transaction needs to be received by the network, and then the network needs to confirm the contract. This process takes around one to two tipsets to process – or around 60 to 90 seconds.
 
-### Use your contract
+## Use your contract
 
 Now that we’ve compiled and deployed the contract, it’s time to actually interact with it!
 
-#### Mint your tokens
+### Mint your tokens
 
 Let’s call a method within the deployed contract to mint some tokens.
 
@@ -201,7 +201,7 @@ Let’s call a method within the deployed contract to mint some tokens.
 
 Again, you must wait for the network to process the transaction, which should take about 90 seconds. You can move on to the next section while you’re waiting.
 
-#### Add to MetaMask
+### Add to MetaMask
 
 Currently, MetaMask has no idea what our token is or what it even does. We can fix this by explicitly telling MetaMask the address of our contract.
 
@@ -220,6 +220,6 @@ Currently, MetaMask has no idea what our token is or what it even does. We can f
 
     ![MetaMask showing a new token.](https://docs.filecoin.io/smart-contracts/fundamentals/erc-20-quickstart/add-complete\_hu7727a8c6e2339e54b232800da45abf9c\_26627\_391x0\_resize\_q75\_h2\_box\_3.webp)
 
-#### Share your tokens
+### Share your tokens
 
 Having a bunch of tokens in your personal MetaMask is nice, but why not send some tokens to a friend? Your friend needs to create a wallet in MetaMask as we did in the [Create a wallet](https://docs.filecoin.io/smart-contracts/fundamentals/erc-20-quickstart/#create-a-wallet) and [Switch networks](https://docs.filecoin.io/smart-contracts/fundamentals/erc-20-quickstart/#switch-networks) sections. They will also need to import your contract deployment address like you did in the [Add your tokens to MetaMask](https://docs.filecoin.io/smart-contracts/fundamentals/erc-20-quickstart/#add-to-metamask) section. Remember, you need to pay gas for every transaction that you make! If your friend tries to send some of your tokens to someone else but can’t, it might be because they [don’t have any `tFil`](https://docs.filecoin.io/smart-contracts/fundamentals/erc-20-quickstart/#get-some-funds).

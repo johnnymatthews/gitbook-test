@@ -13,7 +13,7 @@ The FEVM interpreter must first load its state, including the contract state, wh
 
 Generally, it is not possible to compute gas costs for a contract invocation without using gas estimation through speculative execution.
 
-### Calculation example
+## Calculation example
 
 The total gas fee of a message is calculated as the following:
 
@@ -56,7 +56,7 @@ x     5
 
 Additionally, the message sender can also set the `GasFeeCap` parameter they are willing to pay. If the sender sets the `GasLimit` too high, the network will compute the amount of gas to be refunded and the amount of gas to be burned as `OverEstimationBurn`.
 
-### Estimate gas
+## Estimate gas
 
 Filecoin nodes, such as Lotus, have several JSON-API API endpoints designed to help developers estimate gas usage. The available JSON-RPC APIs are:
 
@@ -71,7 +71,7 @@ Gas estimation varies from network to network. For example, the `BaseFee` on mai
 
 If you’d rather not calculate and estimate gas for every message, you can just leave the optional fields unset. The gas fields will be estimated and set when the message is pushed to the mempool.
 
-### Ethereum compatibility
+## Ethereum compatibility
 
 Since Filecoin is fully EVM-compatible, Filecoin nodes also provide Ethereum-compatible APIs to support gas estimation:
 
@@ -115,7 +115,7 @@ echo $((16#31157))
 201047
 ```
 
-### Additional Resources
+## Additional Resources
 
 * Gas Filecoin improvement proposals (FIPs):
   * [FIP 0032](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0032.md)

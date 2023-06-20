@@ -13,7 +13,7 @@ The Filecoin virtual machine (FVM) has several pre-compiled contracts called pre
 * [Call actor by address `0xfe00..03`](https://docs.filecoin.io/smart-contracts/filecoin-evm-runtime/precompiles/#call-actor-by-address)
 * [Call actor by ID `0xfe00..05`](https://docs.filecoin.io/smart-contracts/filecoin-evm-runtime/precompiles/#call-actor-by-id)
 
-### Resolve Address
+## Resolve Address
 
 Address: `0xfe00000000000000000000000000000000000001`
 
@@ -37,7 +37,7 @@ require(actor_id_bytes.length == 32, "actor not found");
 uint64 actor_id = abi.decode(actor_id_bytes);
 ```
 
-### Lookup Delegated Address
+## Lookup Delegated Address
 
 Address: `0xfe00000000000000000000000000000000000002`
 
@@ -62,7 +62,7 @@ Example:
 (bool success, bytes memory delegated_address_bytes) = address(0xfe00000000000000000000000000000000000002).staticcall(abi.encode(uint256(actor_id)));
 ```
 
-### Call Actor By Address
+## Call Actor By Address
 
 Address: `0xfe00000000000000000000000000000000000003`
 
@@ -114,7 +114,7 @@ Example:
 
 [syscall-error](https://docs.rs/fvm\_sdk/0.6.1/fvm\_sdk/sys/enum.ErrorNumber.html)
 
-### Call Actor By ID
+## Call Actor By ID
 
 Address: `0xfe00000000000000000000000000000000000005`
 

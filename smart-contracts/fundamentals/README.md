@@ -6,7 +6,7 @@ description: >-
 
 # Fundamentals
 
-### Develop on Filecoin
+## Develop on Filecoin
 
 Filecoin combines the benefits of content-addressed data leveraged by [IPFS](https://docs.filecoin.io/smart-contracts/fundamentals/overview/) with blockchain-powered [storage guarantees](https://filrep.io/). The network offers robust and resilient distributed storage at massively lower cost compared to current centralized alternatives.
 
@@ -18,7 +18,7 @@ Developers choose Filecoin because it:
 * is the only decentralized storage network with petabyte-scale capacity
 * stores data at extremely low cost (and keeps it that way for the long term)
 
-### Filecoin and IPFS
+## Filecoin and IPFS
 
 How do Filecoin and IPFS work together? They are complementary protocols for storing and sharing data in the distributed web. Both systems are open-source and share many building blocks, including content addressing (CIDs) and network protocols (libp2p).
 
@@ -32,11 +32,11 @@ Filecoin and IPFS are designed as separate layers to give developers more choice
 
 To learn more about the protocol, go to [How Filecoin Works](https://docs.filecoin.io/basics/what-is-filecoin/overview/)
 
-### Filecoin and smart contracts
+## Filecoin and smart contracts
 
 You can improve speed and reduce gas fees by storing smart contract data on Filecoin. With Filecoin, the data itself is stored off-chain, but is used to generate verifiable CIDs and storage proofs that are recorded on the Filecoin chain and can be included in your smart contracts. This design pairs well with multiple smart contract networks such as Ethereum, Polygon, Avalanche, Solana, and more. Your smart contract only needs to include the compact content ids.
 
-### Get started
+## Get started
 
 Let’s get building. Choose one of the following APIs. These are all storage helpers, or tools and services that abstract Filecoin’s robust deal making processes into simple, streamlined API calls.
 
@@ -52,7 +52,7 @@ Examples:
 * [Avalanche tutorial](https://nftschool.dev/tutorial/avax-nft/) on NFTschool.dev
 * [Using IPFS & Filecoin on Harmony](https://docs.harmony.one/home/developers/tutorials/ipfs-filecoin)
 
-### Additional resources
+## Additional resources
 
 * [Filecoin integrations for Web3 infrastructure](https://www.youtube.com/watch?v=Q0oe6i7d1u4) (video)
 * [What is an IPFS Pinning Service?](https://medium.com/pinata/what-is-an-ipfs-pinning-service-f6ed4cd7e475) (Pinata explainer)

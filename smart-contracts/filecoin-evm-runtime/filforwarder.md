@@ -6,7 +6,7 @@ description: >-
 
 # FILForwarder
 
-### The problem
+## The problem
 
 Filecoin has multiple [address spaces](https://docs.filecoin.io/smart-contracts/filecoin-evm-runtime/address-types/#delegated-addresses): `f0`, `f1`, `f2`, `f3`, and `f4`. Each address space fits a particular need for the Filecoin network. The `f410` address spaces allow Ethereum addresses to be integrated into the Filecoin network.
 
@@ -14,18 +14,18 @@ Users interacting with the Filecoin EVM runtime need to use `f4` addresses, mask
 
 This is where the problem lies. Ethereum-based wallets do not recognize the `f1`, `f2`, or `f3` address formats, making it impossible to send FIL from an Ethereum-style address.
 
-### The solution
+## The solution
 
 The FilForwarder exposes a smart contract method called `forward` that takes a byte-level definition of a protocol address in an _f-style_ and a message value. It then uses the internal Filecoin APIs exposed using the Filecoin EVM runtime to properly send FIL funds reliably and as cheaply as possible. This also has the side effect of creating the actor ID should the address receiving address be considered new. In this way, using FilForwarder from an Ethereum wallet to any other Filecoin address space is safe and reliable.
 
-### Use FILForwarder
+## Use FILForwarder
 
 You can use the FilForwarder contract in two ways:
 
 * Using the Glif.io browser wallet
 * Manually invoking the contract
 
-#### Glif.io
+### Glif.io
 
 Before we start, make sure you know the address you’d like to forward your FIL to. You’ll need to ensure that the `f410` Ethereum-style address has enough FIL to cover the transaction costs.
 
@@ -60,7 +60,7 @@ Before we start, make sure you know the address you’d like to forward your FIL
 
 It generally takes around two minutes for a transaction to complete and for the funds to be available at the destination.
 
-#### Manually
+### Manually
 
 The FilForwarder contract can be interacted with using standard Ethereum tooling like Hardhat or Remix. In this guide, we’re going to use Hardhat, but these steps can be easily replicated using the [web-based IDE Remix](https://docs.filecoin.io/smart-contracts/developing-contracts/remix/).
 
