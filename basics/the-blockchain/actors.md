@@ -7,10 +7,10 @@ description: >-
 
 # Actors
 
-For those familiar with the Ethereum virtual machine (EVM), _actors_ work similarly to [smart contracts](https://docs.filecoin.io/basics/the-blockchain/actors/#user-actors-smart-contracts). In the Filecoin network, there are two types of actors:
+For those familiar with the Ethereum virtual machine (EVM), _actors_ work similarly to [smart contracts](broken-reference). In the Filecoin network, there are two types of actors:
 
-* [_Built-in actors_](https://docs.filecoin.io/basics/the-blockchain/actors/#built-in-actors): Hardcoded programs, written ahead of time by network engineers that manage and orchestrate key subprocesses and subsystems in the Filecoin network.
-* [_User actors_](https://docs.filecoin.io/basics/the-blockchain/actors/#user-actors-smart-contracts): Code implemented by **any developer** that interacts with the Filecoin Virtual Machine (FVM).
+* [_Built-in actors_](actors.md#built-in-actors): Hardcoded programs, written ahead of time by network engineers that manage and orchestrate key subprocesses and subsystems in the Filecoin network.
+* [_User actors_](actors.md#user-actors-smart-contracts): Code implemented by **any developer** that interacts with the Filecoin Virtual Machine (FVM).
 
 ## Built-in actors
 
@@ -18,23 +18,23 @@ Built-in actors are how the Filecoin network manages and updates _global state_.
 
 A basic example of how actors are used in Filecoin is the process by which storage providers prove storage and are subsequently rewarded. The process is as follows:
 
-1. The [`StorageMinerActor`](https://docs.filecoin.io/basics/the-blockchain/actors/#storagemineractor) processes proof of storage from a storage provider.
+1. The [`StorageMinerActor`](actors.md#storagemineractor) processes proof of storage from a storage provider.
 2. The storage provider is awarded storage power based on whether the proof is valid or not.
-3. The [`StoragePowerActor`](https://docs.filecoin.io/basics/the-blockchain/actors/#storagepoweractor) accounts for the storage power.
-4. During block validation, the `StoragePowerActor`’s state, which includes information on storage power allocated to each storage provider, is read.
-5. Using the state information, the consensus mechanism randomly awards blocks to the storage providers with the most power, and the [`RewardActor`](https://docs.filecoin.io/basics/the-blockchain/actors/#rewardactor) sends FIL to storage providers.
+3. The [`StoragePowerActor`](actors.md#storagepoweractor) accounts for the storage power.
+4. During block validation, the [`StoragePowerActor`](actors.md#storagepoweractor)’s state, which includes information on storage power allocated to each storage provider, is read.
+5. Using the state information, the consensus mechanism randomly awards blocks to the storage providers with the most power, and the [`RewardActor`](actors.md#rewardactor) sends FIL to storage providers.
 
 ### Blocks
 
 Each block in the Filecoin chain contains:
 
 * Inline data such as current block height.
-* A pointer ([CID](https://docs.filecoin.io/reference/general/glossary/#content-identifier-cid)) to the current state tree.
-* A pointer ([CID](https://docs.filecoin.io/reference/general/glossary/#content-identifier-cid)) to the set of messages that, when applied to the network, generated the current state tree.
+* A pointer to the current state tree.
+* A pointer to the set of messages that, when applied to the network, generated the current state tree.
 
 ### State tree
 
-A [Merkle Directed Acyclic Graph (Merkle DAG)](https://docs.filecoin.io/reference/general/glossary/#merkle-directed-acyclic-graph) is used to map the state tree and the set of messages. Nodes in the state tree contain information on:
+A [Merkle Directed Acyclic Graph (Merkle DAG)](../../reference/general/glossary.md#merkle-directed-acyclic-graph) is used to map the state tree and the set of messages. Nodes in the state tree contain information on:
 
 * Actors, like FIL balance, nonce and a pointer (CID) to actor state data.
 * Messages in the current block
@@ -57,17 +57,17 @@ The code that defines an actor in the Filecoin network is separated into differe
 
 The 11 different types of built-in actors are as follows:
 
-* [CronActor](https://docs.filecoin.io/basics/the-blockchain/actors/#cronactor)
-* [InitActor](https://docs.filecoin.io/basics/the-blockchain/actors/#initactor)
-* [AccountActor](https://docs.filecoin.io/basics/the-blockchain/actors/#accountactor)
-* [RewardActor](https://docs.filecoin.io/basics/the-blockchain/actors/#rewardactor)
-* [StorageMarketActor](https://docs.filecoin.io/basics/the-blockchain/actors/#storagemarketactor)
-* [StorageMinerActor](https://docs.filecoin.io/basics/the-blockchain/actors/#storagemineractor)
-* [MultisigActor](https://docs.filecoin.io/basics/the-blockchain/actors/#multisigactor)
-* [PaymentChannelActor](https://docs.filecoin.io/basics/the-blockchain/actors/#paymentchannelactor)
-* [StoragePowerActor](https://docs.filecoin.io/basics/the-blockchain/actors/#storagepoweractor)
-* [VerifiedRegistryActor](https://docs.filecoin.io/basics/the-blockchain/actors/#verifiedregistryactor)
-* [SystemActor](https://docs.filecoin.io/basics/the-blockchain/actors/#systemactor)
+* [CronActor](actors.md#cronactor)
+* [InitActor](actors.md#initactor)
+* [AccountActor](actors.md#accountactor)
+* [RewardActor](actors.md#rewardactor)
+* [StorageMarketActor](actors.md#storagemarketactor)
+* [StorageMinerActor](actors.md#storagemineractor)
+* [MultisigActor](actors.md#multisigactor)
+* [PaymentChannelActor](actors.md#paymentchannelactor)
+* [StoragePowerActor](actors.md#storagepoweractor)
+* [VerifiedRegistryActor](actors.md#verifiedregistryactor)
+* [SystemActor](actors.md#systemactor)
 
 #### CronActor
 
@@ -124,6 +124,6 @@ For more information on `SystemActor`, see the [source code](https://github.com/
 
 A _user actor_ is code defined by **any developer** that can interact FVM, otherwise known as a _smart contract_.
 
-A _smart contract_ is a small, self-executing blocks of custom code that runs on other blockchains, like Ethereum. In the Filecoin network, the term is a synonym for [_user actor_](https://docs.filecoin.io/basics/the-blockchain/actors/#user-actors-smart-contracts). You may see the term _smart contract_ used in tandem with _user actor_, but there is no difference between the two.
+A _smart contract_ is a small, self-executing blocks of custom code that runs on other blockchains, like Ethereum. In the Filecoin network, the term is a synonym for [_user actor_](actors.md#user-actors-smart-contracts). You may see the term _smart contract_ used in tandem with _user actor_, but there is no difference between the two.
 
 With the FVM, actors can be written in Solidity. In future updates, any language that compiles to WASM will be supported. With user actors, users can create and enforce custom rules for storing and accessing data on the network. The FVM is responsible for actors and ensuring that they are executed correctly and securely.

@@ -9,7 +9,7 @@ description: >-
 
 ## Compute-over-data
 
-When it comes to data, a common need beyond storage and retrieval is data transformation. The goal with the compute-over-data protocols is generally to perform computation over [IPLD](https://youtu.be/Sgf6j\_mCdjI), which is the data layer used by content-addressed systems like Filecoin. There are working groups working on different types of computing on Filecoin data, such as large-scale parallel compute (e.g., Bacalhau) and cryptographically verifiable compute (e.g. [Lurk](https://filecoin.io/blog/posts/introducing-lurk-a-programming-language-for-recursive-zk-snarks/)), etc.
+When it comes to data, a common need beyond storage and retrieval is data transformation. The goal with the compute-over-data protocols is generally to perform computation over IPLD, which is the data layer used by content-addressed systems like Filecoin. There are working groups working on different types of computing on Filecoin data, such as large-scale parallel compute (e.g., Bacalhau) and cryptographically verifiable compute (e.g. [Lurk](https://filecoin.io/blog/posts/introducing-lurk-a-programming-language-for-recursive-zk-snarks/)), etc.
 
 For example, [Bacalhau](https://www.bacalhau.org/) is a platform for public, transparent, and optionally verifiable distributed computation. It enables users to run arbitrary Docker containers and WebAssembly (wasm) images as tasks against data stored in the InterPlanetary File System (IPFS).
 
@@ -71,11 +71,11 @@ If you are interested in building these use cases, there is a list of solution b
 
 ### Filecoin EVM
 
-The Filecoin EVM runtime (FEVM) is the Ethereum Virtual Machine (EVM) virtualized as a runtime on top of the Filecoin Virtual Machine (FVM). It will allow developers to port any existing EVM-based smart contracts straight onto the FVM and make them work out of the box. FEVM emulates EVM bytecode at the low level, supporting contracts written in Solidity, Vyper, and Yul. The EVM foreign runtime is based on preexisting OSS libraries, including [SputnikVM](https://github.com/rust-blockchain/evm) and [revm](https://github.com/bluealloy/revm). You can find out more details in the [EVM <> FVM mapping specification](https://github.com/filecoin-project/fvm-project/blob/main/04-evm-mapping.md).
+The Filecoin EVM runtime (FEVM) is the Ethereum Virtual Machine (EVM) virtualized as a runtime on top of the Filecoin Virtual Machine (FVM). It will allow developers to port any existing EVM-based smart contracts straight onto the FVM and make them work out of the box. FEVM emulates EVM bytecode at the low level, supporting contracts written in Solidity, Vyper, and Yul. The EVM foreign runtime is based on preexisting OSS libraries, including [SputnikVM](https://github.com/rust-blockchain/evm) and Revm. You can find out more details in the [EVM <> FVM mapping specification](https://github.com/filecoin-project/fvm-project/blob/main/04-evm-mapping.md).
 
 Because Filecoin nodes offer the Ethereum JSON-RPC API support, FEVM is also completely compatible with any EVM development tools, such as Hardhat, Brownie, and MetaMask. Most smart contracts ported to Filecoin shouldn’t require changes or auditing. For example, new ERC-20 tokens can be launched on the Filecoin network or bridged directly to token pools on other chains.
 
-Developers can deploy actors on either the FEVM or native FVM; which one should you choose? The decision can be summed up as such: if you want better performance, write actors that are compiled to WASM and deployed to native FVM. If you are familiar with Solidity and want access to the EVM ecosystem of tools, but don’t mind slightly less performance, deploy to the FEVM. You can find out more about the pros and cons of each in the [table here](https://docs.filecoin.io/developers/smart-contracts/concepts/filecoin-evm/#fevm-and-native-fvm).
+Developers can deploy actors on either the FEVM or native FVM; which one should you choose? The decision can be summed up as such: if you want better performance, write actors that are compiled to WASM and deployed to native FVM. If you are familiar with Solidity and want access to the EVM ecosystem of tools, but don’t mind slightly less performance, deploy to the FEVM.
 
 To sum it up, the FEVM allows current Web3 developers to quickly start writing actors on the Filecoin blockchain while using all of the tools, software packages, and languages they are used to while having access to Filecoin storage deals as a native.
 

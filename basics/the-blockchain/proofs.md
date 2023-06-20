@@ -8,7 +8,7 @@ description: >-
 
 Different blockchains use different cryptographic proving systems (proofs) based on the network’s specific purpose, goals, and functionality. Regardless of which method is used, proofs have the following in common:
 
-* All blockchain networks seek to achieve [_consensus_](https://docs.filecoin.io/basics/the-blockchain/proofs/) , and rely on proofs as part of this process.
+* All blockchain networks seek to achieve [_consensus_](consensus.md) , and rely on proofs as part of this process.
 * Proofs incentivize network participants to behave in certain ways and allow the network to penalize participants that do not abide by network standards.
 * Proofs allow decentralized systems to agree on a network state without a central authority.
 

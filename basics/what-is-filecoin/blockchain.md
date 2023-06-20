@@ -19,7 +19,7 @@ An Actor in the Filecoin Blockchain is the equivalent of the smart contract in t
 
 ### Built-in actors
 
-There are several [built-in system actors](https://spec.filecoin.io/#section-systems.filecoin\_vm.sysactors) that power the Filecoin network as the decentralized storage network.
+There are several built-in system actors that power the Filecoin network as the decentralized storage network.
 
 * System Actor - general system actor.
 * Init actor - initializes new actors and records the network name.
@@ -44,7 +44,7 @@ You can check out this [talk on How Filecoin Actors Work](https://curriculum.pl-
 
 ## Distributed randomness
 
-Filecoin uses distributed and publicly verifiable random beacon protocol - [Drand](https://drand.love) as the randomness beacon for the leader election during the [expected consensus](https://docs.filecoin.io/basics/what-is-filecoin/blockchain/#consensus) to produce blocks. This randomness guarantees that the leader election is secret, fair, and verifiable.
+Filecoin uses distributed and publicly verifiable random beacon protocol - [Drand](https://drand.love) as the randomness beacon for the leader election during the [expected consensus](blockchain.md#expected-consensus) to produce blocks. This randomness guarantees that the leader election is secret, fair, and verifiable.
 
 ## Nodes
 
@@ -75,7 +75,7 @@ Let’s quickly cover how consensus works in the Filecoin network.
 
 Expected consensus (EC) is the underlying consensus algorithm used by Filecoin. EC is a probabilistic Byzantine fault-tolerant consensus protocol that runs a leader election among a set of storage providers to submit a block every epoch. Like proof-of-stake, Filecoin uses proof-of-storage for the leader election, meaning the likelihood of being elected depends on how much provable storage power a miner contributes to the network. The storage power of the network is stored in the storage power table and managed by the Storage Power Actor.
 
-At a high level, the consensus process relies on [DRAND](https://drand.love/) to provide distributed and verifiable randomness to keep leader election secret, fair and verifiable. All the election participants and their power are drawn from the Power Table, which is calculated and maintained over time by the Storage Power Consensus subsystem. Eventually, EC takes all valid blocks produced in this epoch and uses a weighting function to select the chain with the highest weight to add blocks.
+At a high level, the consensus process relies on [Drand](https://drand.love) to provide distributed and verifiable randomness to keep leader election secret, fair and verifiable. All the election participants and their power are drawn from the Power Table, which is calculated and maintained over time by the Storage Power Consensus subsystem. Eventually, EC takes all valid blocks produced in this epoch and uses a weighting function to select the chain with the highest weight to add blocks.
 
 ### Block production process
 
