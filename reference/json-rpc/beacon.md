@@ -6,7 +6,7 @@ description: >-
 
 # Beacon
 
-### BeaconGetEntry
+## BeaconGetEntry
 
 BeaconGetEntry returns the beacon entry for the given Filecoin epoch. If the entry has not yet been produced, the call will block until the entry becomes available
 

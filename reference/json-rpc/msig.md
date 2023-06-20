@@ -6,7 +6,7 @@ description: >-
 
 # Msig
 
-### MsigAddApprove
+## MsigAddApprove
 
 MsigAddApprove approves a previously proposed AddSigner message It takes the following parameters: , , , , ,
 
@@ -39,7 +39,7 @@ Response:
 }
 ```
 
-### MsigAddCancel
+## MsigAddCancel
 
 MsigAddCancel cancels a previously proposed AddSigner message It takes the following parameters: , , , ,
 
@@ -71,7 +71,7 @@ Response:
 }
 ```
 
-### MsigAddPropose
+## MsigAddPropose
 
 MsigAddPropose proposes adding a signer in the multisig It takes the following parameters: , , ,
 
@@ -102,7 +102,7 @@ Response:
 }
 ```
 
-### MsigApprove
+## MsigApprove
 
 MsigApprove approves a previously-proposed multisig message by transaction ID It takes the following parameters: ,
 
@@ -132,7 +132,7 @@ Response:
 }
 ```
 
-### MsigApproveTxnHash
+## MsigApproveTxnHash
 
 MsigApproveTxnHash approves a previously-proposed multisig message, specified using both transaction ID and a hash of the parameters used in the proposal. This method of approval can be used to ensure you only approve exactly the transaction you think you are. It takes the following parameters: , , , , , , ,
 
@@ -167,7 +167,7 @@ Response:
 }
 ```
 
-### MsigCancel
+## MsigCancel
 
 MsigCancel cancels a previously-proposed multisig message It takes the following parameters: , , , , , ,
 
@@ -201,7 +201,7 @@ Response:
 }
 ```
 
-### MsigCreate
+## MsigCreate
 
 MsigCreate creates a multisig wallet It takes the following parameters: , , , ,
 
@@ -236,7 +236,7 @@ Response:
 }
 ```
 
-### MsigGetAvailableBalance
+## MsigGetAvailableBalance
 
 MsigGetAvailableBalance returns the portion of a multisig’s balance that can be withdrawn or spent
 
@@ -263,7 +263,7 @@ Inputs:
 
 Response: `"0"`
 
-### MsigGetPending
+## MsigGetPending
 
 MsigGetPending returns pending transactions for the given multisig wallet. Once pending transactions are fully approved, they will no longer appear here.
 
@@ -308,7 +308,7 @@ Response:
 ]
 ```
 
-### MsigGetVested
+## MsigGetVested
 
 MsigGetVested returns the amount of FIL that vested in a multisig in a certain period. It takes the following parameters: , ,
 
@@ -343,7 +343,7 @@ Inputs:
 
 Response: `"0"`
 
-### MsigGetVestingSchedule
+## MsigGetVestingSchedule
 
 MsigGetVestingSchedule returns the vesting details of a given multisig.
 
@@ -381,7 +381,7 @@ Response:
 }
 ```
 
-### MsigPropose
+## MsigPropose
 
 MsigPropose proposes a multisig message It takes the following parameters: , , , , ,
 
@@ -414,7 +414,7 @@ Response:
 }
 ```
 
-### MsigRemoveSigner
+## MsigRemoveSigner
 
 MsigRemoveSigner proposes the removal of a signer from the multisig. It accepts the multisig to make the change on, the proposer address to send the message from, the address to be removed, and a boolean indicating whether or not the signing threshold should be lowered by one along with the address removal.
 
@@ -445,7 +445,7 @@ Response:
 }
 ```
 
-### MsigSwapApprove
+## MsigSwapApprove
 
 MsigSwapApprove approves a previously proposed SwapSigner It takes the following parameters: , , , , ,
 
@@ -478,7 +478,7 @@ Response:
 }
 ```
 
-### MsigSwapCancel
+## MsigSwapCancel
 
 MsigSwapCancel cancels a previously proposed SwapSigner message It takes the following parameters: , , , ,
 
@@ -510,7 +510,7 @@ Response:
 }
 ```
 
-### MsigSwapPropose
+## MsigSwapPropose
 
 MsigSwapPropose proposes swapping 2 signers in the multisig It takes the following parameters: , , ,
 

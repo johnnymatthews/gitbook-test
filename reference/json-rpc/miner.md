@@ -1,6 +1,6 @@
 # Miner
 
-### MinerCreateBlock
+## MinerCreateBlock
 
 Perms: write
 
@@ -141,7 +141,7 @@ Response:
 }
 ```
 
-### MinerGetBaseInfo
+## MinerGetBaseInfo
 
 There are not yet any comments for this method.
 

@@ -4,7 +4,7 @@ description: The Paych methods are for interacting with and managing payment cha
 
 # Paych
 
-### PaychAllocateLane
+## PaychAllocateLane
 
 Perms: sign
 
@@ -21,7 +21,7 @@ Inputs:
 
 Response: `42`
 
-### PaychAvailableFunds
+## PaychAvailableFunds
 
 Perms: sign
 
@@ -56,7 +56,7 @@ Response:
 }
 ```
 
-### PaychAvailableFundsByFromTo
+## PaychAvailableFundsByFromTo
 
 Perms: sign
 
@@ -92,7 +92,7 @@ Response:
 }
 ```
 
-### PaychCollect
+## PaychCollect
 
 Perms: sign
 
@@ -118,7 +118,7 @@ Response:
 }
 ```
 
-### PaychGet
+## PaychGet
 
 There are not yet any comments for this method.
 
@@ -151,7 +151,7 @@ Response:
 }
 ```
 
-### PaychGetWaitReady
+## PaychGetWaitReady
 
 Perms: sign
 
@@ -170,7 +170,7 @@ Inputs:
 
 Response: `"f01234"`
 
-### PaychList
+## PaychList
 
 Perms: read
 
@@ -187,7 +187,7 @@ Response:
 ]
 ```
 
-### PaychNewPayment
+## PaychNewPayment
 
 Perms: sign
 
@@ -257,7 +257,7 @@ Response:
 }
 ```
 
-### PaychSettle
+## PaychSettle
 
 Perms: sign
 
@@ -283,7 +283,7 @@ Response:
 }
 ```
 
-### PaychStatus
+## PaychStatus
 
 Perms: read
 
@@ -310,7 +310,7 @@ Response:
 }
 ```
 
-### PaychVoucherAdd
+## PaychVoucherAdd
 
 Perms: write
 
@@ -354,7 +354,7 @@ Inputs:
 
 Response: `"0"`
 
-### PaychVoucherCheckSpendable
+## PaychVoucherCheckSpendable
 
 Perms: read
 
@@ -398,7 +398,7 @@ Inputs:
 
 Response: `true`
 
-### PaychVoucherCheckValid
+## PaychVoucherCheckValid
 
 Perms: read
 
@@ -440,7 +440,7 @@ Inputs:
 
 Response: `{}`
 
-### PaychVoucherCreate
+## PaychVoucherCreate
 
 Perms: sign
 
@@ -493,7 +493,7 @@ Response:
 }
 ```
 
-### PaychVoucherList
+## PaychVoucherList
 
 Perms: write
 
@@ -543,7 +543,7 @@ Response:
 ]
 ```
 
-### PaychVoucherSubmit
+## PaychVoucherSubmit
 
 Perms: sign
 

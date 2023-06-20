@@ -15,7 +15,7 @@ Additionally, you must also be able to keep up with the latest security trends a
 
 In summary, as a Filecoin storage provider, you have a responsibility to ensure the security of your customer’s data, your own systems, and the Filecoin network as a whole. This requires a thorough understanding of security best practices, ongoing training and education, and a commitment to staying informed about the latest security trends and technologies.
 
-### Network security
+## Network security
 
 When it comes to network security, it is important to have a solid first line of defense in place. One effective strategy is to implement a redundant firewall setup that can filter incoming traffic as well as traffic between your VLANs.
 
@@ -23,7 +23,7 @@ A next-generation firewall (NGFW) can provide even more robust security by incor
 
 However, it is important to note that implementing a NGFW with IPS enabled can also have an impact on your internet bandwidth. This is because the IPS will inspect all incoming and outgoing traffic, which can slow down your network performance. As such, it is important to carefully consider your bandwidth requirements and plan accordingly.
 
-### System security
+## System security
 
 A second layer of defense is system security. There are multiple concepts that contribute to good system security:
 

@@ -7,7 +7,7 @@ description: >-
 
 # Slashing
 
-### Storage fault slashing
+## Storage fault slashing
 
 This term encompasses a broad set of penalties which are to be paid by storage providers if they fail to provide sector reliability or decide to voluntarily exit the network. These include:
 
@@ -15,6 +15,6 @@ This term encompasses a broad set of penalties which are to be paid by storage p
 * **Sector penalties** are incurred for a faulted sector that was not declared faulted before a _WindowPoSt_ check occurs. The sector will pay a fault fee after a Sector Penalty once the fault is detected.
 * **Termination fees** are incurred when a sector is voluntarily or involuntarily terminated and is removed from the network.
 
-### Consensus fault slashing
+## Consensus fault slashing
 
 This penalty is incurred when committing consensus faults. This penalty is applied to storage providers that have acted maliciously against the network’s consensus functionality.

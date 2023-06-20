@@ -23,7 +23,7 @@ For example, a storage provider setup may have multiple servers that are connect
 
 **In summary**, network skills are essential for building and maintaining a high-performing storage provider setup. A solid understanding of network architecture, topology, protocols, and security principles can help optimize performance, prevent bottlenecks, and protect against security threats. Monitoring the network is also crucial in identifying potential issues and ensuring smooth data flow.
 
-### Network infrastructure
+## Network infrastructure
 
 Network infrastructure, including switches, routers, and firewalls, plays a crucial role in the performance, reliability, and security of any network. Having the right infrastructure in place is essential to ensuring smooth and seamless network connectivity.
 
@@ -39,7 +39,7 @@ In addition to choosing the right components, it’s also important to properly 
 
 **In summary**, network infrastructure, including switches, routers, and firewalls, is essential for building a reliable and secure network. Whether you are building a small home network or a large-scale enterprise network, investing in the right infrastructure components and properly configuring and maintaining them can help ensure optimal network performance, reliability, and security.
 
-### Performance
+## Performance
 
 Performance is a critical aspect of a storage provider setup, particularly when dealing with high network throughput requirements between multiple systems. To ensure optimal performance, it is important to use network benchmarking tools such as iperf and iperf3. These tools make it easy to test network throughput and identify bottlenecks in the network setup.
 

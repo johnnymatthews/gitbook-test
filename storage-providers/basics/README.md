@@ -20,7 +20,7 @@ Follow these steps to begin your storage provider journey:
 
 The documentation you will be reading assumes you are familiar with the documentation in the [Get started](https://docs.filecoin.io/smart-contracts/fundamentals/the-filecoin-virtual-machine/) section, have a general grasp of how Filecoin works and are familiar with Filecoin node software and tooling.
 
-### Understand Filecoin economics
+## Understand Filecoin economics
 
 To understand how you can run a profitable business as a Filecoin storage provider, it is important to make sure you understand the economics of Filecoin. Once you understand all core concepts, you can build out a strategy for your desired ROI.
 
@@ -28,7 +28,7 @@ Storage providers can also add additional value to clients when they offer certa
 
 [Filecoin economics ->](../filecoin-economics/storage-proving.md)
 
-### Plan your business <a href="#plan-your-business" id="plan-your-business"></a>
+## Plan your business <a href="#plan-your-business" id="plan-your-business"></a>
 
 The hardware and other requirements for running a Filecoin storage provider business are significantly higher than regular blockchain mining operations. The mechanisms are designed this way because, in contrast to some other blockchain solutions, where you can simply configure one or more nodes to “mine” tokens, the Filecoin network’s primary goal is to provide decentralized storage for humanity’s most valuable data.
 
@@ -36,7 +36,7 @@ You need to understand the various earning mechanisms in the Filecoin network.
 
 [Filecoin deals ->](../filecoin-deals/storage-deals.md)
 
-### Make sure you have the right skills <a href="#make-sure-you-have-the-right-skills" id="make-sure-you-have-the-right-skills"></a>
+## Make sure you have the right skills <a href="#make-sure-you-have-the-right-skills" id="make-sure-you-have-the-right-skills"></a>
 
 As will become clear, running a storage operation is a serious business, with client data and pledged funds at stake. You will be required to run a highly-available service, and there are automatic financial penalties if you cannot demonstrate data availability to the network. There are many things that can go wrong in a data center, on your network, on your OS, or at an application level.
 
@@ -44,7 +44,7 @@ You will need skilled people to operate your storage provider business. Dependin
 
 [People and skills ->](../skills/linux.md)
 
-### Build the right infrastructure <a href="#build-the-right-infrastructure" id="build-the-right-infrastructure"></a>
+## Build the right infrastructure <a href="#build-the-right-infrastructure" id="build-the-right-infrastructure"></a>
 
 At the lowest level, you will need datacenter infrastructure. You need people capable of architecting, racking, wiring and operating infrastructure components. Alternatively, you can get it collocated, or even entirely as a service from a datacenter provider.
 

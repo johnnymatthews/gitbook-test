@@ -6,7 +6,7 @@ description: >-
 
 # General
 
-### About Filecoin
+## About Filecoin
 
 * [**Filecoin Specification**](https://spec.filecoin.io/) - technical specification for Filecoin protocol and its associated subsystems.
 * [**Engineering Filecoin’s Economy**](https://filecoin.io/2020-engineering-filecoins-economy-en.pdf) - the design of Filecoin’s economic incentives.
@@ -15,9 +15,9 @@ description: >-
 * [**Filecoin 中文社区**](https://github.com/filecoin-project/community-china) - resources and forum for the Chinese community, maintained and moderated by CoinSummer & PL.
 * [**Filecoin YouTube channel**](https://www.youtube.com/channel/UCPyYmtJYQwxM-EUyRUTp5DA) - various Filecoin workshops, conference talks, and meetups.
 
-### Filecoin Network
+## Filecoin Network
 
-#### Node implementations
+### Node implementations
 
 * [**Lotus**](https://github.com/filecoin-project/lotus) - _**Recommended**_ most advanced implementation and [security audited](https://spec.filecoin.io/#section-intro.implementations-status), in GoLang.
 * Other implementations (In progress):
@@ -29,7 +29,7 @@ description: >-
   * [`ognots/lotus`](https://hub.docker.com/r/ognots/lotus) - `mainnet-v1.830-rc1`
   * [`textile/lotus`](https://hub.docker.com/r/textile/lotus) - latest
 
-#### Networks
+### Networks
 
 [`network.filecoin.io`](https://network.filecoin.io) - lists all current Filecoin networks and related information.
 
@@ -43,11 +43,11 @@ description: >-
   * [Textile’s local devnet](https://docs.textile.io/powergate/localnet/#localnet-with-lotus-client) - uses a mocked sector builder for faster deal confirmation and it is for storage app prototyping.
   * [Ganache for Filecoin](https://www.trufflesuite.com/docs/filecoin/ganache/overview) - local network to support development with Filecoin by various ways.
 
-### Network status
+## Network status
 
 Tools to check status and details of the network and chain.
 
-#### Block explorers
+### Block explorers
 
 * [`Filfox.info`](https://filfox.info/en) - Mainnet
 * [Filscan](https://filscan.io) - Mainnet & Calibration
@@ -56,7 +56,7 @@ Tools to check status and details of the network and chain.
   * [Mainnet](https://stats.filecoin.io/)
   * [Calibration](https://stats.calibration.fildev.network/d/z6FtI92Zz/chain?orgId=1\&refresh=25s\&from=now-30m\&to=now\&kiosk)
 
-#### Chain data and monitoring
+### Chain data and monitoring
 
 * [`dashboard.starboard.ventures`](https://dashboard.starboard.ventures/) - network health monitoring
 * [Filstats.io](https://filstats.io) - node telemetry monitoring - add your node!
@@ -65,14 +65,14 @@ Tools to check status and details of the network and chain.
   * [Orphan Block List](https://filscout.com/en/orphan-block/alllist)
 * [Sentinel Project](https://lilium.sh/) - Filecoin Network Monitoring and Analysis System
 
-#### Storage/Deals status
+### Storage/Deals status
 
 * [`storage.filecoin.io`](https://storage.filecoin.io/) - general storage summary of Filecoin
 * [`filecoin.tools`](https://filecoin.tools) - check your CID’s storage deal status. Also provides an API - check [`filecoin.tools/docs`](https://filecoin.tools/docs) for reference
 * [`file.app`](https://file.app/) - Filecoin storage provider analytics
 * [Deals list at `Filfox.io`](https://filfox.info/en/deal)
 
-### Storage Web Applications
+## Storage Web Applications
 
 Web-based applications that store your data on Filecoin. No command-line or coding experience required.
 
@@ -85,11 +85,11 @@ Web-based applications that store your data on Filecoin. No command-line or codi
   * learn more at [`starlinglab.org/78days`](https://www.starlinglab.org/78days/) or the [Filecoin blog interview](https://filecoin.io/blog/starling-framework/)
   * [`Starlingstorage.io`](https://starlingstorage.io/) - API + CLI that simplified storing data to a local Lotus node for preservation use cases.
 
-### APIs & Developer tools
+## APIs & Developer tools
 
 Developer tools, API clients & storage services that developers can use to build on Filecoin.
 
-#### Storage APIs for app builders
+### Storage APIs for app builders
 
 * [Estuary](https://estuary.tech) - a simple IPFS node that integrates with Filecoin. For infrastructure operators, developers and users.
   * [Estuary documentation](https://docs.estuary.tech)
@@ -106,7 +106,7 @@ Developer tools, API clients & storage services that developers can use to build
   * [Space SDK](https://docs.fleek.co/space-sdk/overview/) - modular JavaScript/Typescript library and set of interfaces that packages tools and features enabled by Open Web protocols like IPFS, Textile, Filecoin, and Ethereum.
   * [Space Daemon](https://docs.fleek.co/space-daemon/overview/) - packages together IPFS, Textile Threads and Buckets, and Textile Powergate into one easy to install background service
 
-#### Message signing tools
+### Message signing tools
 
 * [Filecoin Signing Tools](https://github.com/Zondax/filecoin-signing-tools) - _**Recommended**_ a pure JS or Rust / WASM / JSONRPC library for creating signed messages apart from a Filecoin node.
   * Also available on npm at [`@zondax/filecoin-signing-tools`](https://www.npmjs.com/package/@zondax/filecoin-signing-tools)
@@ -114,12 +114,12 @@ Developer tools, API clients & storage services that developers can use to build
 * [Filecoin JS Signer](https://github.com/blitslabs/filecoin-js-signer) - \[_last update: June 2021_] pure TS / JS library for creating signed messages and interacting with Filecoin’s built-in Actors (like Payment Channel and Multisig), used by the [Filecoin Loans grant project](https://github.com/blitslabs/filecoin.loans-monorepo).
   * On npm at [`@blitslabs/filecoin-js-signer`](https://www.npmjs.com/package/@blitslabs/filecoin-js-signer)
 
-#### Wallet-related tools
+### Wallet-related tools
 
 * [Filecoin Rosetta API Proxy](https://github.com/Zondax/rosetta-filecoin) - [Rosetta](https://www.rosetta-api.org/) is an API standard created by Coinbase for a consistent interface to many chains for wallets and exchanges.
 * [FilSnap MetaMask Plugin](https://metamask.io/flask/) - MetaMask has a new plugin system currently still in beta that developers can try out. The MM UI will not change but Filecoin keys are in the MM vault. Try it with [https://filsnap.chainsafe.io/](https://filsnap.chainsafe.io/)
 
-#### Node Infrastructure & APIs
+### Node Infrastructure & APIs
 
 > NOTE: making deep calls into the chain’s history may take some time to return and it may be more efficient to use a chain database (e.g. used by block explorers) that stores the chain’s history and is optimized for queries.
 
@@ -145,39 +145,39 @@ For running a node cluster of load balanced Lotus JSON RPC API endpoints.
 * [Filrep.io API](https://filrep.io/api) - A suite of RESTFul JSON endpoints to discover the best storage provider to make deals with.
 * [Textile storage provider Index](https://blog.textile.io/introducing-the-miner-index/) - API and CLI to find storage providers by price, observed deals, speed from North American nodes.
 
-#### Data prep tools
+### Data prep tools
 
 * [CAR files](https://ipld.io/specs/transport/car/) - automatically used on Lotus import for less than 32 and 64 GiB, Filecoin archive format serialized from DAGs, see also [offline deals for large datasets](https://lotus.filecoin.io/tutorials/lotus/large-files/).
 * [`go-graphsplit`](https://github.com/filedrive-team/go-graphsplit) - FileDrive chunks a larger single DAG for storage in default Filecoin 32 and 64 GiB sector sizes.
 * [IPFS](https://ipfs.tech) - you can use `ipfs add` with an IPFS node then [add the CID from a Filecoin node](https://lotus.filecoin.io/tutorials/lotus/import-data-from-ipfs/).
 
-#### Databases using IPFS and Filecoin
+### Databases using IPFS and Filecoin
 
 * [Tableland](https://tableland.xyz/) - (new) create familiar SQL tables to read and write dynamic NFT metadata or application data for dApps, from Textile
 * [OrbitDB](https://orbitdb.org/) - decentralized multi-party database on IPFS with multi-party syncing with topic pubsub and CRDTs. Filecoin integration using Powergate available at [`orbit-db-powergate-io`](https://github.com/filecoin-shipyard/orbit-db-powergate-io).
 * [ThreadsDB](https://docs.textile.io/threads/) - decentralized multi-party database for user-siloed data on IPFS, from Textile
 
-#### Other developer tools
+### Other developer tools
 
 * [`js-rle`](https://github.com/willscott/js-rle) - RLE+ Spec. Learn about [`rle-bitset-encoding` in the Filecoin Spec](https://spec.filecoin.io/#section-appendix.data\_structures.rle-bitset-encoding).
 * [Truffle for Filecoin](https://www.trufflesuite.com/docs/filecoin/truffle/quickstart) - building apps to preserve files to IPFS and Filecoin.
 
-### Storage providers
+## Storage providers
 
-#### Storage provider reputation systems
+### Storage provider reputation systems
 
 * [Codefi Storage](https://storage.codefi.network/) - view the Filecoin Storage Market, storage provider info, asking price, completed deals.
 * [FIL Swan](https://www.filswan.com/) - for offline deals, storage provider info, prices, offline deal acceptance.
 * [Filrep.io](https://filrep.io/) - Index of online storage providers and their pricing, ranked by power and reputation score.
 * [SpaceGap](https://spacegap.github.io/) - shows storage proof deadlines and sector details for the top 50 storage providers.
 
-#### Storage provider tools
+### Storage provider tools
 
 * [Bidbot](https://github.com/textileio/bidbot) - A Filecoin Network sidecar to bid in storage deal auctions.
 * [Filgas.io](https://fgas.io/) - real-time Filecoin mining gas queries.
 * [Lotus Farcaster](https://github.com/s0nik42/lotus-farcaster) - Prometheus, Grafana and Python monitoring dashboard.
 
-#### Storage client and miner programs
+### Storage client and miner programs
 
 * [Filecoin storage providers (SPs)](https://sp.filecoin.io/) - Interested in becoming an SP? A boot camp, grants and expert advice is available here!
 * [Filecoin Plus Verified Data Program](https://github.com/filecoin-project/filecoin-plus-client-onboarding)
@@ -185,7 +185,7 @@ For running a node cluster of load balanced Lotus JSON RPC API endpoints.
   * Clients can apply to Notaries to receive DataCap and incentivize storage providers at 10x to their quality-adjusted power, increasing probability of block rewards
 * [Slingshot Competition](https://slingshot.filecoin.io/) - ended in 2021 and has now become [Filecoin Evergreen](https://evergreen.filecoin.io/)
 
-#### Retrieval Market resources (WIP experiments)
+### Retrieval Market resources (WIP experiments)
 
 The Retrieval Market is in early development; research and development teams are actively exploring improvements.
 
@@ -195,17 +195,17 @@ The Retrieval Market is in early development; research and development teams are
 * [Decentralized Data Delivery Markets - Open Problems and RFCs](https://github.com/protocol/ResNetLab/blob/master/OPEN\_PROBLEMS/DECENTRALIZED\_DATA\_DELIVERY\_MARKETS.md)
 * [July 2020 Retrieval Markets Workshop](https://www.youtube.com/watch?v=eUcsZ1JS9pM) - list of [Sessions](https://docs.google.com/document/d/17bEHP2CHkQFYYQnl7YpatAOh6kWxjlNgihdc4F66SVM/edit)
 
-### Ecosystem galleries
+## Ecosystem galleries
 
 * [**Community Projects Showcase**](https://github.com/filecoin-project/community/#ecosystem-projects) - updated news about ecosystem projects
 * [Filecoin Ecosystem](https://ecosystem.filecoin.io/)
 
-#### Hackathons
+### Hackathons
 
 * [Upcoming Hackathons](https://hackathons.filecoin.io/)
   * Keep a lookout for upcoming hackathons!
   * All winners are eligible for [Next Steps Grants](https://github.com/filecoin-project/devgrants/blob/master/microgrants/microgrants.md) after the Hackathon!
 
-#### Grants and accelerators
+### Grants and accelerators
 
 * [**Filecoin Developer Grants**](https://filecoin.io/grants) - ongoing monthly developer grant program to support open source projects and new [RFPs](https://github.com/filecoin-project/devgrants/tree/master/rfps) on Filecoin, funded by the [Filecoin Foundation](https://fil.org)

@@ -6,11 +6,11 @@ description: This page covers the built-in actors Filecoin.sol API.
 
 For conceptual information on built-in actors, including their purposes, how they work and more, see the [conceptual guide](https://docs.filecoin.io/reference/built-in-actors/overview/).
 
-### Prerequisites
+## Prerequisites
 
 Before you can call a built-in actor using the API, you must [import filecoin.solidity using one of the available methods](https://docs.filecoin.io/smart-contracts/developing-contracts/call-built-in-actors/#using-filecoinsolidity).
 
-### Call a built-in actor
+## Call a built-in actor
 
 For available actors and methods see [Available actors and methods](https://docs.filecoin.io/smart-contracts/developing-contracts/call-built-in-actors/#available-actors-and-methods).
 
@@ -25,7 +25,7 @@ Once you’ve either imported particular contracts manually or simply installed 
 
 For conceptual information on built-in actors, including their purposes, how they work and available types, see the [conceptual guide](https://docs.filecoin.io/reference/built-in-actors/overview/).
 
-#### Call the account actor
+### Call the account actor
 
 The following example imports the Account actor library and creates a callable method for each of the [available actor methods](https://docs.filecoin.io/reference/built-in-actors/filecoin-sol/#call-the-account-actor). For the full code, see [the GitHub repository](https://github.com/Zondax/filecoin-solidity/blob/master/contracts/v0.8/tests/account.test.sol).
 
@@ -51,7 +51,7 @@ contract AccountApiTest {
 }
 ```
 
-#### Call the DataCap actor
+### Call the DataCap actor
 
 The following example imports the DataCap actor library and creates a callable method for each of the [available actor methods](https://docs.filecoin.io/reference/built-in-actors/filecoin-sol/#call-the-datacap-actor). For the full code, see [the GitHub repository](https://github.com/Zondax/filecoin-solidity/blob/master/contracts/v0.8/tests/datacap.test.sol).
 
@@ -122,7 +122,7 @@ contract DataCapApiTest {
 }
 ```
 
-#### Call the storage market actor
+### Call the storage market actor
 
 The following example imports the Storage market actor library and creates a callable method for each of the [available actor methods](https://docs.filecoin.io/reference/built-in-actors/filecoin-sol/#call-the-storage-market-actor). For the full code, see [the GitHub repository](https://github.com/Zondax/filecoin-solidity/blob/master/contracts/v0.8/tests/miner.test.sol).
 
@@ -194,7 +194,7 @@ contract MarketApiTest {
 }
 ```
 
-#### Call the miner actor
+### Call the miner actor
 
 The following example imports the Account actor library and creates a callable method for each of the [available actor methods](https://docs.filecoin.io/reference/built-in-actors/filecoin-sol/#call-the-miner-actor). For the full code, see [the GitHub repository](https://github.com/Zondax/filecoin-solidity/blob/master/contracts/v0.8/tests/miner.test.sol).
 
@@ -274,7 +274,7 @@ contract MinerApiTest {
 }
 ```
 
-#### Call the storage power actor
+### Call the storage power actor
 
 The following example imports the Storage power actor library and creates a callable method for each of the [available actor methods](https://docs.filecoin.io/reference/built-in-actors/filecoin-sol/#call-the-storage-power-actor). For the full code, see [the GitHub repository](https://github.com/Zondax/filecoin-solidity/blob/master/contracts/v0.8/tests/power.test.sol).
 
@@ -311,7 +311,7 @@ contract PowerApiTest {
 }
 ```
 
-#### Call the verified registry actor
+### Call the verified registry actor
 
 The following example imports the verified registry actor library and creates a callable method for each of the [available actor methods](https://docs.filecoin.io/reference/built-in-actors/filecoin-sol/#call-the-verified-registry-actor). For the full code, see [the GitHub repository](https://github.com/Zondax/filecoin-solidity/blob/master/contracts/v0.8/tests/verifreg.test.sol).
 

@@ -7,7 +7,7 @@ description: >-
 
 # Implementations
 
-### Lotus
+## Lotus
 
 ![The Lotus implementation logo.](https://docs.filecoin.io/nodes/implementations/overview/lotus-logo\_hu94e87517a6539b07b7a47f27cd289c82\_8394\_150x0\_resize\_q75\_h2\_box\_3.webp)
 
@@ -15,7 +15,7 @@ Lotus is the reference implementation of the Filecoin protocol, developed by Pro
 
 [Learn more about Lotus](https://docs.filecoin.io/nodes/implementations/lotus/)
 
-### Venus
+## Venus
 
 ![The Venus implementation logo.](https://docs.filecoin.io/nodes/implementations/overview/venus-logo\_hu39e623891ff184c93ed6ad5a1d61312e\_10430\_150x0\_resize\_q75\_h2\_box\_3.webp)
 
@@ -27,31 +27,31 @@ One of the key features of Venus is its support for the Chinese language and mar
 
 [Learn more about Venus](https://docs.filecoin.io/nodes/implementations/venus/)
 
-### Implementation differences
+## Implementation differences
 
 while Lotus and Venus share many similarities, they differ in their development, language, feature sets, focus, and community support. Depending on your needs and interests, you may prefer one implementation over the other:
 
-#### Language
+### Language
 
 Lotus is written in Go, while Venus is written in Rust.
 
-#### Compatibility
+### Compatibility
 
 Both Lotus and Venus are fully compatible with the Filecoin network and can interoperate with other Filecoin nodes on the network.
 
-#### Features
+### Features
 
 While both implementations provide storage, retrieval, and mining functionalities, they differ in their feature sets. Lotus includes features such as a decentralized storage market, a retrieval market, and a built-in consensus mechanism, while Venus includes features such as automatic fault tolerance, intelligent storage allocation, and decentralized data distribution.
 
-#### Focus
+### Focus
 
 Lotus has a more global focus, while Venus has a stronger focus on the Chinese market. Venus provides a Chinese language user interface and documentation, making it easier for Chinese users to participate in the Filecoin network.
 
-### Other implementations
+## Other implementations
 
 The following implementations exist, but aren’t fully featured.
 
-#### Forest
+### Forest
 
 ![Forest logo.](https://docs.filecoin.io/nodes/implementations/overview/forest-logo\_hu328798fb63b8913efa4ee5d19499fa75\_8567\_150x0\_resize\_q75\_h2\_box\_3.webp)
 

@@ -8,13 +8,13 @@ description: >-
 
 Each step in the sealing process has different performance considerations, and fine-tuning is required to align the different steps optimally. For example, storage providers that don’t understand the process expected throughput may end up overloading the sealing pipeline by trying to seal too many sectors at once or taking on a dataset that is too large for available infrastructure. This can lead to a slower _sealing rate_, which is discussed in greater detail in [Sealing Rate](https://docs.filecoin.io/storage-provider/architecture/sealing-rate/).
 
-### Overview
+## Overview
 
 The sealing pipeline can be broken into the following steps:
 
 <figure><img src="https://docs.filecoin.io/storage-provider/architecture/sealing-pipeline/sealing-tasks_hu9268c492255deb0a4b7b412df6151e82_116179_941x0_resize_q75_h2_box_3.webp" alt=""><figcaption></figcaption></figure>
 
-#### AddPiece
+### AddPiece
 
 The sealing pipeline begins with _AddPiece_ (AP), where the pipeline takes a _Piece_ and prepares it into the sealing scratch space for the _PreCommit 1_ task ([PC1](https://docs.filecoin.io/storage-provider/architecture/sealing-pipeline/#2-precommit-1-pc1)) to take over. In Filecoin, a _Piece_ is data in CAR-file format produced by an [IPLD DAG](https://ipld.io) with a corresponding `PayloadCID` and `PieceCID`. The maximum Piece size is equal to the sector size, which is either 32 GiB or 64 GiB. If the content is larger than the sector size, it must be split into more than one `PieceCID` during data preparation.
 
@@ -29,7 +29,7 @@ Consider limiting the AP process to a few cores by using the [`taskset` command]
 taskset -c <xx-xx> lotus-worker run ...
 ```
 
-#### PreCommit 1
+### PreCommit 1
 
 PreCommit 1 (PC1) is the most intensive process of the entire sealing pipeline. PC1 is the step in which a sector, regardless of whether it contains data or not, is cryptographically secured. The worker process loads cryptographic parameters from a cache location, which should be stored on enterprise NVMe for latency reduction. These parameters are then used to run Proof-of-Replication (PoRep) SDR encoding against the sector that was put into the sealing scratch space. This task is single-threaded and very CPU intensive, so it requires a CPU with SHA256 extensions. Typical CPUs that meet this requirement include the AMD Epyc Milan/Rome or an Intel Xeon Ice Lake with 32 cores or more.
 
@@ -45,7 +45,7 @@ In order to achieve a decent sealing rate and make use of all sealing capacity i
 
 The process of sealing a single 32 GiB sector takes roughly **3 hours**.
 
-#### PreCommit 2
+### PreCommit 2
 
 When PC1 has been completed on a given sector, the entire scratch space for that sector is moved over to the _PreCommit 2 (PC2)_ task. This task is typically executed on a different server than the PC1 server because it behaves differently. In short, PC2 validates PC1 using the Poseidon hashing algorithm over the Merkle Tree DAG that was created in PC1. As mentioned in the previous section, the entire scratch space is either 384 GiB or 768 GiB, depending on the sector size.
 
@@ -68,15 +68,15 @@ lotus-miner sectors batching precommit --publish-now
 
 The sealed sector and its 11 layers are kept on the scratch volume until Commit 2 (C2) is complete.
 
-#### WaitSeed
+### WaitSeed
 
 WaitSeed is not an actual task that is executed, but it is a step in the pipeline in which the blockchain forces the pipeline to wait for 150 epochs as a built-in security mechanism. With Filecoin’s 30 second epochs, this means 75 minutes must elapse between PC2 and the next task, Commit 1 (C1).
 
-#### Commit 1
+### Commit 1
 
 The Commit 1 (C1) phase is an intermediate phase that performs the preparation necessary to generate a proof. It is CPU-bound and typically completes in seconds. It is recommended that storage providers run this process on the server where PC2 is running.
 
-#### Commit 2
+### Commit 2
 
 The last and final step in the sealing pipeline is Commit 2 (C2). This step involves the creation of zk-SNARK proof. Like PC2, this task is GPU-bound and is, therefore, best co-located with the PC2 task.
 

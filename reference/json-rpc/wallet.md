@@ -1,6 +1,6 @@
 # Wallet
 
-### WalletBalance
+## WalletBalance
 
 WalletBalance returns the balance of the given address at the current head of the chain.
 
@@ -19,7 +19,7 @@ Inputs:
 
 Response: `"0"`
 
-### WalletDefaultAddress
+## WalletDefaultAddress
 
 WalletDefaultAddress returns the address marked as default in the wallet.
 
@@ -29,7 +29,7 @@ Inputs: `null`
 
 Response: `"f01234"`
 
-### WalletDelete
+## WalletDelete
 
 WalletDelete deletes an address from the wallet.
 
@@ -48,7 +48,7 @@ Inputs:
 
 Response: `{}`
 
-### WalletExport
+## WalletExport
 
 WalletExport returns the private key of an address in the wallet.
 
@@ -77,7 +77,7 @@ Response:
 }
 ```
 
-### WalletHas
+## WalletHas
 
 WalletHas indicates whether the given address is in the wallet.
 
@@ -96,7 +96,7 @@ Inputs:
 
 Response: `true`
 
-### WalletImport
+## WalletImport
 
 WalletImport receives a KeyInfo, which includes a private key, and imports it into the wallet.
 
@@ -118,7 +118,7 @@ Inputs:
 
 Response: `"f01234"`
 
-### WalletList
+## WalletList
 
 WalletList lists all the addresses in the wallet.
 
@@ -137,7 +137,7 @@ Response:
 ]
 ```
 
-### WalletNew
+## WalletNew
 
 WalletNew creates a new address in the wallet with the given sigType. Available key types: bls, secp256k1, secp256k1-ledger Support for numerical types: 1 - secp256k1, 2 - BLS is deprecated
 
@@ -156,7 +156,7 @@ Inputs:
 
 Response: `"f01234"`
 
-### WalletSetDefault
+## WalletSetDefault
 
 WalletSetDefault marks the given address as the default one.
 
@@ -175,7 +175,7 @@ Inputs:
 
 Response: `{}`
 
-### WalletSign
+## WalletSign
 
 WalletSign signs the given bytes using the given address.
 
@@ -205,7 +205,7 @@ Response:
 }
 ```
 
-### WalletSignMessage
+## WalletSignMessage
 
 WalletSignMessage signs the given message using the given address.
 
@@ -269,7 +269,7 @@ Response:
 }
 ```
 
-### WalletValidateAddress
+## WalletValidateAddress
 
 WalletValidateAddress validates whether a given string can be decoded as a well-formed address
 
@@ -288,7 +288,7 @@ Inputs:
 
 Response: `"f01234"`
 
-### WalletVerify
+## WalletVerify
 
 WalletVerify takes an address, a signature, and some bytes, and indicates whether the signature is valid. The address does not have to be in the wallet.
 

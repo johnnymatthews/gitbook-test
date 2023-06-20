@@ -6,7 +6,7 @@ description: >-
 
 # Chain
 
-### ChainDeleteObj
+## ChainDeleteObj
 
 ChainDeleteObj deletes node referenced by the given CID
 
@@ -27,7 +27,7 @@ Inputs:
 
 Response: `{}`
 
-### ChainExport
+## ChainExport
 
 ChainExport returns a stream of bytes with CAR dump of chain data. The exported chain data includes the header chain from the given tipset back to genesis, the entire genesis state, and the most recent ’nroots' state trees. If oldmsgskip is set, messages from before the requested roots are also not included.
 
@@ -55,7 +55,7 @@ Inputs:
 
 Response: `"Ynl0ZSBhcnJheQ=="`
 
-### ChainGetBlock
+## ChainGetBlock
 
 ChainGetBlock returns the block specified by the given CID.
 
@@ -131,7 +131,7 @@ Response:
 }
 ```
 
-### ChainGetBlockMessages
+## ChainGetBlockMessages
 
 ChainGetBlockMessages returns messages stored in the specified block.
 
@@ -214,7 +214,7 @@ Response:
 }
 ```
 
-### ChainGetGenesis
+## ChainGetGenesis
 
 ChainGetGenesis returns the genesis tipset.
 
@@ -235,7 +235,7 @@ Response:
 }
 ```
 
-### ChainGetMessage
+## ChainGetMessage
 
 ChainGetMessage reads a message referenced by the specified CID from the chain blockstore.
 
@@ -277,7 +277,7 @@ Response:
 }
 ```
 
-### ChainGetMessagesInTipset
+## ChainGetMessagesInTipset
 
 ChainGetMessagesInTipset returns message stores in current tipset
 
@@ -331,7 +331,7 @@ Response:
 ]
 ```
 
-### ChainGetNode
+## ChainGetNode
 
 Perms: read
 
@@ -360,7 +360,7 @@ Response:
 }
 ```
 
-### ChainGetParentMessages
+## ChainGetParentMessages
 
 ChainGetParentMessages returns messages stored in parent tipset of the specified block.
 
@@ -409,7 +409,7 @@ Response:
 ]
 ```
 
-### ChainGetParentReceipts
+## ChainGetParentReceipts
 
 ChainGetParentReceipts returns receipts for messages in parent tipset of the specified block. The receipts in the list returned is one-to-one with the messages returned by a call to ChainGetParentMessages with the same blockCid.
 
@@ -443,7 +443,7 @@ Response:
 ]
 ```
 
-### ChainGetPath
+## ChainGetPath
 
 ChainGetPath returns a set of revert/apply operations needed to get from one tipset to another, for example:
 
@@ -509,7 +509,7 @@ Response:
 ]
 ```
 
-### ChainGetRandomnessFromBeacon
+## ChainGetRandomnessFromBeacon
 
 ChainGetRandomnessFromBeacon is used to sample the beacon for randomness.
 
@@ -538,7 +538,7 @@ Inputs:
 
 Response: `"Bw=="`
 
-### ChainGetRandomnessFromTickets
+## ChainGetRandomnessFromTickets
 
 ChainGetRandomnessFromTickets is used to sample the chain for randomness.
 
@@ -567,7 +567,7 @@ Inputs:
 
 Response: `"Bw=="`
 
-### ChainGetTipSet
+## ChainGetTipSet
 
 ChainGetTipSet returns the tipset specified by the given TipSetKey.
 
@@ -604,7 +604,7 @@ Response:
 }
 ```
 
-### ChainGetTipSetByHeight
+## ChainGetTipSetByHeight
 
 ChainGetTipSetByHeight looks back for a tipset at the specified epoch. If there are no blocks at the specified epoch, a tipset at an earlier epoch will be returned.
 
@@ -642,7 +642,7 @@ Response:
 }
 ```
 
-### ChainHasObj
+## ChainHasObj
 
 ChainHasObj checks if a given CID exists in the chain blockstore.
 
@@ -663,7 +663,7 @@ Inputs:
 
 Response: `true`
 
-### ChainHead
+## ChainHead
 
 ChainHead returns the current head of the chain.
 
@@ -684,7 +684,7 @@ Response:
 }
 ```
 
-### ChainNotify
+## ChainNotify
 
 ChainNotify returns channel with chain head updates. First message is guaranteed to be of length `1`, and type `current`.
 
@@ -710,7 +710,7 @@ Response:
 ]
 ```
 
-### ChainReadObj
+## ChainReadObj
 
 ChainReadObj reads IPLD nodes referenced by the specified CID from chain blockstore and returns raw bytes.
 
@@ -731,7 +731,7 @@ Inputs:
 
 Response: `"Ynl0ZSBhcnJheQ=="`
 
-### ChainSetHead
+## ChainSetHead
 
 ChainSetHead forcefully sets current chain head. Use with caution.
 
@@ -757,7 +757,7 @@ Inputs:
 
 Response: `{}`
 
-### ChainStatObj
+## ChainStatObj
 
 ChainStatObj returns statistics about the graph referenced by ‘obj’. If ‘base’ is also specified, then the returned stat will be a diff between the two objects.
 
@@ -791,7 +791,7 @@ Response:
 }
 ```
 
-### ChainTipSetWeight
+## ChainTipSetWeight
 
 ChainTipSetWeight computes weight for the specified tipset.
 

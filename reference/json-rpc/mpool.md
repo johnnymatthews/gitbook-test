@@ -6,7 +6,7 @@ description: >-
 
 # Mpool
 
-### MpoolBatchPush
+## MpoolBatchPush
 
 MpoolBatchPush batch pushes a signed message to mempool.
 
@@ -61,7 +61,7 @@ Response:
 ]
 ```
 
-### MpoolBatchPushMessage
+## MpoolBatchPushMessage
 
 MpoolBatchPushMessage batch pushes a unsigned message to mempool.
 
@@ -131,7 +131,7 @@ Response:
 ]
 ```
 
-### MpoolBatchPushUntrusted
+## MpoolBatchPushUntrusted
 
 MpoolBatchPushUntrusted batch pushes a signed message to mempool from untrusted sources.
 
@@ -186,7 +186,7 @@ Response:
 ]
 ```
 
-### MpoolClear
+## MpoolClear
 
 MpoolClear clears pending messages from the mpool
 
@@ -205,7 +205,7 @@ Inputs:
 
 Response: `{}`
 
-### MpoolGetConfig
+## MpoolGetConfig
 
 MpoolGetConfig returns (a copy of) the current mpool config
 
@@ -231,7 +231,7 @@ Response:
 }
 ```
 
-### MpoolGetNonce
+## MpoolGetNonce
 
 MpoolGetNonce gets next nonce for the specified sender. Note that this method may not be atomic. Use MpoolPushMessage instead.
 
@@ -250,7 +250,7 @@ Inputs:
 
 Response: `42`
 
-### MpoolPending
+## MpoolPending
 
 MpoolPending returns pending mempool messages.
 
@@ -308,7 +308,7 @@ Response:
 ]
 ```
 
-### MpoolPush
+## MpoolPush
 
 MpoolPush pushes a signed message to mempool.
 
@@ -359,7 +359,7 @@ Response:
 }
 ```
 
-### MpoolPushMessage
+## MpoolPushMessage
 
 MpoolPushMessage atomically assigns a nonce, signs, and pushes a message to mempool. maxFee is only used when GasFeeCap/GasPremium fields aren’t specified
 
@@ -427,7 +427,7 @@ Response:
 }
 ```
 
-### MpoolPushUntrusted
+## MpoolPushUntrusted
 
 MpoolPushUntrusted pushes a signed message to mempool from untrusted sources.
 
@@ -478,7 +478,7 @@ Response:
 }
 ```
 
-### MpoolSelect
+## MpoolSelect
 
 MpoolSelect returns a list of pending messages for inclusion in the next block
 
@@ -537,7 +537,7 @@ Response:
 ]
 ```
 
-### MpoolSetConfig
+## MpoolSetConfig
 
 MpoolSetConfig sets the mpool config to (a copy of) the supplied config
 
@@ -565,7 +565,7 @@ Inputs:
 
 Response: `{}`
 
-### MpoolSub
+## MpoolSub
 
 Perms: read
 

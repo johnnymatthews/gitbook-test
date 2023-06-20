@@ -16,7 +16,7 @@ Storage providers need to be able to implement and maintain storage infrastructu
 
 Overall, storage is a critical aspect of the Filecoin network and storage providers must have the necessary skills and knowledge to provide high-quality storage services to clients.
 
-### ZFS
+## ZFS
 
 Zettabyte File System (ZFS) is a combined file system and logical volume manager that provides advanced features such as pooled storage, data integrity verification and automatic repair, and data compression. It is a popular choice among storage providers due to its reliability, scalability, and performance.
 
@@ -26,7 +26,7 @@ In addition to configuring ZFS, storage providers must also be able to manage th
 
 Having the knowledge and skills to configure ZFS is crucial as a storage providers, as it enables you to provide reliable and high-performance storage services to your clients. Without this expertise, you may struggle to deliver the level of service that your clients expect, which could lead to decreased customer satisfaction and loss of business.
 
-#### RAIDZ2
+### RAIDZ2
 
 ZFS is a combined file system and volume manager, designed to work efficiently on large-scale storage systems. One of the unique features of ZFS is its built-in support for various types of RAID configurations, which makes it an ideal choice for data storage in a Filecoin network.
 
@@ -38,7 +38,7 @@ For example, `RAIDZ2` is a configuration that provides double parity, meaning th
 
 Finally, creating datasets is another important aspect of ZFS configuration. Datasets are logical partitions within a ZFS storage pool that can have their own settings and attributes, such as compression, encryption, and quota. As a storage provider, it is necessary to understand how to create datasets to effectively manage storage and optimize performance.
 
-#### Snapshots and replication
+### Snapshots and replication
 
 ZFS provides built-in protection for data in the form of snapshots. Snapshots are read-only copies of a ZFS file system at a particular point in time. By taking regular snapshots, you can protect your data against accidental deletions, file corruption, or other disasters.
 
@@ -46,7 +46,7 @@ To ensure that your data is fully protected, it is important to configure a snap
 
 In addition to snapshots, ZFS also allows you to replicate them to another system running ZFS. This can be useful for creating backups or for replicating data to a remote site for disaster recovery purposes. ZFS replication works by sending incremental changes to the destination system, which ensures that only the changes are sent over the network, rather than the entire dataset. This can significantly reduce the amount of data that needs to be transferred and can help minimize network bandwidth usage.
 
-### Performance analysis
+## Performance analysis
 
 As a storage provider, it is crucial to be able to troubleshoot and resolve any performance issues that may arise. This requires a deep understanding of the underlying storage system and the ability to use Linux performance analytic tools such as `iostat`. These tools can help identify potential bottlenecks in the storage system, such as high disk utilization or slow response times.
 

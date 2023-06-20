@@ -9,7 +9,7 @@ description: >-
 
 Instead of destroying a previously sealed sector and recreating a new sector that needs to be sealed, Snap Deals allow data to be ingested into CC-sectors without the requirement of re-sealing the sector.
 
-### Why would you do snap deals?
+## Why would you do snap deals?
 
 There are two main reasons why a storage provider could be doing Snap Deals, also known as _“snapping up their sectors”_ in the Filecoin community:
 

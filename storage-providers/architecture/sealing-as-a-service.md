@@ -8,11 +8,11 @@ description: >-
 
 * [Benefits](https://docs.filecoin.io/storage-provider/architecture/sealing-as-a-service/#benefits)
 
-## Sealing-as-a-service
+# Sealing-as-a-service
 
 Storage providers with hardware cost or availability constraints can use _Sealing-as-a-service_, in which another provider performs sector sealing on the storage providers behalf. This page describes how sealing-as-a-service works, and the benefits to storage providers.
 
-### Overview
+## Overview
 
 In
 
@@ -22,7 +22,7 @@ a traditional setup, a storage provider needs high-end hardware to build out a [
 2. The sealer seals the data into sectors.
 3. The sealer returns the sealed sectors in exchange for a service cost.
 
-### Benefits
+## Benefits
 
 Sealing-as-a-service provides multiple benefits for storage providers:
 

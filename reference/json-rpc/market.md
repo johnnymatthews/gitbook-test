@@ -1,6 +1,6 @@
 # Market
 
-### MarketAddBalance
+## MarketAddBalance
 
 MarketAddBalance adds funds to the market actor
 
@@ -30,7 +30,7 @@ Response:
 }
 ```
 
-### MarketGetReserved
+## MarketGetReserved
 
 MarketGetReserved gets the amount of funds that are currently reserved for the address
 
@@ -49,7 +49,7 @@ Inputs:
 
 Response: `"0"`
 
-### MarketReleaseFunds
+## MarketReleaseFunds
 
 MarketReleaseFunds releases funds reserved by MarketReserveFunds
 
@@ -69,7 +69,7 @@ Inputs:
 
 Response: `{}`
 
-### MarketReserveFunds
+## MarketReserveFunds
 
 MarketReserveFunds reserves funds for a deal
 
@@ -99,7 +99,7 @@ Response:
 }
 ```
 
-### MarketWithdraw
+## MarketWithdraw
 
 MarketWithdraw withdraws unlocked funds from the market actor
 

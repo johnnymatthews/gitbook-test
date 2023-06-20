@@ -14,11 +14,11 @@ The protocol level built-in actors API is split into the following sections:
 * [Storage power actor](https://docs.filecoin.io/reference/built-in-actors/protocol-api/#storage-power-actor)
 * [Verified registry actor](https://docs.filecoin.io/reference/built-in-actors/protocol-api/#verified-registry-actor)
 
-### Account actor
+## Account actor
 
 The account actor is responsible for user account. If you want to call these methods in your smart contracts, you need to specify method number of that method you want to invoke. Please refer the each method for its method number.
 
-#### AuthenticateMessage
+### AuthenticateMessage
 
 ```
 ```
@@ -41,7 +41,7 @@ Results:
 
 * `struct` EmptyValue.
 
-#### UniversalReceiverHook
+### UniversalReceiverHook
 
 ```
 ```
@@ -62,11 +62,11 @@ Results:
 
 * `struct` EmptyValue - always success.
 
-### Datacap
+## Datacap
 
 DataCap Actor is responsible for DataCap token management. The ActorCode for DataCap actor is `hex"0007"` which will be used to call DataCap actor APIs. You also need to specify the method number of which method you want to invoke. Refer to each method for its method number.
 
-#### Name
+### Name
 
 ```
 ```
@@ -87,7 +87,7 @@ Results:
 
 * `String` : DataCap
 
-#### Symbol
+### Symbol
 
 ```
 ```
@@ -108,7 +108,7 @@ Results:
 
 * `String` : DCAP
 
-#### TotalSupply
+### TotalSupply
 
 ```
 ```
@@ -129,7 +129,7 @@ Results:
 
 * `int256` TokenAmount - Total DataCap token supply.
 
-#### Balance
+### Balance
 
 ```
 ```
@@ -150,7 +150,7 @@ Results:
 
 * `int256` TokenAmount - the DataCap token balance for the specified wallet address.
 
-#### Transfer
+### Transfer
 
 ```
 ```
@@ -177,7 +177,7 @@ Results:
   * `int256` ToBalance - the balance of to\_address.
   * `bytes` RecipientData: data returned from receive hook.
 
-#### TransferFrom
+### TransferFrom
 
 ```
 ```
@@ -206,7 +206,7 @@ Results:
   * `int256` Allowance - the remaining allowance of owner address.
   * `bytes` RecipientData - data returned from receive hook.
 
-#### IncreaseAllowance
+### IncreaseAllowance
 
 ```
 ```
@@ -229,7 +229,7 @@ Results:
 
 * `int256` TokenAmount - the new DataCap allowance of the operator address.
 
-#### DecreaseAllowance
+### DecreaseAllowance
 
 ```
 ```
@@ -252,7 +252,7 @@ Results:
 
 * `int256` TokenAmount - the new DataCap allowance of the operator address.
 
-#### RevokeAllowance
+### RevokeAllowance
 
 ```
 ```
@@ -274,7 +274,7 @@ Results:
 
 * `int256` TokenAmount - the old Allowance amount of the operator address.
 
-#### Burn
+### Burn
 
 ```
 ```
@@ -296,7 +296,7 @@ Results:
 
 * `int256` TokenAmount - the updated DataCap token balance of the owner/caller address.
 
-#### BurnFrom
+### BurnFrom
 
 ```
 ```
@@ -321,7 +321,7 @@ Results:
   * `bytes` Owner - the wallet address of the owner.
   * `int256` Amount - the new balance of owner wallet.
 
-#### Allowance
+### Allowance
 
 ```
 ```
@@ -344,11 +344,11 @@ Results:
 
 * `int256` TokenAmount - the allowance that an operator can control of an owner’s allowance.
 
-### Miner
+## Miner
 
 The miner built-in actor responsible to deal with storage mining operations and collect proof. To interact with a specific storage provider, you must use their miner address to invoke the methods in the built-in miner actor. You also need to specify the method number for the method you want to invoke. Please refer to each method for its method number.
 
-#### GetPeerID
+### GetPeerID
 
 ```
 ```
@@ -370,7 +370,7 @@ Results:
 * `struct` GetPeerIDReturn
   * `bytes` PeerID - the peer ID for the specified storage provider/miner.
 
-#### ChangePeerID
+### ChangePeerID
 
 ```
 ```
@@ -392,7 +392,7 @@ Results:
 
 * `struct` EmptyValue
 
-#### GetMultiaddrs
+### GetMultiaddrs
 
 ```
 ```
@@ -414,7 +414,7 @@ Results:
 * `struct` GetMultiAddrsReturn
   * `byte[]` MultiAddrs - the multi-signature address.
 
-#### ChangeMultiaddrs
+### ChangeMultiaddrs
 
 ```
 ```
@@ -436,7 +436,7 @@ Results:
 
 * `struct` EmptyValue
 
-#### ChangeWorkerAddress
+### ChangeWorkerAddress
 
 ```
 ```
@@ -459,7 +459,7 @@ Results:
 
 * `struct` EmptyValue
 
-#### ConfirmChangeWorkerAddress
+### ConfirmChangeWorkerAddress
 
 ```
 ```
@@ -480,7 +480,7 @@ Results:
 
 * `struct` EmptyValue
 
-#### RepayDebt
+### RepayDebt
 
 ```
 ```
@@ -501,7 +501,7 @@ Results:
 
 * `struct` EmptyValue
 
-#### GetOwner
+### GetOwner
 
 ```
 ```
@@ -523,7 +523,7 @@ Results:
 * `struct` GetOwnerReturn
   * `byte` Owner - owner address.
 
-#### ChangeOwnerAddress
+### ChangeOwnerAddress
 
 ```
 ```
@@ -544,7 +544,7 @@ Results:
 
 * `struct` EmptyValue
 
-#### GetBeneficiary
+### GetBeneficiary
 
 ```
 ```
@@ -577,7 +577,7 @@ Results:
     * `bool` ApprovedByBeneficiary - if this proposal is approved by the beneficiary or not.
     * `bool` ApprovedByNominee - if this proposal is approved by the nominee or not.
 
-#### ChangeBeneficiary
+### ChangeBeneficiary
 
 ```
 ```
@@ -601,7 +601,7 @@ Results:
 
 * `struct` EmptyValue
 
-#### IsControllingAddress
+### IsControllingAddress
 
 ```
 ```
@@ -622,7 +622,7 @@ Results:
 
 * `bool` IsControllingAddressReturn - if the specified address is the control address.
 
-#### GetSectorSize
+### GetSectorSize
 
 ```
 ```
@@ -644,7 +644,7 @@ Results:
 * `struct` GetSectorSizeReturn
   * `unit64` SectorSize - the sector size of this miner.
 
-#### GetAvailableBalance
+### GetAvailableBalance
 
 ```
 ```
@@ -665,7 +665,7 @@ Results:
 
 * `int256` GetAvailableBalanceReturn - the available token balance amount.
 
-#### WithdrawBalance
+### WithdrawBalance
 
 ```
 ```
@@ -685,7 +685,7 @@ Results:
 
 * `int256` WithdrawBalanceReturn - the token amount withdrawn.
 
-#### GetVestingFunds
+### GetVestingFunds
 
 ```
 ```
@@ -709,11 +709,11 @@ Results:
     * `int64` Epoch - the epoch of funds vested.
     * `int256` Amount - the number of funds vested.
 
-### Multisig
+## Multisig
 
 Multisig built-in actor is responsible for dealing with operations involving the Filecoin wallet. To interact with a specific multi-signature wallet address, you need to use this wallet address to invoke the methods in the built-in multisig actor. You also need to specify the method number of which method you want to invoke. Please refer to each method for its method number.
 
-#### Propose
+### Propose
 
 ```
 ```
@@ -742,7 +742,7 @@ Results:
   * `uint31` Code - the exit code of the transaction. If `Applied` is `false` this field can be ignored.
   * `bytes` Ret - the return value of the transaction. If `Applied` is `false` this field can be ignored.
 
-#### Approve
+### Approve
 
 ```
 ```
@@ -768,7 +768,7 @@ Results:
   * `uint31` Code - the exit code of the transaction. If `Applied` is `false` this field can be ignored.
   * `bytes` Ret - the return value of the transaction. If `Applied` is `false` this field can be ignored.
 
-#### Cancel
+### Cancel
 
 ```
 ```
@@ -791,7 +791,7 @@ Results:
 
 * `struct` EmptyValue.
 
-#### AddSigner
+### AddSigner
 
 ```
 ```
@@ -814,7 +814,7 @@ Results:
 
 * `struct` EmptyValue.
 
-#### RemoveSigner
+### RemoveSigner
 
 ```
 ```
@@ -837,7 +837,7 @@ Results:
 
 * `struct` EmptyValue.
 
-#### SwapSigner
+### SwapSigner
 
 ```
 ```
@@ -860,7 +860,7 @@ Results:
 
 * `struct` EmptyValue.
 
-#### ChangeNumApprovalsThreshold
+### ChangeNumApprovalsThreshold
 
 ```
 ```
@@ -882,7 +882,7 @@ Results:
 
 * `struct` EmptyValue.
 
-#### LockBalance
+### LockBalance
 
 ```
 ```
@@ -906,11 +906,11 @@ Results:
 
 * `struct` EmptyValue.
 
-### Storage market actor
+## Storage market actor
 
 Storage market actor is responsible for managing storage and retrieval deals. The ActorCode for storage market actor is `hex"0005"` which will be used to call this actor. You also need to specify the method number of the method you want to invoke. Please refer to each method for its method number.
 
-#### AddBalance
+### AddBalance
 
 ```
 ```
@@ -931,7 +931,7 @@ Results:
 
 * `struct` EmptyValue.
 
-#### GetBalance
+### GetBalance
 
 ```
 ```
@@ -954,7 +954,7 @@ Results:
   * `int256` Balance - the escrow balance for this address.
   * `int256` Locked - the escrow-locked amount for this address.
 
-#### WithdrawBalance
+### WithdrawBalance
 
 ```
 ```
@@ -978,7 +978,7 @@ Results:
 * `struct` WithdrawBalanceReturn
   * `int256` AmountWithdraw - the token amount withdrawn.
 
-#### PublishStorageDeals
+### PublishStorageDeals
 
 ```
 ```
@@ -1015,7 +1015,7 @@ Results:
   * `uint64[]` IDs - returned storage deal IDs.
   * `bytes` ValidDeals - represent all the valid deals.
 
-#### GetDealDataCommitment
+### GetDealDataCommitment
 
 ```
 ```
@@ -1038,7 +1038,7 @@ Results:
   * `bytes` Data - the data commitment of this deal.
   * `uint64` Size - the size of this deal.
 
-#### GetDealClient
+### GetDealClient
 
 ```
 ```
@@ -1059,7 +1059,7 @@ Results:
 
 * `bytes` GetDealClientReturn - the wallet address of the client.
 
-#### GetDealProvider
+### GetDealProvider
 
 ```
 ```
@@ -1080,7 +1080,7 @@ Results:
 
 * `bytes` GetDealProviderReturn - the wallet address of the provider.
 
-#### GetDealLabel
+### GetDealLabel
 
 ```
 ```
@@ -1101,7 +1101,7 @@ Results:
 
 * `string` GetDealLabelReturn - the label of this deal.
 
-#### GetDealTerm
+### GetDealTerm
 
 ```
 ```
@@ -1124,7 +1124,7 @@ Results:
   * `int64` Start - the chain epoch to start the deal.
   * `int64` End - the chain epoch to end the deal.
 
-#### GetDealTotalPrice
+### GetDealTotalPrice
 
 ```
 ```
@@ -1145,7 +1145,7 @@ Results:
 
 * `int256` GetDealTotalPriceReturn - the token amount that will be paid by the client to the provider.
 
-#### GetDealClientCollateral
+### GetDealClientCollateral
 
 ```
 ```
@@ -1166,7 +1166,7 @@ Results:
 
 * `int256` GetDealClientCollateralReturn - the token amount as collateral paid by the client.
 
-#### GetDealProviderCollateral
+### GetDealProviderCollateral
 
 ```
 ```
@@ -1187,7 +1187,7 @@ Results:
 
 * `int256` GetDealProviderCollateralReturn - the token amount as collateral paid by the provider.
 
-#### GetDealVerified
+### GetDealVerified
 
 ```
 ```
@@ -1208,7 +1208,7 @@ Results:
 
 * `bool` GetDealVerifiedReturn - if the deal is verified or not.
 
-#### GetDealActivation
+### GetDealActivation
 
 ```
 ```
@@ -1231,11 +1231,11 @@ Results:
   * `int64` Activated - Epoch at which the deal was activated, or -1.
   * `int64` Terminated -Epoch at which the deal was terminated abnormally, or -1.
 
-### Storage power actor
+## Storage power actor
 
 Strorage power actor is responsible for keeping track of the storage power allocated at each storage miner. The ActorCode for the built-in storage power actor is `hex"0004"` which will be used to call methods in the storage power actor. You also need to specify the method number for the method you want to invoke. Please refer to each method for its method number.
 
-#### CreateMiner
+### CreateMiner
 
 ```
 ```
@@ -1263,7 +1263,7 @@ Results:
   * `bytes` IDAddress - The canonical ID-based address for the actor.
   * `byte`: RobustAddress -A more expensive but re-org-safe address for the newly created actor.
 
-#### NetworkRawPower
+### NetworkRawPower
 
 ```
 ```
@@ -1284,7 +1284,7 @@ Results:
 
 * `int256` NetworkRawPowerReturn - the raw storage power of the whole network.
 
-#### MinerRawPower
+### MinerRawPower
 
 ```
 ```
@@ -1308,7 +1308,7 @@ Results:
 * `int256` RawBytePower - the row power of the miner.
 * `bool` MeetsConsensusMinimum - if the miner power meets the minimum for consensus.
 
-#### MinerCount
+### MinerCount
 
 ```
 ```
@@ -1329,7 +1329,7 @@ Results:
 
 * `uint64` MinerCountReturn - the count of the miners that the caller address has.
 
-#### MinerConsensusCount
+### MinerConsensusCount
 
 ```
 ```
@@ -1350,11 +1350,11 @@ Results:
 
 * `uint64`MinerConsensusCountReturn - the count of the miners that meet the consensus minimum that the caller address has.
 
-### Verified registry actor
+## Verified registry actor
 
 Verified registry actor is responsible for managing verified clients. The ActorCode for the verified registry built-in actor is `hex"0006"` which will be used to call the exported methods in the verified registry built-in actor. You need to specify the method number for the method you want to invoke. Please referer to each method for its method number.
 
-#### AddVerifiedClient
+### AddVerifiedClient
 
 ```
 ```
@@ -1377,7 +1377,7 @@ Results:
 
 * `struct` EmptyValue.
 
-#### RemoveExpiredAllocations
+### RemoveExpiredAllocations
 
 ```
 ```
@@ -1403,7 +1403,7 @@ Results:
   * `BatachReturn` Results - results for each processed allocation.
   * `int256` DataCapRecoverd - The amount of DataCap token reclaimed for the client.
 
-#### GetClaims
+### GetClaims
 
 ```
 ```
@@ -1438,7 +1438,7 @@ Results:
     * `int64` TermStart - the epoch at which the piece was committed.
     * `unit64` Sector - ID of the provider’s sector in which the data is committed.
 
-#### ExtendClaimTerms
+### ExtendClaimTerms
 
 ```
 ```
@@ -1466,7 +1466,7 @@ Results:
     * `uint32` SuccessCount - total successes in the batch.
     * `struct` FailCodes\[] {`uint32` idx, `uint32` code} - list of failure code and index for all failures in batch.
 
-#### RemoveExpiredClaims
+### RemoveExpiredClaims
 
 ```
 ```

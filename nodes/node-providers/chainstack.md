@@ -8,19 +8,19 @@ description: >-
 
 The ChainStack RPC API, maintained by [Chainstack Labs](https://chainstack.com/), provides high-performance testnet nodes for Filecoin builders, especially for applications built on the Filecoin Virtual Machine. The ChainStack RPC API provides both a standard endpoint and a WebSocket endpoint. For further information, see the [official page](https://chainstack.com/labs/#filecoin)
 
-### HTTP endpoints
+## HTTP endpoints
 
 ```plaintext
 https://filecoin-calibration.chainstacklabs.com/rpc/v0
 ```
 
-### Web socket endpoints
+## Web socket endpoints
 
 ```plaintext
 wss://ws-filecoin-calibration.chainstacklabs.com/rpc/v0
 ```
 
-### Curl example
+## Curl example
 
 ```shell
 curl -X POST 'https://filecoin-calibration.chainstacklabs.com/rpc/v0' \

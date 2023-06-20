@@ -6,7 +6,7 @@ description: >-
 
 # JSON-RPC
 
-### Quick start
+## Quick start
 
 The easiest way to test the API is to use Curl commands. A Curl command to the Filecoin network looks something like this:
 
@@ -24,7 +24,7 @@ curl --location --request POST '<NODE_ADDRESS>' \
 }'
 ```
 
-### Step-by-step example
+## Step-by-step example
 
 1.  In a terminal window, use Curl to request the current chain head from a public [Glif](https://glif.io) node.
 
@@ -73,7 +73,7 @@ curl --location --request POST '<NODE_ADDRESS>' \
     ...
     ```
 
-### Permissions
+## Permissions
 
 Each method has specific permissions that must be met before you can receive a response from a Filecoin node. Methods with the `read` permission can be called by anyone at anytime, without the need for a token. All other permissions require you to send an authentication along with you request.
 
@@ -82,7 +82,7 @@ Each method has specific permissions that must be met before you can receive a r
 * `sign`: Use private keys stored in wallet for signing, read and write permissions.
 * `admin`: Manage permissions, read, write, and sign permissions.
 
-### Authentication
+## Authentication
 
 Each node implementation has different ways to generate and manage authentication tokens. Take a look at your node’s specific documentation:
 

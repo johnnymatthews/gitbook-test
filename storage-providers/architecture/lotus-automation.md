@@ -10,7 +10,7 @@ description: >-
 [Find the automation code here!](https://github.com/ng-solutions-architecture/lotus-automation)
 {% endhint %}
 
-### Why this automation?
+## Why this automation?
 
 It can be rather overwhelming for new storage providers to learn everything about Filecoin and the Lotus software components. In order to help with the learning process, we provide a fully automated installation of the Lotus stack. This automation should allow anyone to go on mainnet or the Calibration testnet in no time.
 

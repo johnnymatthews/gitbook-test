@@ -14,13 +14,13 @@ There are two groups of users within the network indexer process:
 * _Storage providers_ advertise their available content by storing data in the indexer. This process is handled by the indexer’s _ingest_ logic.
 * _Retrieval clients_ query the indexer to determine which storage providers have the content and what protocol to use, such as Graphsync, Bitswap, etc. This process is handled by the indexer’s _find_ logic.
 
-### How the indexer works
+## How the indexer works
 
 This diagram summarizes the different _actors_ in the indexer ecosystem and how they interact with each other. In this context, these actors are not the same as [smart-contract actors](https://docs.filecoin.io/smart-contracts/filecoin-evm-runtime/actor-types/).
 
 <figure><img src="https://docs.filecoin.io/storage-provider/architecture/network-indexer/indexer.png" alt=""><figcaption><p>For more info on how the indexer works, read the <a href="https://filecoin.io/blog/posts/how-does-the-network-indexer-work/">Filecoin blog post</a>.</p></figcaption></figure>
 
-### IPNI and storage providers
+## IPNI and storage providers
 
 Storage providers publish data to indexers so that clients can find that data using the CID or multihash of the content. When a client queries the indexer using a CID or multihash, the indexer then responds to the client with the provider data record, which tells the client where and how the content can be retrieved.
 

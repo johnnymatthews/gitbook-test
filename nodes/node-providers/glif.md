@@ -8,19 +8,19 @@ description: >-
 
 The Glif Node RPC API is a publicly hosted Lotus endpoint that supports JSON-RPC POST requests against the Lotus API. The Glif Nodes RPC API provides both a standard endpoint and a WebSocket endpoint. For further information, see the [official endpoint page](https://api.calibration.node.glif.io/rpc/v1).
 
-### HTTP endpoints
+## HTTP endpoints
 
 ```plaintext
 https://api.calibration.node.glif.io/rpc/v1
 ```
 
-### WebSockets endpoints
+## WebSockets endpoints
 
 ```plaintext
 wss://wss.calibration.node.glif.io/apigw/lotus/rpc/v1
 ```
 
-### Curl example
+## Curl example
 
 ```shell
 curl -X POST 'https://api.node.glif.io' \
@@ -32,11 +32,11 @@ curl -X POST 'https://api.node.glif.io' \
 {"jsonrpc":"2.0","result":{"Cids":[{"/":"bafy2bzaceayoigaf3v5muqmknpjfkguse43jp4t2zxhpmykhqynqhkdgpgybc"},{"/":"bafy2bzacecnrtzlhn6h75gm7tozhzuw77plvdhniwzfj7wgmyuju6wn573h22"},{"/":"bafy2bzacecygiaxfsqv7ecb2gvodzh74eret3pchwe5e4j5a3mzlwasvndi6i"},{"/":"bafy2bzacebe477tdmijfse4je2g63gnnkdgzj3ftq6zbygd7toszkrsjts6uu"},{"/":"bafy2bzacedoe6hcxy2cgqzbg4p7qolbd5imbjpjnz2tj4n7o3kw2md4uv2ttq"},{"/":"bafy2bzacec7wbqvskwvolireljmufszdu5nk37yyg4qtxgnrwbyipgoenmhc6"},{"/":"bafy2bzaceahxdiauteywlbjnwj3ntr72qcbamtq3nbvjzyn5wruithpyqyxbm"}],"Blocks":[{"Miner":"f0693008","Ticket":{"VRFProof":"uLR0LHfNBAfQzyYUVBiIEXzyblPv3yPIEsJQGTpaAvO1ZriPZ7wC2IFpw7mrz1RvDQEfsgRXGxb6APTRvrPiFEAe35RFNLKC9SYb64PNcDYwGY4de5LdlHfyUv+Ovwg5"}...
 ```
 
-### Supported methods
+## Supported methods
 
 The Glif Node API supports all API request methods listed in the [Lotus JSON-RPC API documentation](https://lotus.filecoin.io/developers/apis/json-rpc/).
 
-### Further notes
+## Further notes
 
 Here is some extra information you might need to consider when using these nodes.
 

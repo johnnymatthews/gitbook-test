@@ -7,7 +7,7 @@ description: >-
 
 # Eth
 
-### EthAccounts
+## EthAccounts
 
 This method is intended to return a list of addresses owned by client. However, `eth_accounts` will always return and empty array `[]` since Filecoin does not manage Ethereum private keys.
 
@@ -38,7 +38,7 @@ curl --location --request POST 'https://api.node.glif.io' \
 }
 ```
 
-### EthBlockNumber
+## EthBlockNumber
 
 Returns the number of most recent block.
 
@@ -69,7 +69,7 @@ curl --location --request POST 'https://api.node.glif.io' \
 }
 ```
 
-### EthCall
+## EthCall
 
 Executes a new message call immediately without creating a transaction on the blockchain.
 
@@ -105,7 +105,7 @@ Inputs:
 ]
 ```
 
-### EthChainId
+## EthChainId
 
 Returns the currently configured chain ID, a value used in replay-protected transaction signing as introduced by EIP-155.
 
@@ -136,7 +136,7 @@ curl --location --request POST 'https://api.node.glif.io' \    src/languages upd
 }
 ```
 
-### EthEstimateGas
+## EthEstimateGas
 
 Generates and returns an estimate of how much gas is necessary to allow the transaction to complete. The transaction will not be added to the blockchain. Note that the estimate may be significantly more than the amount of gas actually used by the transaction, for a variety of reasons including EVM mechanics and node performance.
 
@@ -176,7 +176,7 @@ curl --location --request POST 'https://api.node.glif.io' \
     }' | jq
 ```
 
-### EthFeeHistory
+## EthFeeHistory
 
 Returns a collection of historical gas information.
 
@@ -208,7 +208,7 @@ curl --location --request POST 'https://api.node.glif.io' \
 }' | jq
 ```
 
-### EthGasPrice
+## EthGasPrice
 
 Returns the current price per gas in wei.
 
@@ -239,7 +239,7 @@ curl --location --request POST 'https://api.node.glif.io' \
 }
 ```
 
-### EthGetBalance
+## EthGetBalance
 
 Returns the balance of the account of a given address.
 
@@ -277,7 +277,7 @@ curl --location --request POST 'https://api.node.glif.io' \
 }
 ```
 
-### EthGetBlockByHash
+## EthGetBlockByHash
 
 Returns information about a block by tipset, also known as a block hash.
 
@@ -297,7 +297,7 @@ Returns information about a block by tipset, also known as a block hash.
 ]
 ```
 
-### EthGetBlockByNumber
+## EthGetBlockByNumber
 
 Returns information about a block by block number.
 
@@ -350,7 +350,7 @@ curl --location --request POST 'https://api.node.glif.io' \
 }
 ```
 
-### EthGetBlockTransactionCountByHash
+## EthGetBlockTransactionCountByHash
 
 Returns the number of messages in the tipset.
 
@@ -379,7 +379,7 @@ curl --location --request POST 'https://api.node.glif.io' \
 }
 ```
 
-### EthGetBlockTransactionCountByNumber
+## EthGetBlockTransactionCountByNumber
 
 Returns the number of transactions in a block matching the given tipset.
 
@@ -416,7 +416,7 @@ curl --location --request POST 'https://api.node.glif.io' \
 }
 ```
 
-### EthGetCode
+## EthGetCode
 
 Returns code at a given address.
 
@@ -454,7 +454,7 @@ curl --location --request POST 'https://api.node.glif.io' \
 }
 ```
 
-### EthGetFilterChanges
+## EthGetFilterChanges
 
 Polling method for a filter, which returns an array of logs which occurred since last poll.
 
@@ -482,7 +482,7 @@ Response:
 ]
 ```
 
-### EthGetFilterLogs
+## EthGetFilterLogs
 
 Returns event logs matching filter with given id. (requires write perm since timestamp of last filter execution will be written)
 
@@ -510,7 +510,7 @@ Response:
 ]
 ```
 
-### EthGetLogs
+## EthGetLogs
 
 Returns event logs matching given filter spec.
 
@@ -544,7 +544,7 @@ Response:
 ]
 ```
 
-### EthGetStorageAt
+## EthGetStorageAt
 
 Permissions: read
 
@@ -563,7 +563,7 @@ Inputs:
 
 Response: `"0x07"`
 
-### EthGetTransactionByBlockHashAndIndex
+## EthGetTransactionByBlockHashAndIndex
 
 Permissions: read
 
@@ -606,7 +606,7 @@ Response:
 }
 ```
 
-### EthGetTransactionByBlockNumberAndIndex
+## EthGetTransactionByBlockNumberAndIndex
 
 Permissions: read
 
@@ -649,7 +649,7 @@ Response:
 }
 ```
 
-### EthGetTransactionByHash
+## EthGetTransactionByHash
 
 Permissions: read
 
@@ -691,7 +691,7 @@ Response:
 }
 ```
 
-### EthGetTransactionCount
+## EthGetTransactionCount
 
 Permissions: read
 
@@ -709,7 +709,7 @@ Inputs:
 
 Response: `"0x5"`
 
-### EthGetTransactionReceipt
+## EthGetTransactionReceipt
 
 Returns the receipt of a transaction by transaction hash.
 
@@ -764,7 +764,7 @@ Response:
 }
 ```
 
-### EthMaxPriorityFeePerGas
+## EthMaxPriorityFeePerGas
 
 Returns a fee per gas that is an estimate of how much you can pay as a priority fee, or ’tip’, to get a transaction included in the current block. Generally you will use the value returned from this method to set the `maxFeePerGas` in a subsequent transaction that you are submitting.
 
@@ -793,7 +793,7 @@ curl --location --request POST 'https://api.node.glif.io' \
 }
 ```
 
-### EthNewBlockFilter
+## EthNewBlockFilter
 
 Installs a persistent filter to notify when a new block arrives.
 
@@ -822,7 +822,7 @@ curl --location --request POST 'https://api.node.glif.io' \
 }
 ```
 
-### EthNewFilter
+## EthNewFilter
 
 Creates a filter object, based on filter options, to notify when the state changes (logs). Unlike [`eth_newBlockFilter`](https://docs.filecoin.io/reference/json-rpc/eth/#ethnewblockfilter) which notifies you of all new blocks, you can pass in filter options to track new logs matching the topics specified. To check if the state has changed, call [`eth_getFilterChanges`](https://docs.filecoin.io/reference/json-rpc/eth/#ethgetfilterchanges).
 
@@ -868,7 +868,7 @@ curl --location --request POST 'https://api.node.glif.io' \
 }
 ```
 
-### EthNewPendingTransactionFilter
+## EthNewPendingTransactionFilter
 
 Creates a filter in the node, to notify when new pending transactions arrive. To check if the state has changed, call [`eth_getFilterChanges`](https://docs.filecoin.io/reference/json-rpc/eth/#ethgetfilterchanges).
 
@@ -897,7 +897,7 @@ curl --location --request POST 'https://api.node.glif.io' \
 }
 ```
 
-### EthProtocolVersion
+## EthProtocolVersion
 
 Returns the current ethereum protocol version.
 
@@ -926,7 +926,7 @@ curl --location --request POST 'https://api.node.glif.io' \
 }
 ```
 
-### EthSendRawTransaction
+## EthSendRawTransaction
 
 Creates a new message call transaction or a contract creation for signed transactions. Returns 32 Bytes - the transaction hash, or the zero hash if the transaction is not yet available.
 
@@ -950,7 +950,7 @@ curl --location --request POST 'https://api.node.glif.io' \
 ```json
 ```
 
-### EthSubscribe
+## EthSubscribe
 
 Subscribe to different Ethereum event types like newHeads, logs, pendingTransactions, and minedTransactions using WebSockets. Creates a new subscription for desired events. Sends data as soon as it occurs.
 
@@ -959,7 +959,7 @@ Subscribe to different Ethereum event types like newHeads, logs, pendingTransact
   * Event types: specifies the type of event to listen to (ex: new pending transactions, logs, etc).
   * Optional parameters: optional parameters to include to describe the type of event to listen to (`address` for example).
 
-### EthUninstallFilter
+## EthUninstallFilter
 
 Uninstalls a filter with given id.
 
@@ -988,7 +988,7 @@ curl --location --request POST 'https://api.node.glif.io' \
 }
 ```
 
-### EthUnsubscribe
+## EthUnsubscribe
 
 Unsubscribe from different Ethereum event types with a regular RPC call with `eth_unsubscribe` as the method and the `subscriptionId` as the first parameter.
 

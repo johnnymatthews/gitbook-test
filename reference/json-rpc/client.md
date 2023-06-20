@@ -6,7 +6,7 @@ description: >-
 
 # Client
 
-### ClientCalcCommP
+## ClientCalcCommP
 
 ClientCalcCommP calculates the CommP for a specified file
 
@@ -37,7 +37,7 @@ Response:
 }
 ```
 
-### ClientCancelDataTransfer
+## ClientCancelDataTransfer
 
 ClientCancelDataTransfer cancels a data transfer with the given transfer ID and other peer
 
@@ -58,7 +58,7 @@ Inputs:
 
 Response: `{}`
 
-### ClientCancelRetrievalDeal
+## ClientCancelRetrievalDeal
 
 ClientCancelRetrievalDeal cancels an ongoing retrieval deal based on DealID
 
@@ -77,7 +77,7 @@ Inputs:
 
 Response: `{}`
 
-### ClientDataTransferUpdates
+## ClientDataTransferUpdates
 
 Perms: write
 
@@ -120,7 +120,7 @@ Response:
 }
 ```
 
-### ClientDealPieceCID
+## ClientDealPieceCID
 
 ClientCalcCommP calculates the CommP and data size of the specified CID
 
@@ -154,7 +154,7 @@ Response:
 }
 ```
 
-### ClientDealSize
+## ClientDealSize
 
 ClientDealSize calculates real deal data size
 
@@ -185,7 +185,7 @@ Response:
 }
 ```
 
-### ClientFindData
+## ClientFindData
 
 ClientFindData identifies peers that have a certain file, and returns QueryOffers (one per peer).
 
@@ -234,7 +234,7 @@ Response:
 ]
 ```
 
-### ClientGenCar
+## ClientGenCar
 
 ClientGenCar generates a CAR file for the specified file.
 
@@ -257,7 +257,7 @@ Inputs:
 
 Response: `{}`
 
-### ClientGetDealInfo
+## ClientGetDealInfo
 
 ClientGetDealInfo returns the latest information about a given deal.
 
@@ -361,7 +361,7 @@ Response:
 }
 ```
 
-### ClientGetDealStatus
+## ClientGetDealStatus
 
 ClientGetDealStatus returns status given a code
 
@@ -380,7 +380,7 @@ Inputs:
 
 Response: `"string value"`
 
-### ClientGetDealUpdates
+## ClientGetDealUpdates
 
 ClientGetDealUpdates returns the status of updated deals
 
@@ -473,7 +473,7 @@ Response:
 }
 ```
 
-### ClientGetRetrievalUpdates
+## ClientGetRetrievalUpdates
 
 ClientGetRetrievalUpdates returns status of updated retrieval deals
 
@@ -539,7 +539,7 @@ Response:
 }
 ```
 
-### ClientHasLocal
+## ClientHasLocal
 
 ClientHasLocal indicates whether a certain CID is locally stored.
 
@@ -560,7 +560,7 @@ Inputs:
 
 Response: `true`
 
-### ClientImport
+## ClientImport
 
 ClientImport imports file under the specified path into filestore.
 
@@ -594,7 +594,7 @@ Response:
 }
 ```
 
-### ClientListDataTransfers
+## ClientListDataTransfers
 
 ClientListTransfers returns the status of all ongoing transfers of data
 
@@ -641,7 +641,7 @@ Response:
 ]
 ```
 
-### ClientListDeals
+## ClientListDeals
 
 ClientListDeals returns information about the deals made by the local client.
 
@@ -736,7 +736,7 @@ Response:
 ]
 ```
 
-### ClientListImports
+## ClientListImports
 
 ClientListImports lists imported files and their root CIDs
 
@@ -762,7 +762,7 @@ Response:
 ]
 ```
 
-### ClientListRetrievals
+## ClientListRetrievals
 
 ClientQueryAsk returns a signed StorageAsk from the specified miner. ClientListRetrievals returns information about retrievals made by the local client
 
@@ -830,7 +830,7 @@ Response:
 ]
 ```
 
-### ClientMinerQueryOffer
+## ClientMinerQueryOffer
 
 ClientMinerQueryOffer returns a QueryOffer for the specific miner and file.
 
@@ -878,7 +878,7 @@ Response:
 }
 ```
 
-### ClientQueryAsk
+## ClientQueryAsk
 
 Perms: read
 
@@ -912,7 +912,7 @@ Response:
 }
 ```
 
-### ClientRemoveImport
+## ClientRemoveImport
 
 ClientRemoveImport removes file import
 
@@ -931,7 +931,7 @@ Inputs:
 
 Response: `{}`
 
-### ClientRestartDataTransfer
+## ClientRestartDataTransfer
 
 ClientRestartDataTransfer attempts to restart a data transfer with the given transfer ID and other peer
 
@@ -952,7 +952,7 @@ Inputs:
 
 Response: `{}`
 
-### ClientRetrieve
+## ClientRetrieve
 
 ClientRetrieve initiates the retrieval of a file, as specified in the order.
 
@@ -994,7 +994,7 @@ Inputs:
 
 Response: `{}`
 
-### ClientRetrieveTryRestartInsufficientFunds
+## ClientRetrieveTryRestartInsufficientFunds
 
 ClientRetrieveTryRestartInsufficientFunds attempts to restart stalled retrievals on a given payment channel which are stuck due to insufficient funds
 
@@ -1013,7 +1013,7 @@ Inputs:
 
 Response: `{}`
 
-### ClientRetrieveWithEvents
+## ClientRetrieveWithEvents
 
 ClientRetrieveWithEvents initiates the retrieval of a file, as specified in the order, and provides a channel of status updates.
 
@@ -1068,7 +1068,7 @@ Response:
 }
 ```
 
-### ClientStartDeal
+## ClientStartDeal
 
 ClientStartDeal proposes a deal with a miner.
 
@@ -1105,7 +1105,7 @@ Inputs:
 
 Response: `null`
 
-### ClientStatelessDeal
+## ClientStatelessDeal
 
 ClientStatelessDeal fire-and-forget-proposes an offline deal to a miner without subsequent tracking.
 

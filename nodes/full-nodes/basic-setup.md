@@ -36,6 +36,6 @@ To install Lotus on your computer, follow these steps:
 
     This will start the Lotus miner, which will use your computer’s computing power to mine new blocks on the Filecoin network.
 
-### Deeper dive
+## Deeper dive
 
 For a deeper dive into how to install Lotus on your system, including more advanced setups and configuration, check out the official [Lotus documentation](https://lotus.filecoin.io/lotus/install/prerequisites/).

@@ -12,6 +12,6 @@ Before installing Lotus on your computer, you will need to meet the following pr
 * **Firewall and port forwarding**: Ensure that your firewall settings and port forwarding rules allow incoming and outgoing traffic on the ports used by Lotus.
 * **Command-line interface**: Lotus is primarily operated through the command line interface. Ensure that you have a basic understanding of command-line usage and are comfortable working in a terminal environment.
 
-### Lotus documentation
+## Lotus documentation
 
 To get more information, check out the official [Lotus documentation](https://lotus.filecoin.io/lotus/install/prerequisites/).

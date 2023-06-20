@@ -6,13 +6,13 @@ description: >-
 
 # Reference architectures
 
-### 1 PiB raw architecture
+## 1 PiB raw architecture
 
 <figure><img src="https://docs.filecoin.io/storage-provider/infrastructure/reference-architectures/1PIB_hu3aa5be9abfbc866b330731e24d743847_146876_1477x0_resize_q75_h2_box_3.webp" alt=""><figcaption></figcaption></figure>
 
 The following reference architecture is designed for 1 PiB of raw sectors or raw data to be stored. Let’s discuss the various design choices of this architecture.
 
-#### Virtual machines
+### Virtual machines
 
 * 32 CPU Cores
 * 512 GB RAM
@@ -27,7 +27,7 @@ We recommend 12-16 cores per VM and 128 GiB of memory. Lotus daemon and Boost ne
 
 Both Lotus daemon and Boost require public internet connectivity. In the case of Boost you also need to consider bandwidth. Depending on the deal size you are accepting, you might require 1 Gbps or 10 Gbps internet bandwidth.
 
-#### Lotus miner
+### Lotus miner
 
 * 16 CPU Cores
 * 256 GB RAM
@@ -38,11 +38,11 @@ Lotus miner becomes a less intensive process with dedicated PoST workers separat
 
 We opted for a standalone Lotus miner in this design and gave it 256 GiB of memory. This is because we operate ZFS at the storage layer, which requires a lot of memory for caching. Lotus miner has enough with 128 GiB of memory when you opt for a dedicated storage server or NAS system for your storage.
 
-#### SATA Storage
+### SATA Storage
 
 In this architecture we have attached storage shelves to the Lotus miner with 2.4 PiB of usable capacity. This is the capacity after the creation of a RAIDZ2 file system (double parity). We recommend vdevs of 12 disks wide. In RAIDZ2 this results in 10 data disks and 2 parity disks. Storage systems also don’t behave well at 100% used capacity, so we designed for 20% extra capacity.
 
-#### PoST workers
+### PoST workers
 
 * 16 CPU Cores
 * 128 GB RAM
@@ -54,7 +54,7 @@ We have split off the Winning PoST and Window PoST tasks from the Lotus miner. U
 
 PoST workers require 128 GiB of memory at the minimum and require a capable GPU with 10GB of memory and 3500 or more CUDA cores.
 
-#### Sealing workers
+### Sealing workers
 
 The sealing workers require the most attention during the design of a solution. Their performance will define the sealing rate of your setup, and hence, how fast you can onboard client deals.
 
@@ -100,7 +100,7 @@ The scratch space contents from PC1 is copied over to the PC2 worker. This PC2 w
 
 C1 doesn’t require much attention for our architecture. C2 however requires a capable GPU again.
 
-### Solo storage providing
+## Solo storage providing
 
 Please take a look at the presentation Benjamin Hoejsbo from [PIKNIK](https://www.piknik.com) gave, in which solo storage provider setups are examined. The presentation is from 2022, but the content is still relevant as of March 2023.
 
