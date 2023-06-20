@@ -6,11 +6,11 @@ description: >-
 
 # Solidity libraries
 
-### OpenZeppelin
+## OpenZeppelin
 
 [OpenZeppelin](https://www.openzeppelin.com/contracts) provides a library of battle-tested smart contract templates, including widely used implementations of ERC token standards. For a guided example that implements an ERC20 token on the Filecoin network, see [Example using an ERC20 contract](https://docs.filecoin.io/smart-contracts/developing-contracts/ethereum-libraries/#example-using-an-erc20-contract).
 
-#### Benefits
+### Benefits
 
 OpenZeppelin offers the following to smart contract developers:
 
@@ -25,7 +25,7 @@ Token standards, such as [ERC20](https://docs.openzeppelin.com/contracts/4.x/erc
 * [ERC777](https://docs.openzeppelin.com/contracts/4.x/erc777) provides a richer standard for fungible tokens, supporting new use cases and backwards compatibility with ERC20.
 * [ERC1155](https://docs.openzeppelin.com/contracts/4.x/erc1155) is a new standard for _multi-tokens_, where a single contract represents multiple fungible and non-fungible tokens, and operations are batched for increased gas efficiency.
 
-#### Using OpenZeppelin with FVM
+### Using OpenZeppelin with FVM
 
 The _general_ procedure for using OpenZeppelin with FVM is as follows:
 
@@ -41,7 +41,7 @@ The _general_ procedure for using OpenZeppelin with FVM is as follows:
 
 Thanks to the FVM, your contract can be integrated and deployed on the Filecoin network with OpenZeppelin inheritance. For a guided example that implements an ERC20 token on the Filecoin network, see [Example using an ERC20 contract](https://docs.filecoin.io/smart-contracts/developing-contracts/ethereum-libraries/#example-using-an-erc20-contract).
 
-#### Example using an ERC20 contract
+### Example using an ERC20 contract
 
 In the following tutorial, you’ll write and deploy a smart contract that implements the [ERC20](https://docs.openzeppelin.com/contracts/4.x/erc20) on the Calibration testnet using Remix and MetaMask:
 
@@ -105,7 +105,7 @@ In this procedure, you will create, deploy, mint and send an [ERC20](https://doc
 
 Once the network processes the transaction, the token is minted and sent to your network address. Congratulations, you’ve completed the tutorial!
 
-#### Additional resources
+### Additional resources
 
 Learn more about OpenZeppelin with the following resources:
 
@@ -113,14 +113,14 @@ Learn more about OpenZeppelin with the following resources:
 * [Documentation](https://docs.openzeppelin.com/contracts/4.x/)
 * [GitHub](https://github.com/OpenZeppelin/openzeppelin-contracts)
 
-### DappSys
+## DappSys
 
 The DappSys library provides safe, simple, and flexible Ethereum contract building blocks for common Ethereum and Solidity use cases.
 
 * [Documentation](https://dappsys.readthedocs.io/en/latest/)
 * [GitHub](https://github.com/dapphub/dappsys)
 
-### 0x protocol
+## 0x protocol
 
 The 0x protocol library provides a set of secure smart contracts that facilitate peer-to-peer exchange of Ethereum-based assets.
 

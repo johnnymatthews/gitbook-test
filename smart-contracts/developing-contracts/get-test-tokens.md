@@ -7,7 +7,7 @@ description: >-
 
 # Get test tokens
 
-### Calibration testnet
+## Calibration testnet
 
 MetaMask is one of the easier ways to manage addresses on the Calibration testnet. MetaMask uses the `t4` [address type](https://docs.filecoin.io/basics/what-is-filecoin/blockchain/#addresses), which allows developers to create and manage Solidity contracts easily. Follow the [Add to MetaMask guide](https://docs.filecoin.io/basics/assets/metamask-setup/) if you havn’t set up an address in your MetaMask wallet yet. w
 
@@ -32,7 +32,7 @@ MetaMask is one of the easier ways to manage addresses on the Calibration testne
 
 That’s all there is to it! Getting `tFil` is easy!
 
-### Local testnet
+## Local testnet
 
 Before we begin, you must have a local testnet running. Follow the [Run a local network guide](https://docs.filecoin.io/networks/local-testnet/set-up/) if you haven’t got a local testnet set up yet.
 

@@ -7,7 +7,7 @@ description: >-
 
 # Verify a contract
 
-### Verification tools
+## Verification tools
 
 The following FEVM-compatible chain explorers offer contract verification tools. For more information, click the appropriate link below.
 
@@ -15,17 +15,17 @@ The following FEVM-compatible chain explorers offer contract verification tools.
 * [Starboard](https://fvm.starboard.ventures/explorer/verifier)
 * [Beryx](https://beryx.zondax.ch/contract\_verifier)
 
-### Verification tutorial with Filfox
+## Verification tutorial with Filfox
 
 The following guide walks you through the process of contract verification using the [Filfox](https://filfox.info/en/contract) explorer.
 
-#### Prerequisites
+### Prerequisites
 
 * A smart contract (`.sol` file)
 * [Remix](https://remix.ethereum.org/)
 * Access to one of the [verification tools](https://docs.filecoin.io/smart-contracts/developing-contracts/verify-contracts/#verification-tools)
 
-#### Procedure
+### Procedure
 
 1. Open Remix.
 2. In the **File Explorer** sidebar tab, under **contracts**, right click on the contract you want to verify.

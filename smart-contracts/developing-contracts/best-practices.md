@@ -6,11 +6,11 @@ description: >-
 
 # Best practices
 
-### Transactions
+## Transactions
 
 Best practices for transactions are described below.
 
-#### Consistently generating transaction receipts
+### Consistently generating transaction receipts
 
 Since receipts in Filecoin are generated in the next tipset, depending on when a transaction is submitted to the mempool, the receipt may take between 30 and 90 seconds to return. To consistently return transaction receipts when deploying a transaction or awaiting confirmation, change the default transaction receipt timeout (60000 ms or 1 minute for many toolchains) to 90 seconds or more. An example that sets `timeout` to `180000` (3 minutes) for an Open Zeppelin upgradeable proxy is as follows:
 
@@ -23,7 +23,7 @@ const deployment = await upgrades.deployProxy(contract, preparedArguments, {
 });
 ```
 
-#### Unstuck a message from the mempool
+### Unstuck a message from the mempool
 
 When users send messages to the Filecoin network, those messages will first land in the mempool. Once a node receives your message, it will verify the gas fee and signature and then process the transaction. Depending on network traffic and other factors, this process may take some time.
 
@@ -48,7 +48,7 @@ Developers processing messages using SDKs, such as ethers.js or web3.js, must re
 3. Set a higher `gasLimit` and `gasPrice` for this message.
 4. Sign and send the new message.
 
-### Futureproofing
+## Futureproofing
 
 Developers should take the time to thoroughly read through the following summary of possible contract future-proofing updates, as failure to properly future proof smart contracts may result in incompatibility with future Filecoin releases.
 
@@ -57,7 +57,7 @@ Developers should take the time to thoroughly read through the following summary
 * If a contract sends funds to actors that are non-native, Ethereum, or EVM smart contract accounts, it [must use the `call_actor` precompile](https://docs.filecoin.io/smart-contracts/developing-contracts/best-practices/#contracts-sending-funds-to-specific-actors).
 * If a contract is interacting with built-in actors, it must upgrade to the [latest version of Filecoin Solidity library, currently `v0.8`](https://docs.filecoin.io/smart-contracts/developing-contracts/best-practices/#contracts-interacting-with-built-in-actors).
 
-#### All contracts
+### All contracts
 
 All contracts must do the following:
 
@@ -75,19 +75,19 @@ Smart contracts should use `CBOR (0x51)` in outputs. Specifically:
 * Always pass `CBOR` to the `call_actor` precompile. `DAG_CBOR` is currently forbidden.
 * Always return `CBOR` from `handle_filecoin_method`. `DAG_CBOR` is currently forbidden.
 
-#### Contracts using `GranularityExported` hash
+### Contracts using `GranularityExported` hash
 
 The `GranularityExported` method in the Datacap actor was renamed to `Granularity`, so any contracts which use the FRC42 hash of `GranularityExported` (`953701584`) must update the hash to `3936767397` and redeploy.
 
-#### Contracts sending funds to specific actors
+### Contracts sending funds to specific actors
 
 Any contracts sending funds to actors that are not native accounts (`f1` or `f3` addresses), Ethereum accounts, or EVM smart contracts must now use the `call_actor` precompile. **Solidity’s transfer function will no longer work as that will attempt to invoke the target actor as an EVM contract**.
 
-#### Contracts interacting with built-in actors
+### Contracts interacting with built-in actors
 
 All contracts interacting with built-in actors must upgrade to the [latest version of Filecoin Solidity library, currently `v0.8`](https://github.com/Zondax/filecoin-solidity/tree/master/contracts/v0.8). The IPLD codec used in the `handle_filecoin_method` solidity entrypoint and the `call_actor` should now be `CBOR (0x51)`, not `DAG_CBOR (0x71)`, as previously used. The underlying encoding (i.e. the payload bytes) are the same, but the codec numbers are now different. `DAG_CBOR` support will be re-enabled in the future but the usage of the codec implies additional runtime guarantees that have not yet been implemented.
 
-### Contract Verification
+## Contract Verification
 
 When deploying contracts to mainnet, it is important to verify your contracts to improve transparency, security and trustlessness of the network. The process of verifying your contract involves recompiling your contract’s source code to ensure that the produced bytecode matches the bytecode that is already live on the network since it was deployed.
 

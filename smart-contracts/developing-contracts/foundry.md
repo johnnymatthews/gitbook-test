@@ -9,7 +9,7 @@ description: >-
 
 The template repository contains submodules and remappings for ds-test assertions for testing, solmate building blocks for contracts, and forge-std to layer on top of EVM cheat codes to improve UX.
 
-### Prerequisites
+## Prerequisites
 
 You must have the following installed:
 
@@ -18,7 +18,7 @@ You must have the following installed:
 
 You should also have an address on the Filecoin Calibration testnet. See the [Add to MetaMask page](https://docs.filecoin.io/basics/assets/metamask-setup/) for information on how to get an address. You also need test-FIL `tFIL` in your wallet. See the [Use a Faucet](https://docs.filecoin.io/smart-contracts/developing-contracts/get-test-tokens/) page for information on how to get test funds.
 
-### Steps
+## Steps
 
 1.  Clone the `xBalbinus/fevm-foundry-kit` repository and move into the `fevm-foundry-kit` directory:
 

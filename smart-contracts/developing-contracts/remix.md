@@ -6,13 +6,13 @@ description: >-
 
 # Remix
 
-### Launch an ERC-20 token
+## Launch an ERC-20 token
 
 As a simple introduction, we’re going to use Remix to create an ERC-20 token on the Filecoin network. In this guide, we’re using the Calibration testnet, but this process is the same for mainnet.
 
 This guide assumes you’ve already connected your MetaMask extension to a Filecoin network. If you haven’t done so yet, [check out this guide to add the Hyperspace testnet to MetaMask](https://docs.filecoin.io/basics/assets/metamask-setup/).
 
-#### Create a workspace
+### Create a workspace
 
 In Remix, workspaces are where you can create a contract, or group of contracts, for each project. Let’s create a new workspace to create our new ERC-20 token.
 
@@ -27,7 +27,7 @@ In Remix, workspaces are where you can create a contract, or group of contracts,
 
     ![Set workspace details.](https://docs.filecoin.io/smart-contracts/developing-contracts/remix/create-a-workspace-details\_hube86baae893ca7489237727aa1192243\_224220\_1440x0\_resize\_q75\_h2\_box\_3.webp)
 
-#### Customize the contract
+### Customize the contract
 
 The contract template we’re using is pretty simple. We just need to modify a couple of variables.
 
@@ -43,7 +43,7 @@ The contract template we’re using is pretty simple. We just need to modify a c
 
 That’s all we need to change within this contract. You can see on line 4 that this contract is importing another contract from `@openzeppelin` for us, meaning that we can keep our custom token contract simple.
 
-#### Compile
+### Compile
 
 1.  Click the green play symbol at the top of the workspace to compile your contract. You can also press `CMD` + `s` on MacOS or `CTRL` + `s` on Linux and Windows.
 
@@ -52,7 +52,7 @@ That’s all we need to change within this contract. You can see on line 4 that 
 
     ![Compile and get the dependencies](https://docs.filecoin.io/smart-contracts/developing-contracts/remix/compile-deps\_hu91fca83f29d2c07e42bb219cc12af660\_213060\_1440x0\_resize\_q75\_h2\_box\_3.webp)
 
-#### Deploy
+### Deploy
 
 Now that we’ve successfully compiled our contract, we need to deploy it somewhere! This is where our previous MetaMask setup comes into play.
 
@@ -92,11 +92,11 @@ This guide assumes you’ve already connected your MetaMask extension to a Filec
 
 On the Filecoin network, a new set of blocks, also called a tipset, is created every thirty seconds. When deploying a contract, the transaction needs to be received by the network, and then the network needs to confirm the contract. This process takes around one to two tipsets to process – or around 60 to 90 seconds.
 
-### Use your contract
+## Use your contract
 
 Now that we’ve compiled and deployed the contract, it’s time to actually interact with it!
 
-#### Mint your tokens
+### Mint your tokens
 
 Let’s call a method within the deployed contract to mint some tokens.
 
@@ -119,7 +119,7 @@ Let’s call a method within the deployed contract to mint some tokens.
 
 Again, you must wait for the network to process the transaction, which should take about 90 seconds. You can move on to the next section while you’re waiting.
 
-#### Add to MetaMask
+### Add to MetaMask
 
 Currently, MetaMask has no idea what our token is or what it even does. We can fix this by explicitly telling MetaMask the address of our contract.
 
@@ -140,7 +140,7 @@ Currently, MetaMask has no idea what our token is or what it even does. We can f
 
 And that’s it! Deploying an ERC-20 token on Filecoin is simple!
 
-#### Adjusting your gas fees
+### Adjusting your gas fees
 
 Remix uses a default of 2.5 nanoFIL per gas as a priority fee, which is usually too high for the Filecoin network. If you don’t adjust this, you may end up overpaying when deploying to mainnet. We recommend that you switch from the site-suggested gas fees to oracle-supplied gas fees when deploying your contract.
 

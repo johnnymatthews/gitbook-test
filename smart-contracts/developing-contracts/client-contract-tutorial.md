@@ -16,11 +16,11 @@ In this tutorial, we will cover the background of creating storage deals via sma
 
 You can find a video form of this walkthrough on [ETHGlobal’s YouTube Channel](https://www.youtube.com/watch?v=27EV3gQGY9k).
 
-### Workflows
+## Workflows
 
 Before we get started, let’s quickly cover the two workflows for creating storage deals.
 
-#### Regular deal creation workflow
+### Regular deal creation workflow
 
 Filecoin is a blockchain tailor-made for processing storage deals. Before the Filecoin virtual machine was implemented into the network, storage deals could only be created using the following workflow:
 
@@ -28,17 +28,17 @@ Filecoin is a blockchain tailor-made for processing storage deals. Before the Fi
 
 This process requires a lot of different actions to be taken by both the client and the storage provider. But with the advent of the Filecoin Virtual Machine, smart contracts can be deployed on top of the Filecoin blockchain. This allows developers to access and now create Filecoin Storage Deals within smart contracts! And thus, now developers can also create new storage deals on the Filecoin blockchain. This reduces the number of actions clients, and storage providers have to take to generate storage deals.
 
-#### Smart contract deal creation workflow
+### Smart contract deal creation workflow
 
 To create storage deals, smart contracts need a specific Solidity event called `DealProposalCreate`. Storage Providers running [Boost software](https://boost.filecoin.io/) can then listen for this event and, if the deal is acceptable to them, pick up the deal automatically. The workflow can be seen below.
 
 <figure><img src="../../.gitbook/assets/Untitled.png" alt="" width="488"><figcaption></figcaption></figure>
 
-### Steps
+## Steps
 
 Let’s now run through how to create storage deals via smart contracts.
 
-#### Setup
+### Setup
 
 First, let’s grab the kit and set up the development environment.
 
@@ -81,7 +81,7 @@ First, let’s grab the kit and set up the development environment.
 
     This should compile and deploy all the contracts, including the client contract, which is the one we will be interacting with. Copy and take note of the address of the deployed contract for later.
 
-#### Preparing a file for storage
+### Preparing a file for storage
 
 Before storing a file with a storage provider, it needs to be prepared by turning it into a `.car` file, and the metadata must be recorded. To do this the Hardhat kit has a tool [which can do this for you](https://github.com/filecoin-project/fevm-hardhat-kit/tree/main/tools). However, to keep things nice and simple, we’re going to use the [FVM Data Depot website](https://data.lighthouse.storage/). This website will automatically convert files to the `.car` format, output all the necessary metadata, and act as an HTTP retrieval point for the storage providers.
 
@@ -97,7 +97,7 @@ Before storing a file with a storage provider, it needs to be prepared by turnin
 
     We’ll use this information in the next step when invoking the `MakeDealProposal` method.
 
-#### Invoke the MakeDealProposal method
+### Invoke the MakeDealProposal method
 
 Now that we have the `.car` file prepared in the data depot, we can invoke the MakeDealProposal method on the smart contract we deployed earlier. To do this, we will run the `make-deal-proposal` task in Hardhat. There are quite a few parameters to include in this call:
 
@@ -135,10 +135,10 @@ yarn hardhat make-deal-proposal \
 
 Parameters such as the `collateral` and `price-per-epoch` are set to `0`. On mainnet, these would be determined by storage providers, but since this is on the Calibration testnet, the storage providers should pick up the jobs even with these parameters set to `0`.
 
-#### Storage provider picks up the job
+### Storage provider picks up the job
 
 Now if you’ve invoked the task with all the correct parameters, the method will execute on-chain and emit an event that Boost storage providers will be listening to. If the deal is well-formed and the parameters are acceptable, they will download the .car file, double-check to ensure the `piece-cid` and `piece-size` match the deal and publish your storage deal! This could take up to a day. Once the deal is published, you can find it on a [Calibration testnet block explorer](https://docs.filecoin.io/networks/calibration/explorers/). The client in the deal should be the `t4` address of the smart contract we called `MakeStorageDeal` on.
 
-#### Conclusion
+## Conclusion
 
 During this tutorial, we have shown the significance of making deals using smart contracts and then walked through making a storage deal using the FVM deal-making kit and web3.storage. Developers can make use of this workflow to integrate decentralized storage on Filecoin with their smart contracts and decentralized applications.
