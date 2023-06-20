@@ -8,14 +8,14 @@ description: >-
 
 **Maintainer**: [Protocol Labs](https://protocol.ai)
 
-### Genesis
+## Genesis
 
 * CAR File: `QmavMCf95w2UMYGD1J5GpHcWBWXR2jTFYmtAkgeroMmpk1`
 * Reset Timestamp: `2020-08-24T22:00:00Z`
 * Genesis Block CID: `bafy2bzacecnamqgqmifpluoeldx7zzglxcljo6oja4vrmtj7432rphldpdmm2`
 * SHA-1 Digest: `4782cb42b4b01793b5cd9f593cc3dc87b6d3c7b4`
 
-### Network parameters
+## Network parameters
 
 * Supported Sector Sizes: `32 GiB` and `64 GiB`
 * Consensus Miner Min Power: `10 TiB`
@@ -26,10 +26,7 @@ description: >-
 * WindowPoSt Period Deadlines: `48`
 * Pre-Commit Challenge Delay: `150`
 
-### Bootstrap peers
-
-```
-```
+## Bootstrap peers
 
 ```plaintext
 /dns4/bootstrap-0.mainnet.filops.net/tcp/1347/p2p/12D3KooWCVe8MmsEMes2FzgTpt9fXtmCY7wrq91GRiaC8PHSCCBj
@@ -49,7 +46,7 @@ description: >-
 /dns4/bootstrap-1.ipfsmain.cn/tcp/34723/p2p/12D3KooWMKxMkD5DMpSWsW7dBddKxKT7L2GgbNuckz9otxvkvByP
 ```
 
-### Resources
+## Resources
 
 * [Latest lightweight snapshot](https://snapshots.mainnet.filops.net/minimal/latest) generated with [Lotus](https://lotus.filecoin.io/) by [Protocol Labs](https://protocol.ai/)
 * [Latest lightweight snapshot](https://forest.chainsafe.io/mainnet/snapshot-latest) generated with [Forest](http://github.com/ChainSafe/forest) by [ChainSafe](https://chainsafe.io/)

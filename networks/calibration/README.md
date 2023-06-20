@@ -16,18 +16,18 @@ A drawback of 32 GiB and 64 GiB sectors is that storage providers generally pref
 
 [PiKNiK](https://www.piknik.com/) is running a Boost-enabled storage provider that will listen out for small deals to solve this issue. The PiKNiK SP will attempt to aggregate these deals into 32 GiB sectors. If a deal has yet to be bundled into a 32 GiB sector after 12 hours, then the PiKNiK SP will publish it in whatever state it is in.
 
-Developers can reference pre-existing deals that are already available on the network. [See the PiKNiK documentation for more details](https://docs.filecoin.io/networks/calibration/details/). See the [`#fil-net-calibration-discuss` channel in the Filecoin Slack](https://filecoinproject.slack.com/archives/C01D42NNLMS) for support.
+Developers can reference pre-existing deals that are already available on the network. See the [`#fil-net-calibration-discuss` channel in the Filecoin Slack](https://filecoinproject.slack.com/archives/C01D42NNLMS) for support.
 
 **Maintainer**: [Protocol Labs](https://protocol.ai)
 
-### Genesis
+## Genesis
 
 * CAR File: `QmY581cXXtNwHweiC69jECupu9EBx274huHjSgxPNv1zAAj`
 * Reset Timestamp: `2021-02-19T23:10:00Z`
 * Genesis Block CID: `bafy2bzaceapb7hfdkewspic7udnogw4xnhjvhm74xy5snwa24forre5z4s2lm`
 * SHA-1 Digest: `944c0c13172b9f552dfed5dfaffaba95113c8254`
 
-### Network parameters
+## Network parameters
 
 * Supported Sector Sizes: `32 GiB` and `64 GiB`
 * Consensus Miner Min Power: `32 GiB`
@@ -38,10 +38,7 @@ Developers can reference pre-existing deals that are already available on the ne
 * WindowPoSt Period Deadlines: `48`
 * Pre-Commit Challenge Delay: `150`
 
-### Bootstrap peers
-
-```
-```
+## Bootstrap peers
 
 ```plaintext
 /dns4/bootstrap-0.calibration.fildev.network/tcp/1347/p2p/12D3KooWRLZAseMo9h7fRD6ojn6YYDXHsBSavX5YmjBZ9ngtAEec
@@ -50,11 +47,11 @@ Developers can reference pre-existing deals that are already available on the ne
 /dns4/bootstrap-3.calibration.fildev.network/tcp/1347/p2p/12D3KooWLrPM4WPK1YRGPCUwndWcDX8GCYgms3DiuofUmxwvhMCn
 ```
 
-### Snapshots
+## Snapshots
 
 * [Latest minimal snapshot](https://snapshots.calibrationnet.filops.net/minimal/latest.zst)
 
-### Resources
+## Resources
 
 * [Faucet](https://faucet.calibration.fildev.network/)
 * [Stats Dashboard](https://stats.calibration.fildev.network/)

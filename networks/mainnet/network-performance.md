@@ -10,11 +10,11 @@ The Filecoin Network is a decentralized storage market and network that provides
 
 It is highly non-trivial to provide highly reliable benchmarks for Filecoin network performance. However, as you begin interacting with Filecoin, you can use these heuristics to understand general Filecoin network performance and how it fits your use case.
 
-#### Financial transfers
+### Financial transfers
 
 A message that requires [transferring FIL](https://lotus.filecoin.io/docs/set-up/manage-fil/) is often extremely fast, and will take on average \~1 blocktime (or around 30 seconds) to be reflected on-chain. We consider 120 blocks (1 hour) a conservative number of confirmations for high-value transfers.
 
-### Data storage
+## Data storage
 
 In the Filecoin [data storage protocol](https://lotus.filecoin.io/docs/developers/store-data/), the following occurs once a deal is proposed and accepted:
 
@@ -25,7 +25,7 @@ In the Filecoin [data storage protocol](https://lotus.filecoin.io/docs/developer
 
 For the majority of clients, the most important metric is the time from deal acceptance to deal appearance on-chain. This metric is the sum of the time required to complete steps (1) through (3), described above. Based on current high-level benchmarks, these steps are estimated to take roughly 5-10 minutes for a 1 MiB file.
 
-### Data retrieval
+## Data retrieval
 
 There are two methods by which one can directly [retrieve data](https://lotus.filecoin.io/docs/developers/retrieve-data/) from the Filecoin network:
 

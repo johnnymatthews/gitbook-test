@@ -14,11 +14,11 @@ Spacenet aims to provide developers with a testbed to deploy decentralized appli
 
 To learn more about what you can do on Spacenet, visit the [Interplanetary Consensus](https://docs.filecoin.io/basics/interplanetary-consensus/overview/) section. For instructions on working with Spacenet, visit the [Spacenet repository](https://github.com/consensus-shipyard/spacenet).
 
-### Genesis
+## Genesis
 
 * [Spacenet Genesis](https://github.com/consensus-shipyard/lotus/blob/spacenet/build/genesis/spacenet.car)
 
-### Network parameters
+## Network parameters
 
 * Supported Sector Sizes: `2 KiB` and `8 MiB`
 * Consensus Miner Min Power: `2 KiB`
@@ -28,17 +28,14 @@ To learn more about what you can do on Spacenet, visit the [Interplanetary Conse
 * WindowPoSt Period Deadlines: `48`
 * Pre-Commit Challenge Delay: `10`
 
-### Bootstrap peers
-
-```
-```
+## Bootstrap peers
 
 ```plaintext
 /dns4/bootstrap-1.spacenet.ipc.space/tcp/1347/p2p/12D3KooWBgvwdJfJzi33n3RtesHdXvW16pGqaVgzD2WCijxvwEp1
 /dns4/bootstrap-2.spacenet.ipc.space/tcp/1347/p2p/12D3KooW9u5RNjcw5zbkZcWGo2WWwjEbvr1Qz7sTs9GpxNw5xNzC
 ```
 
-### Resources
+## Resources
 
 * [Spacenet repository](https://github.com/consensus-shipyard/spacenet)
 * [Spacenet status page](https://spacenet.statuspage.io/)
