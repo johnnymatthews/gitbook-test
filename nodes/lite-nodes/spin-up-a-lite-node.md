@@ -21,42 +21,49 @@ To build the lite-node, you’ll need some specific software. Run the following 
 {% tabs %}
 {% tab title="MacOS" %}
 1. Ensure you have [XCode](https://developer.apple.com/xcode/) and [Homebrew](https://brew.sh/) installed.
-2. Install the following dependencies:
+2.  Install the following dependencies:\
+
 
     ```sh
     brew install go bzr jq pkg-config hwloc coreutils
     ```
 
-3. Install Rust and source the `~/.cargo/env` config file:
+
+3.  Install Rust and source the `~/.cargo/env` config file:\
+
 
     ```sh
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
     source "$HOME/.cargo/env"
     ```
-
 {% endtab %}
+
 {% tab title="Ubuntu" %}
-1. Install the following dependencies:
+1.  Install the following dependencies:\
+
 
     ```sh
     sudo apt update -y
     sudo apt install mesa-opencl-icd ocl-icd-opencl-dev gcc git bzr jq pkg-config curl clang build-essential hwloc libhwloc-dev wget -y
     ```
 
-2. Install Go and add `/usr/local/go/bin` to your `$PATH` variable:
+
+2.  Install Go and add `/usr/local/go/bin` to your `$PATH` variable:\
+
 
     ```sh
     wget -c https://golang.org/dl/go1.18.8.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
     echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc && source ~/.bashrc
     ```
 
-3. Install Rust and source the `~/.cargo/env` config file:
+
+3.  Install Rust and source the `~/.cargo/env` config file:\
+
 
     ```sh
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
     source "$HOME/.cargo/env"
     ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -66,14 +73,17 @@ Before we can build the Lotus binaries, there’s some setup we need to do. MacO
 
 {% tabs %}
 {% tab title="MacOS Intel" %}
-1. Clone the repository, and move into the `lotus` directory:
+1.  Clone the repository, and move into the `lotus` directory:\
+
 
     ```sh
     git clone https://github.com/filecoin-project/lotus.git
     cd lotus/
     ```
 
-2. Switch to the branch representing the network you want to use:
+
+2.  Switch to the branch representing the network you want to use:\
+
 
     ```sh
     git checkout releases # Mainnet
@@ -81,18 +91,23 @@ Before we can build the Lotus binaries, there’s some setup we need to do. MacO
     # Or to use the Calibration testnet run
     # git checkout ntwk/calibration
     ```
+
 
 3. Done! You can move on to the [Build](https://docs.filecoin.io/nodes/lite-nodes/spin-up-a-lite-node/#build-the-binary) section.
 {% endtab %}
+
 {% tab title="MacOS ARM" %}
-1. Clone the repository, and move into the `lotus` directory:
+1.  Clone the repository, and move into the `lotus` directory:\
+
 
     ```sh
     git clone https://github.com/filecoin-project/lotus.git
     cd lotus/
     ```
 
-2. Switch to the branch representing the network you want to use:
+
+2.  Switch to the branch representing the network you want to use:\
+
 
     ```sh
     git checkout releases # Mainnet
@@ -101,7 +116,9 @@ Before we can build the Lotus binaries, there’s some setup we need to do. MacO
     # git checkout ntwk/calibration
     ```
 
-3. Create the necessary environment variables to allow Lotus to run on M1 architecture:
+
+3.  Create the necessary environment variables to allow Lotus to run on M1 architecture:\
+
 
     ```bash
     export LIBRARY_PATH=/opt/homebrew/lib
@@ -109,17 +126,22 @@ Before we can build the Lotus binaries, there’s some setup we need to do. MacO
     export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
     ```
 
+
 4. Done! You can move on to the [Build](https://docs.filecoin.io/nodes/lite-nodes/spin-up-a-lite-node/#build-the-binary) section.
 {% endtab %}
+
 {% tab title="Ubuntu" %}
-1. Clone the repository, and move into the `lotus` directory:
+1.  Clone the repository, and move into the `lotus` directory:\
+
 
     ```sh
     git clone https://github.com/filecoin-project/lotus.git
     cd lotus/
     ```
 
-2. Switch to the branch representing the network you want to use:
+
+2.  Switch to the branch representing the network you want to use:\
+
 
     ```sh
     # Checkout to mainnet
@@ -129,12 +151,15 @@ Before we can build the Lotus binaries, there’s some setup we need to do. MacO
     # git checkout ntwk/calibration
     ```
 
-3. If your processor was released later than an AMD Zen or Intel Ice Lake CPU, enable the use of SHA extensions by adding these two environment variables. If in doubt, ignore this command and move on to [the next section](https://docs.filecoin.io/nodes/lite-nodes/spin-up-a-lite-node/#build-the-binary).
+
+3.  If your processor was released later than an AMD Zen or Intel Ice Lake CPU, enable the use of SHA extensions by adding these two environment variables. If in doubt, ignore this command and move on to [the next section](https://docs.filecoin.io/nodes/lite-nodes/spin-up-a-lite-node/#build-the-binary).\
+
 
     ```sh
     export RUSTFLAGS="-C target-cpu=native -g"
     export FFI_BUILD_FROM_SOURCE=1
     ```
+
 
 4. Done! You can move on to the Build section.
 {% endtab %}
@@ -146,52 +171,59 @@ The last thing we need to do to get our node setup is to build the package. The 
 
 {% tabs %}
 {% tab title="Mainnet" %}
-1. Remove or delete any existing Lotus configuration files on your system:
+1.  Remove or delete any existing Lotus configuration files on your system:\
+
 
     ```shell
     mv ~/.lotus ~/.lotus-backup
     ```
 
-1. Make the Lotus binaries and install them:
+
+2.  Make the Lotus binaries and install them:\
+
 
     ```shell
     make clean all
     sudo make install
     ```
 
-1. Once the installation finishes, query the Lotus version to ensure everything is installed successfully and for the correct network:
+
+3.  Once the installation finishes, query the Lotus version to ensure everything is installed successfully and for the correct network:\
+
 
     ```shell
     lotus --version
 
     # lotus version 1.19.1-dev+mainnet+git.94b621dd5
     ```
-
 {% endtab %}
 
 {% tab title="Calibration" %}
+1.  Remove or delete any existing Lotus configuration files on your system:\
 
-1. Remove or delete any existing Lotus configuration files on your system:
 
     ```shell
     mv ~/.lotus ~/.lotus-backup
     ```
 
-1. Make the Lotus binaries and install them:
+
+2.  Make the Lotus binaries and install them:\
+
 
     ```shell
     make clean && make calibrationnet
     sudo make install
     ```
 
-1. Once the installation finishes, query the Lotus version to ensure everything is installed successfully and for the correct network:
+
+3.  Once the installation finishes, query the Lotus version to ensure everything is installed successfully and for the correct network:\
+
 
     ```shell
     lotus --version
 
     # lotus version 1.19.1-dev+calibrationnet+git.94b621dd5.dirty
     ```
-
 {% endtab %}
 {% endtabs %}
 
@@ -201,7 +233,8 @@ Let's start the lite-node by connecting to a remote full-node. We can use the pu
 
 {% tabs %}
 {% tab title="Mainnet" %}
-1. Create an environment variable called `FULLNODE_API_INFO` and set it to the WebSockets address of the node you want to connect to. At the same time, start the Lotus daemon with the `--lite` tag:
+1.  Create an environment variable called `FULLNODE_API_INFO` and set it to the WebSockets address of the node you want to connect to. At the same time, start the Lotus daemon with the `--lite` tag:\
+
 
     ```shell
     FULLNODE_API_INFO=wss://wss.mainnet.node.glif.io/apigw/lotus lotus daemon --lite
@@ -214,11 +247,13 @@ Let's start the lite-node by connecting to a remote full-node. We can use the pu
     ...
     ```
 
-1. The Lotus daemon will continue to run in this terminal window. All subsequent commands we use should be done in a separate terminal window.
 
+2. The Lotus daemon will continue to run in this terminal window. All subsequent commands we use should be done in a separate terminal window.
 {% endtab %}
+
 {% tab title="Calibration" %}
-1. Create an environment variable called `FULLNODE_API_INFO` and set it to the WebSockets address of the node you want to connect to. At the same time, start the Lotus daemon with the `--lite` tag:
+1.  Create an environment variable called `FULLNODE_API_INFO` and set it to the WebSockets address of the node you want to connect to. At the same time, start the Lotus daemon with the `--lite` tag:\
+
 
     ```shell
     FULLNODE_API_INFO=wss://wss.calibration.node.glif.io/apigw/lotus lotus daemon --lite
@@ -231,8 +266,8 @@ Let's start the lite-node by connecting to a remote full-node. We can use the pu
     ...
     ```
 
-1. The Lotus daemon will continue to run in this terminal window. All subsequent commands we use should be done in a separate terminal window.
 
+2. The Lotus daemon will continue to run in this terminal window. All subsequent commands we use should be done in a separate terminal window.
 {% endtab %}
 {% endtabs %}
 
@@ -240,10 +275,10 @@ Let's start the lite-node by connecting to a remote full-node. We can use the pu
 
 To send JSON-RPC requests to our lite-node we need to expose the API.
 
-
 {% tabs %}
 {% tab title="Mainnet" %}
-1. Open `~/.lotus/config.toml` and uncomment `ListenAddress` on line 6:
+1.  Open `~/.lotus/config.toml` and uncomment `ListenAddress` on line 6:\
+
 
     ```toml
     [API]
@@ -260,8 +295,10 @@ To send JSON-RPC requests to our lite-node we need to expose the API.
     ...
     ```
 
-1. Open the terminal window where your lite-node is running and press `CTRL` + `c` to close the daemon.
-1. In the same window, restart the lite-node:
+
+2. Open the terminal window where your lite-node is running and press `CTRL` + `c` to close the daemon.
+3.  In the same window, restart the lite-node:\
+
 
     ```shell
     FULLNODE_API_INFO=wss://wss.mainnet.node.glif.io/apigw/lotus lotus daemon --lite
@@ -274,11 +311,13 @@ To send JSON-RPC requests to our lite-node we need to expose the API.
     ...
     ```
 
-1. The Lotus daemon will continue to run in this terminal window. All subsequent commands we use should be done in a separate terminal window.
 
+4. The Lotus daemon will continue to run in this terminal window. All subsequent commands we use should be done in a separate terminal window.
 {% endtab %}
+
 {% tab title="Calibration" %}
-1. Open `~/.lotus/config.toml` and uncomment `ListenAddress` on line 6:
+1.  Open `~/.lotus/config.toml` and uncomment `ListenAddress` on line 6:\
+
 
     ```toml
     [API]
@@ -295,8 +334,10 @@ To send JSON-RPC requests to our lite-node we need to expose the API.
     ...
     ```
 
-1. Open the terminal window where your lite-node is running and press `CTRL` + `c` to close the daemon.
-1. In the same window restart the lite-node:
+
+2. Open the terminal window where your lite-node is running and press `CTRL` + `c` to close the daemon.
+3.  In the same window restart the lite-node:\
+
 
     ```shell
     FULLNODE_API_INFO=wss://wss.calibration.node.glif.io/apigw/lotus lotus daemon --lite
@@ -309,8 +350,8 @@ To send JSON-RPC requests to our lite-node we need to expose the API.
     ...
     ```
 
-1. The Lotus daemon will continue to run in this terminal window. All subsequent commands we use should be done in a separate terminal window.
 
+4. The Lotus daemon will continue to run in this terminal window. All subsequent commands we use should be done in a separate terminal window.
 {% endtab %}
 {% endtabs %}
 
@@ -320,7 +361,8 @@ The lite-node is now set up to accept local JSON-RPC requests! However, we don't
 
 To access privileged JSON-RPC methods, like creating a new wallet, we need to supply an authentication key with our Curl requests.
 
-1. Create a new admin token and set the result to a new `LOTUS_ADMIN_KEY` environment variable:
+1.  Create a new admin token and set the result to a new `LOTUS_ADMIN_KEY` environment variable:\
+
 
     ```shell
     lotus auth create-token --perm "admin"
@@ -329,13 +371,15 @@ To access privileged JSON-RPC methods, like creating a new wallet, we need to su
     # eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiLCJzaWduIiwiYWRtaW4iXX0.um-LqY7g-SDOsMheDRbQ9JIaFzus_Pan0J88VQ6ZLVE
     ```
 
-1. Keep this key handy. We're going to use it in the next section.
+
+2. Keep this key handy. We're going to use it in the next section.
 
 ## Send requests
 
 Let's run a couple of commands to see if the JSON-RPC API is set up correctly.
 
-1. First, let's grab the head of the Filecoin network chain:
+1.  First, let's grab the head of the Filecoin network chain:\
+
 
     ```shell
     curl -X POST '127.0.0.1:1234/rpc/v0' \
@@ -357,7 +401,9 @@ Let's run a couple of commands to see if the JSON-RPC API is set up correctly.
     # ...
     ```
 
-1. Next, let's try to create a new wallet. Since this is a privileged method, we need to supply our auth key `eyJhbGc...`:
+
+2.  Next, let's try to create a new wallet. Since this is a privileged method, we need to supply our auth key `eyJhbGc...`:\
+
 
     ```shell
     curl -X POST '127.0.0.1:1234/rpc/v0' \
@@ -374,9 +420,10 @@ Let's run a couple of commands to see if the JSON-RPC API is set up correctly.
     # }
     ```
 
+    \
     The `result` field is the public key for our address. The private key is stored within our lite-node.
+3.  Set the new address as the default wallet for our lite-node:\
 
-1. Set the new address as the default wallet for our lite-node:
 
     ```shell
     curl -X POST '127.0.0.1:1234/rpc/v0' \
