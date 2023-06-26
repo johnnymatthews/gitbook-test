@@ -8,7 +8,7 @@ description: >-
 # Call built-in actors
 
 {% hint style="info" %}
-For conceptual information on built-in actors, including their purposes, how they work and available types, see the [conceptual guide](https://docs.filecoin.io/reference/built-in-actors/overview/)
+For conceptual information on built-in actors, including their purposes, how they work and available types, see the [conceptual guide](../../reference/built-in-actors/)
 {% endhint %}
 
 Built-in actors can be invoked using the Protocol _JSON-RPC_ API or the Zondax _filecoin.sol_ API.
@@ -27,19 +27,19 @@ The Protocol _JSON-RPC_ API:
 The Zondax _filecoin.sol_ API:
 
 * Is maintained by [Zondax](https://docs.zondax.ch/).
-* Supports [_some but not all_ of the built-in actors and their methods](https://docs.filecoin.io/smart-contracts/developing-contracts/call-built-in-actors/#available-actors-and-methods).
+* Supports [_some but not all_ of the built-in actors and their methods](call-built-in-actors.md#available-actors-and-methods).
 
 ## Protocol API
 
 Smart contracts can directly access built-in actors and methods using the Protocol API. Links to the reference guides for each of the available actor methods is listed below:
 
-* [Account actor](https://docs.filecoin.io/reference/built-in-actors/protocol-api/#account-actor)
-* [Datacap](https://docs.filecoin.io/reference/built-in-actors/protocol-api/#datacap)
-* [Miner](https://docs.filecoin.io/reference/built-in-actors/protocol-api/#miner)
-* [Multisig](https://docs.filecoin.io/reference/built-in-actors/protocol-api/#multisig)
-* [Storage market actor](https://docs.filecoin.io/reference/built-in-actors/protocol-api/#storage-market-actor)
-* [Storage power actor](https://docs.filecoin.io/reference/built-in-actors/protocol-api/#storage-power-actor)
-* [Verified registry actor](https://docs.filecoin.io/reference/built-in-actors/protocol-api/#verified-registry-actor)
+* [Account actor](call-built-in-actors.md#account)
+* [Datacap](call-built-in-actors.md#datacap)
+* [Miner](call-built-in-actors.md#miner)
+* [Multisig](call-built-in-actors.md#multisig)
+* [Storage market actor](call-built-in-actors.md#storage-market)
+* [Storage power actor](call-built-in-actors.md#storage-power)
+* [Verified registry actor](call-built-in-actors.md#verified-registry)
 
 ## Filecoin.sol
 
@@ -57,7 +57,7 @@ The majority of the Account, DataCap, Storage Market, Miner, Storage Owner and V
 
 [procedure](https://docs.filecoin.io/smart-contracts/developing-contracts/call-built-in-actors/#import-filecoinsol)
 
-**Account**
+#### **Account**
 
 | Method                | Supported? |
 | --------------------- | ---------- |
@@ -66,7 +66,7 @@ The majority of the Account, DataCap, Storage Market, Miner, Storage Owner and V
 | PubkeyAddress         | ✖️         |
 | UniversalReceiverHook | ✔️         |
 
-**DataCap**
+#### **DataCap**
 
 | Method            | Supported? |
 | ----------------- | ---------- |
@@ -86,7 +86,7 @@ The majority of the Account, DataCap, Storage Market, Miner, Storage Owner and V
 | Transfer          | ✔️         |
 | TransferFrom      | ✔️         |
 
-**Miner**
+#### **Miner**
 
 | Method                    | Supported? |
 | ------------------------- | ---------- |
@@ -132,7 +132,7 @@ The majority of the Account, DataCap, Storage Market, Miner, Storage Owner and V
 | TerminateSectors          | ✖️         |
 | WithdrawBalance           | ✔️         |
 
-**Multisig**
+#### **Multisig**
 
 | Method                      | Supported? |
 | --------------------------- | ---------- |
@@ -148,7 +148,7 @@ The majority of the Account, DataCap, Storage Market, Miner, Storage Owner and V
 | SwapSigner                  | ✔️         |
 | UniversalReceiverHook       | ✔️         |
 
-**Storage market**
+#### **Storage market**
 
 | Method                    | Supported? |
 | ------------------------- | ---------- |
@@ -173,7 +173,7 @@ The majority of the Account, DataCap, Storage Market, Miner, Storage Owner and V
 | VerifyDealsForActivation  | ✖️         |
 | WithdrawBalance           | ✔️         |
 
-**Storage power**
+#### **Storage power**
 
 | Method                                   | Supported? |
 | ---------------------------------------- | ---------- |
@@ -195,7 +195,7 @@ The majority of the Account, DataCap, Storage Market, Miner, Storage Owner and V
 | UpdateClaimedPower                       | ✖️         |
 | UpdatePledgeTotal                        | ✖️         |
 
-**Verified registry**
+#### **Verified registry**
 
 | Method                      | Supported? |
 | --------------------------- | ---------- |
@@ -218,44 +218,37 @@ The majority of the Account, DataCap, Storage Market, Miner, Storage Owner and V
 
 The `filecoin.sol` library is embeddable into your smart contract, which means it does not need be present on chain first. Instead, you can just import the library and call the available methods. The `filecoin.sol` library can be [added via `npm`](https://docs.filecoin.io/smart-contracts/developing-contracts/call-built-in-actors/#import-filecoinsol-with-npm) or [manually imported](https://docs.filecoin.io/smart-contracts/developing-contracts/call-built-in-actors/#import-filecoinsol-manually) into your contract. The `npm`-based import is simpler, and is recommended.
 
-**Import filecoin.sol with npm**
+#### **Import filecoin.sol with npm**
 
 1. Install [yarn](https://yarnpkg.com/) if you don’t have it installed.
-2.  Install `filecoin.sol`:
+2. Install `filecoin.sol`:
 
-    ```
-    ```
-3. ```shell
-   yarn add @zondax/filecoin.sol
-   ```
+```
+yarn add @zondax/filecoin.sol
+```
 
-**Import filecoin.sol manually**
+#### **Import filecoin.sol manually**
 
-1.  Navigate to your smart contract project folder `<my-project>`:
+1. Navigate to your smart contract project folder `<my-project>`:
 
-    ```
-    ```
+```
+cd my-project
+```
 
-* ```shell
-  cd <my-project>
-  ```
-*   Create a folder named `libs`:
+2. Create a folder named `libs`:
 
-    ```
-    ```
-* ```shell
-  mkdir libs
-  ```
-*   Navigate to `libs`:
+```
+mkdir libs
+```
 
-    ```
-    ```
+3. Move into the `libs` directory:
 
-1. ```shell
-   cd libs
-   ```
-2. Copy the Zondax contracts with the methods you wish to call from [the contracts folder](https://github.com/Zondax/filecoin-solidity/tree/master/contracts/v0.8) into `libs`.
+```
+cd libs
+```
+
+4. Copy the Zondax contracts with the methods you wish to call from [the contracts folder](https://github.com/Zondax/filecoin-solidity/tree/master/contracts/v0.8) into `libs`.
 
 ### Call a built-in actor
 
-Once you’ve either imported particular contracts manually or simply installed `filecoin.sol` using npm, create a callable method to access the built-in actor methods the way you normally would in a Solidity smart contract. Working examples of smart contracts that call built-in actor methods are available in the [reference guide](https://docs.filecoin.io/reference/built-in-actors/filecoin-sol/).
+Once you’ve either imported particular contracts manually or simply installed `filecoin.sol` using npm, create a callable method to access the built-in actor methods the way you normally would in a Solidity smart contract. Working examples of smart contracts that call built-in actor methods are available in the [reference guide](call-built-in-actors.md#filecoin.sol).
