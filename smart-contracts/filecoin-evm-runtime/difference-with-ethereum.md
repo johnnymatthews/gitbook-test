@@ -8,7 +8,7 @@ description: >-
 
 ## Gas costs
 
-Filecoin charges Filecoin gas only. This includes the Filecoin EVM runtime. Instead of the Filecoin EVM runtime charging gas according to the EVM spec for each EVM opcode executed, the Filecoin virtual machine (FVM) charges Filecoin gas for executing the EVM interpreter itself. The [How gas works](https://docs.filecoin.io/smart-contracts/filecoin-evm-runtime/how-gas-works/) page goes into this in more detail. Importantly, this means that Filecoin EVM runtime gas costs and EVM gas costs will be very different:
+Filecoin charges Filecoin gas only. This includes the Filecoin EVM runtime. Instead of the Filecoin EVM runtime charging gas according to the EVM spec for each EVM opcode executed, the Filecoin virtual machine (FVM) charges Filecoin gas for executing the EVM interpreter itself. The [How gas works](how-gas-works.md) page goes into this in more detail. Importantly, this means that Filecoin EVM runtime gas costs and EVM gas costs will be very different:
 
 1. EVM and Filecoin gas are different units of measurement and are not 1:1. Purely based on chain throughput (gas/second), the ratio of Ethereum gas to Filecoin gas is about 1:444. Expect Filecoin gas numbers to look _much_ larger than those in Ethereum.
 2. Because Filecoin charges Filecoin gas for executing the Filecoin EVM runtime interpreter:
@@ -18,8 +18,6 @@ Filecoin charges Filecoin gas only. This includes the Filecoin EVM runtime. Inst
 {% hint style="danger" %}
 ⚠️ Filecoin gas costs are not set in stone and should never be hard-coded. Future network upgrades will break any smart contracts that depend on gas costs not changing.
 {% endhint %}
-
-
 
 ## Gas stipend
 
@@ -31,7 +29,7 @@ Filecoin EVM runtime emulates EVM self-destruct behavior but isn’t able to ent
 
 1. There is no gas refund for self-destruct.
 2. On self-destruct, the contract is marked as self-destructed, but is not actually deleted from the Filecoin state-tree. Instead, it simply behaves as if it does not exist. It acts like an empty contract.
-3. Unlike in the EVM, in Filecoin EVM runtime, self-destruct can _fail_ causing the executing contract to revert. Specifically, this can happen if the specified beneficiary address is an embedded [ID address](https://docs.filecoin.io/smart-contracts/filecoin-evm-runtime/address-types/) and no actor exists with the specified ID.
+3. Unlike in the EVM, in Filecoin EVM runtime, self-destruct can _fail_ causing the executing contract to revert. Specifically, this can happen if the specified beneficiary address is an embedded [ID address](../../basics/the-blockchain/addresses.md) and no actor exists with the specified ID.
 4. If funds are sent to a self-destructed contract after it self-destructs but before the end of the transaction, those funds remain with the self-destructed contract. In Ethereum, these funds would vanish after the transaction finishes executing.
 
 ## CALLCODE
@@ -50,7 +48,7 @@ The Filecoin EVM runtime, unlike Ethereum, does not usually enforce gas limits w
 
 ## Multiple Addresses
 
-In Filecoin, contracts generally have multiple addresses. Two of these address types, `f0` and `f410f`, can be converted to 0x-style (Ethereum) addresses which can be used in the `CALL` opcode. See [Converting to a 0x-style address](https://docs.filecoin.io/smart-contracts/filecoin-evm-runtime/address-types/#converting-to-a-0x-style-address) for details on how these addresses are derived.
+In Filecoin, contracts generally have multiple addresses. Two of these address types, `f0` and `f410f`, can be converted to 0x-style (Ethereum) addresses which can be used in the `CALL` opcode. See [Converting to a 0x-style address](address-types.md#converting-to-a-0x-style-address) for details on how these addresses are derived.
 
 Importantly, this means that any contract can be called by either its “normal” EVM address (corresponding to the contract’s `f410f` address) or its “masked ID address” (corresponding from the contract’s `f0` address).
 
@@ -61,4 +59,4 @@ However, the addresses returned by the CALLER, ORIGIN, and ADDRESS instructions 
 
 ## Deferred execution model
 
-When calling an Ethereum method that allows the user to ask for the `latest` block, Filecoin will return the `chain head` - `1` block. This behavior was implemented for compatibility with the [deferred execution](https://docs.filecoin.io/smart-contracts/filecoin-evm-runtime/differences-with-ethereum/) mode that Filecoin uses. In this mode, messages submitted at a given `height` are only processed at `height` + `1`. This means that receipts for a block produced at `height` are only available at `height` + `1`.
+When calling an Ethereum method that allows the user to ask for the `latest` block, Filecoin will return the `chain head` - `1` block. This behavior was implemented for compatibility with the deferred execution mode that Filecoin uses. In this mode, messages submitted at a given `height` are only processed at `height` + `1`. This means that receipts for a block produced at `height` are only available at `height` + `1`.

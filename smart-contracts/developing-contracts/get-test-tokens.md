@@ -9,7 +9,7 @@ description: >-
 
 ## Calibration testnet
 
-MetaMask is one of the easier ways to manage addresses on the Calibration testnet. MetaMask uses the `t4` [address type](https://docs.filecoin.io/basics/what-is-filecoin/blockchain/#addresses), which allows developers to create and manage Solidity contracts easily. Follow the [Add to MetaMask guide](https://docs.filecoin.io/basics/assets/metamask-setup/) if you havn’t set up an address in your MetaMask wallet yet. w
+MetaMask is one of the easier ways to manage addresses on the Calibration testnet. MetaMask uses the `t4` [address type](../filecoin-evm-runtime/address-types.md), which allows developers to create and manage Solidity contracts easily. Follow the [MetaMask setup guide](../../basics/assets/metamask-setup.md) if you havn’t set up an address in your MetaMask wallet yet. w
 
 1.  In your browser, open MetaMask and copy your address to your clipboard:
 

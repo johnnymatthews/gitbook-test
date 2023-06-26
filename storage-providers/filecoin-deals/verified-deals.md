@@ -14,9 +14,9 @@ Notaries are responsible for allocating a resource called _DataCap_ to clients w
 
 ## Quality Adjusted Power (QAP)
 
-Storage providers are incentivized by the Filecoin network to store verified deals. A 10x quality adjustment multiplier is set at the protocol level for storage offered for verified deals. A 100 TiB dataset will account for 1 PiB of _Quality-Adjusted-Power_ (QAP). This means the storage provider has a larger share of storage power on the Filecoin network and will be more likely to get elected for WinningPoSt (see [Storage proving](https://docs.filecoin.io/storage-provider/filecoin-economics/storage-proving/)). The storage provider will earn 10x more block rewards for the same capacity made available to the network, if that capacity is storing verified deals.
+Storage providers are incentivized by the Filecoin network to store verified deals. A 10x quality adjustment multiplier is set at the protocol level for storage offered for verified deals. A 100 TiB dataset will account for 1 PiB of _Quality-Adjusted-Power_ (QAP). This means the storage provider has a larger share of storage power on the Filecoin network and will be more likely to get elected for WinningPoSt (see [Storage proving](../filecoin-economics/storage-proving.md)). The storage provider will earn 10x more block rewards for the same capacity made available to the network, if that capacity is storing verified deals.
 
-When storing real customer data and not simply [CC sectors](https://docs.filecoin.io/reference/general/glossary/#capacity-commitment), a whole new set of responsibilities arises. A storage provider must have the capacity to make deals, to be able to obtain a copy of the data, to prepare the data for the network, prove the data on-chain via sealing, and last but not least, have a means to offer retrieval of the data to the client when requested.
+When storing real customer data and not simply [CC sectors](../../reference/general/glossary.md#capacity-commitment), a whole new set of responsibilities arises. A storage provider must have the capacity to make deals, to be able to obtain a copy of the data, to prepare the data for the network, prove the data on-chain via sealing, and last but not least, have a means to offer retrieval of the data to the client when requested.
 
 ## Responsibilities
 
@@ -36,7 +36,7 @@ Once the data is sealed and you are proving your copies on-chain (i.e. on the bl
 
 ## Tools
 
-Tools and programs exist to support Fil+, but storage providers need to know how to operate this entire workflow. See [Filecoin Plus Programs](https://docs.filecoin.io/storage-provider/filecoin-deals/filecoin-programs/) for more information on available programs. See [Architecture](https://docs.filecoin.io/storage-provider/architecture/lotus-components/) for more information on the tooling and software components.
+Tools and programs exist to support Fil+, but storage providers need to know how to operate this entire workflow. See [Filecoin Plus Programs](filecoin-programs.md) for more information on available programs. See [Architecture](../architecture/lotus-components.md) for more information on the tooling and software components.
 
 ## Rewards & penalties
 

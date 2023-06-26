@@ -14,9 +14,6 @@ Best practices for transactions are described below.
 
 Since receipts in Filecoin are generated in the next tipset, depending on when a transaction is submitted to the mempool, the receipt may take between 30 and 90 seconds to return. To consistently return transaction receipts when deploying a transaction or awaiting confirmation, change the default transaction receipt timeout (60000 ms or 1 minute for many toolchains) to 90 seconds or more. An example that sets `timeout` to `180000` (3 minutes) for an Open Zeppelin upgradeable proxy is as follows:
 
-```
-```
-
 ```js
 const deployment = await upgrades.deployProxy(contract, preparedArguments, {
     timeout: 180000
@@ -31,15 +28,15 @@ If the Filecoin network still needs to confirm a message, it’s because it has 
 
 We recommend users resubmit the message with a higher gas fee or priority fee so those messages will not block the mempool and potentially impact the block-producing time. Gas fees on the network can fluctuate depending on network demand, so it’s always a good idea to monitor gas prices and adjust your fees accordingly to ensure your transaction is processed promptly.
 
-**Metamask**
+#### **Metamask**
 
 If you are building your project using MetaMask, it would be easier to educate the users to speed up a transaction by increasing the gas fee directly in MetaMask. Refer to the [official MetaMask documentation](https://support.metamask.io/hc/en-us/articles/360015489251-How-to-speed-up-or-cancel-a-pending-transaction) for more details.
 
-**Lotus**
+#### **Lotus**
 
 Developers using Lotus can [replace an existing message with an updated gas fee](https://lotus.filecoin.io/kb/update-msg-gas-fee/).
 
-**SDKs**
+#### **SDKs**
 
 Developers processing messages using SDKs, such as ethers.js or web3.js, must replace the message with higher gas fees by following these steps:
 
@@ -52,23 +49,23 @@ Developers processing messages using SDKs, such as ethers.js or web3.js, must re
 
 Developers should take the time to thoroughly read through the following summary of possible contract future-proofing updates, as failure to properly future proof smart contracts may result in incompatibility with future Filecoin releases.
 
-* **All contracts** must [accept both `DAG_CBOR (0x71)` and `CBOR (0x51)` in inputs and treat them identically, and use `CBOR (0x51)` in outputs](https://docs.filecoin.io/smart-contracts/developing-contracts/best-practices/#all-contracts).
-* If a contract uses the FRC42 hash of `GranularityExported`, it must be [updated and redeployed](https://docs.filecoin.io/smart-contracts/developing-contracts/best-practices/#contracts-using-granularityexported-hash)
-* If a contract sends funds to actors that are non-native, Ethereum, or EVM smart contract accounts, it [must use the `call_actor` precompile](https://docs.filecoin.io/smart-contracts/developing-contracts/best-practices/#contracts-sending-funds-to-specific-actors).
-* If a contract is interacting with built-in actors, it must upgrade to the [latest version of Filecoin Solidity library, currently `v0.8`](https://docs.filecoin.io/smart-contracts/developing-contracts/best-practices/#contracts-interacting-with-built-in-actors).
+* **All contracts** must [accept both `DAG_CBOR (0x71)` and `CBOR (0x51)` in inputs and treat them identically, and use `CBOR (0x51)` in outputs](best-practices.md#accept-both-dag\_cbor-0x71-and-cbor-0x51-in-inputs-and-treat-them-identically).
+* If a contract uses the FRC42 hash of `GranularityExported`, it must be updated and redeployed.
+* If a contract sends funds to actors that are non-native, Ethereum, or EVM smart contract accounts, it [must use the `call_actor` precompile](best-practices.md#contracts-sending-funds-to-specific-actors).
+* If a contract is interacting with built-in actors, it must upgrade to the latest version of Filecoin Solidity library, currently `v0.8`.
 
 ### All contracts
 
 All contracts must do the following:
 
-**Accept both `DAG_CBOR (0x71)` and `CBOR (0x51)` in inputs and treat them identically**
+#### **Accept both `DAG_CBOR (0x71)` and `CBOR (0x51)` in inputs and treat them identically**
 
 Smart contracts should accept both `DAG_CBOR (0x71)` and `CBOR (0x51)` in inputs and treat them identically. Specifically:
 
 * Treat `DAG_CBOR` and `CBOR` as equivalent when returned from the `call_actor` precompile.
 * Treat `DAG_CBOR` and `CBOR` as equivalent when received as a parameter to `handle_filecoin_method`.
 
-**Use CBOR (0x51) in outputs**
+#### **Use CBOR (0x51) in outputs**
 
 Smart contracts should use `CBOR (0x51)` in outputs. Specifically:
 
@@ -98,4 +95,4 @@ Developers can easily do so through the following block explorers:
 * [Filfox contract verifier](https://filfox.info/en/contract)
 * [Beryx contract verifier](https://beryx.zondax.ch/contract\_verifier)
 
-You can find this tutorial in the [FEVM ERC-20 Quickstart](https://docs.filecoin.io/smart-contracts/fundamentals/erc-20-quickstart/).
+You can find this tutorial in the [FEVM ERC-20 Quickstart](../fundamentals/erc-20-quickstart.md).

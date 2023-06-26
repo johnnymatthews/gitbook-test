@@ -8,7 +8,7 @@ description: >-
 
 ## Develop on Filecoin
 
-Filecoin combines the benefits of content-addressed data leveraged by [IPFS](https://docs.filecoin.io/smart-contracts/fundamentals/overview/) with blockchain-powered [storage guarantees](https://filrep.io/). The network offers robust and resilient distributed storage at massively lower cost compared to current centralized alternatives.
+Filecoin combines the benefits of content-addressed data leveraged by IPFS with blockchain-powered storage guarantees. The network offers robust and resilient distributed storage at massively lower cost compared to current centralized alternatives.
 
 Developers choose Filecoin because it:
 
@@ -29,8 +29,6 @@ This is where Filecoin comes in. Filecoin adds an incentive layer to content-add
 Filecoin and IPFS are designed as separate layers to give developers more choice and modularity, but many tools are available for combining their benefits. This diagram illustrates how these tools (often called storage helpers) provide developer-friendly APIs for storing on IPFS, Filecoin, or both.
 
 ![Web3-Enabled Architecture by Filecoin](https://docs.filecoin.io/smart-contracts/fundamentals/overview/web3-architecture\_hu3e83233343686501f76831d055c9ac40\_1659851\_2856x0\_resize\_q75\_h2\_box\_3.webp)
-
-To learn more about the protocol, go to [How Filecoin Works](https://docs.filecoin.io/basics/what-is-filecoin/overview/)
 
 ## Filecoin and smart contracts
 

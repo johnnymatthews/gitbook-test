@@ -7,9 +7,7 @@ description: >-
 
 # IPC agent
 
-The IPC Agent is the entry point to interacting with IPC. It is a client application that provides a simple and easy-to-use interface to interact with IPC as a user and run all the processes required for the operation of a subnet.
-
-See the [GitHub docs](https://github.com/consensus-shipyard/ipc-agent/tree/main/docs) for a conceptual overview.
+The IPC Agent is the entry point to interacting with IPC. It is a client application that provides a simple and easy-to-use interface to interact with IPC as a user and run all the processes required for the operation of a subnet. See the [GitHub docs](https://github.com/consensus-shipyard/ipc-agent/tree/main/docs) for a conceptual overview.
 
 ### Installation
 
@@ -103,7 +101,7 @@ git clone https://github.com/consensus-shipyard/lotus
 cd lotus
 ```
 
-`spacenet` is the master branch of the repository. To find the latest release deployed over Spacenet, you can check the last release published in the repository and use checkout that tag.
+The `spacenet` branch is the main branch in the repository. To find the latest release deployed over Spacenet, you can check the last release published in the repository and use checkout that tag.
 
 ```shell
 git checkout <release/branch>
@@ -124,7 +122,7 @@ Run your node:
 With this, your node should automatically connect to the bootstraps of the network and start syncing the latest state of the chain.
 
 {% hint style="info" %}
-More information and further details about the operation of Spacenet can be found in the [Spacenet repository](https://github.com/consensus-shipyard/spacenet)
+More information and further details about the operation of Spacenet can be found in the [Spacenet repository](https://github.com/consensus-shipyard/spacenet).
 {% endhint %}
 
 With the node running, you are ready to connect the IPC agent to Spacenet. For this, you’ll need to get an authentication token for your node, and point to the RPC API of the node (by default running on port `1234`).
@@ -175,7 +173,7 @@ Finally, to be able to interact with Spacenet and run new subnets, some FIL shou
 
 #### Local deployment
 
-To deploy sample rootnet locally for testing you can use the IPC scripts installed in `./bin/ipc-infra` (refer to the [installation of infrastructure](https://docs.filecoin.io/basics/interplanetary-consensus/ipc-agent/#install-infrastructure-scripts)) by running:
+To deploy sample rootnet locally for testing you can use the IPC scripts installed in `./bin/ipc-infra` by running:
 
 ```shell
 ./bin/ipc-infra/run-root-docker-1val.sh <lotus-api-port> <validator-libp2p-port>
@@ -278,10 +276,10 @@ docker exec -it 84711d67cf162e30747c4525d69728c4dea8c6b4b35cd89f6d0947fee14bf908
 Before joining a new subnet, our node for that subnet should be initialized, because as part of the joining process we would need to provide information about our validator network address, so other validators know how to dial them. For the deployment of subnet daemons we also provide a convenient infra script:
 
 ```shell
-$ ./bin/ipc-infra/run-subnet-docker.sh <lotus-api-port> <validator-libp2p-port> <subnet-id> <absolute-path-validator-key>
+./bin/ipc-infra/run-subnet-docker.sh <lotus-api-port> <validator-libp2p-port> <subnet-id> <absolute-path-validator-key>
 
 # Sample execution
-$ ./bin/ipc-infra/run-subnet-docker.sh 1239 1349 /root/t01002 ~/.ipc-agent/wallet.key
+./bin/ipc-infra/run-subnet-docker.sh 1239 1349 /root/t01002 ~/.ipc-agent/wallet.key
 ```
 
 {% hint style="danger" %}
@@ -338,8 +336,6 @@ As a sanity-check that we have joined the subnet successfully and that we provid
 
 ```shell
 ./bin/ipc-agent list-subnets --gateway-address=<gateway-addr> --subnet=<parent-subnet-id>
-
-# Sample execution
 
 ```
 
@@ -435,7 +431,6 @@ To leave a subnet, the following agent command can be used:
 
 ```shell
 ./bin/ipc-agent leave-subnet --subnet=<subnet-id>
-
 ```
 
 For example:
@@ -475,7 +470,7 @@ docker exec -it 91d2af805346 sh -c "eudico wallet import --format=json-lotus inp
 
 In this section, we will deploy a subnet where the IPC agent is responsible for handling more than one validator in the subnet. Throughout this guide, we use the `ipc-infra` scripts to deploy the nodes in Docker containers, but a similar steps could be used to deploy the nodes on bare-metal or any other runtime.
 
-For the rest of this tutorial, we’ll assume that you have your agent already configured and interacting with a rootnet. For more information on how to connect to a rootnet check [revisit this section](https://docs.filecoin.io/basics/interplanetary-consensus/ipc-agent/#interacting-with-a-rootnet). We are going to deploy a subnet with 5 validators. The first thing we’ll need to do is creating a new wallet for every validator we want to run. We can do this directly through the agent with the following command:
+For the rest of this tutorial, we’ll assume that you have your agent already configured and interacting with a rootnet. We are going to deploy a subnet with 5 validators. The first thing we’ll need to do is creating a new wallet for every validator we want to run. We can do this directly through the agent with the following command:
 
 ```shell
 ./bin/ipc-agent wallet-new --key-type=secp256k1 --subnet=/root
@@ -496,7 +491,7 @@ With this, we can already create the subnet with `/root` as its parent. We are g
 
 #### Deploying the infrastructure
 
-In order to deploy the 5 validators for the subnet, we will have to first export the keys from our root node so we can import them to our validators. Depending on how you are running your rootnet node you’ll have to make a call to the docker container, or your nodes API. More information about exporting keys from your node can be found under [this section](https://docs.filecoin.io/basics/interplanetary-consensus/ipc-agent/#exporting-wallet-keys).
+In order to deploy the 5 validators for the subnet, we will have to first export the keys from our root node so we can import them to our validators. Depending on how you are running your rootnet node you’ll have to make a call to the docker container, or your nodes API.
 
 With the five keys conveniently exported, we can deploy the subnet nodes using the `infra-scripts`. The following code snippet showcases the deployment of five sample nodes. Note that each node should be importing a different wallet key for their validator, and should be exposing different ports for their API and validators:
 
@@ -525,7 +520,7 @@ t1ivy6mo2ofxw4fdmft22nel66w63fb7cuyslm4cy@/ip4/127.0.0.1/tcp/1347/p2p/12D3KooWEJ
 
 #### Configuring the agent
 
-To configure the agent for its use with all the validators, we need to connect to the RPC API of one of the validators, and import all of the wallets of the validators in that node, so the agent is able through the same API to act on behalf of any validator. More information about importing [keys can be found in this section](https://docs.filecoin.io/basics/interplanetary-consensus/ipc-agent/#importing-a-wallet-to-a-subnet-node).
+To configure the agent for its use with all the validators, we need to connect to the RPC API of one of the validators, and import all of the wallets of the validators in that node, so the agent is able through the same API to act on behalf of any validator.
 
 Here’s an example of the configuration connecting to the RPC of the first validator, and configuring all the wallets for the validators in the subnet.
 

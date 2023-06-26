@@ -13,7 +13,7 @@ description: >-
 
 Lotus is the reference implementation of the Filecoin protocol, developed by Protocol Labs, the organization behind Filecoin. Lotus is a full-featured implementation of the Filecoin network, including the storage, retrieval, and mining functionalities. It is written in Go and is designed to be modular, extensible, and highly scalable.
 
-[Learn more about Lotus](https://docs.filecoin.io/nodes/implementations/lotus/)
+[Learn more about Lotus](lotus.md)
 
 ## Venus
 
@@ -25,7 +25,7 @@ Venus is a full-featured implementation of the Filecoin protocol, providing stor
 
 One of the key features of Venus is its support for the Chinese language and market. Venus provides a Chinese language user interface and documentation, making it easier for Chinese users to participate in the Filecoin network.
 
-[Learn more about Venus](https://docs.filecoin.io/nodes/implementations/venus/)
+[Learn more about Venus](venus.md)
 
 ## Implementation differences
 

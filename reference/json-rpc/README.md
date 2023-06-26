@@ -10,9 +10,6 @@ description: >-
 
 The easiest way to test the API is to use Curl commands. A Curl command to the Filecoin network looks something like this:
 
-```
-```
-
 ```curl
 curl --location --request POST '<NODE_ADDRESS>' \
 --header 'Content-Type: application/json' \
@@ -26,10 +23,8 @@ curl --location --request POST '<NODE_ADDRESS>' \
 
 ## Step-by-step example
 
-1.  In a terminal window, use Curl to request the current chain head from a public [Glif](https://glif.io) node.
+1. In a terminal window, use Curl to request the current chain head from a public [Glif](https://glif.io) node.\
 
-    ```
-    ```
 
 *   ```shell
     curl -X POST 'https://api.node.glif.io' \

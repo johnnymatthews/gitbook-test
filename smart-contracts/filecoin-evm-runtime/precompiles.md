@@ -8,10 +8,10 @@ description: >-
 
 The Filecoin virtual machine (FVM) has several pre-compiled contracts called precompiles. Each precompile address starts with `0xfe000...`. Specifically:
 
-* [Resolve address `0xfe00..01`](https://docs.filecoin.io/smart-contracts/filecoin-evm-runtime/precompiles/#resolve-address)
-* [Lookup delegated address `0xfe00..02`](https://docs.filecoin.io/smart-contracts/filecoin-evm-runtime/precompiles/#lookup-delegated-address)
-* [Call actor by address `0xfe00..03`](https://docs.filecoin.io/smart-contracts/filecoin-evm-runtime/precompiles/#call-actor-by-address)
-* [Call actor by ID `0xfe00..05`](https://docs.filecoin.io/smart-contracts/filecoin-evm-runtime/precompiles/#call-actor-by-id)
+* [Resolve address `0xfe00..01`](precompiles.md#resolve-address)
+* [Lookup delegated address `0xfe00..02`](precompiles.md#lookup-delegated-address)
+* [Call actor by address `0xfe00..03`](precompiles.md#call-actor-by-address)
+* [Call actor by ID `0xfe00..05`](precompiles.md#call-actor-by-id)
 
 ## Resolve Address
 
@@ -26,9 +26,6 @@ Resolves a Filecoin address (e.g., “f01”, “f2abcde”) into a Filecoin act
   * If the supplied address is invalid (cannot be parsed as a Filecoin address), revert.
 
 Example:
-
-```
-```
 
 ```solidity
 (bool success, bytes memory actor_id_bytes) = address(0xfe00000000000000000000000000000000000001).staticcall(fil_address_bytes);
@@ -55,9 +52,6 @@ Looks up the “delegated address” (f4 address) of an actor by ID. This precom
 
 Example:
 
-```
-```
-
 ```solidity
 (bool success, bytes memory delegated_address_bytes) = address(0xfe00000000000000000000000000000000000002).staticcall(abi.encode(uint256(actor_id)));
 ```
@@ -68,35 +62,36 @@ Address: `0xfe00000000000000000000000000000000000003`
 
 Calls the specified actor using the native FVM calling convention by its _Filecoin_ address. This precompile must be called with `DELEGATECALL` as the precompile will call the target actor _on behalf of_ the currently executing contract.
 
-*   Input: ABI Encoded:
+### Input: ABI Encoded
 
-    ```
-    ```
-* ```solidity
-  (uint64 method, uint256 value, uint64 flags, uint64 codec, bytes params, bytes filAddress)
-  ```
-  * `method` is the Filecoin method number. The precompile will revert if the method number is not either 0 (bare value transfer) or at least 1024. Methods between 1 and 1023 inclusive are currently restricted (but may be allowed in the future).
-  * `value` is the value to transfer in attoFIL.
-  * `codec` is the IPLD codec of the parameters. This must either be 0x51 or 0x00 (for now) and will revert if passed an illegal codec:
-    * If the parameters are non-empty, they must be CBOR, and the codec must be 0x51.
-    * If the parameters are empty, the codec must be 0x00.
-  * `params` are the CBOR-encoded message parameters, if any.
-  * `filAddress` is the Filecoin address of the callee.
-*   Output: ABI Encoded:
+{% code overflow="wrap" %}
+```json
+(uint64 method, uint256 value, uint64 flags, uint64 codec, bytes params, bytes filAddress)
+```
+{% endcode %}
 
-    ```
-    ```
-* ```solidity
-  (int256 exit_code, uint64 return_codec, bytes return_value)
-  ```
-  * `exit_code` is one of:
-    * `= 0` to indicate the call exited successfully.
-    * `> 0` to indicate that the target actor _reverted_ with the specified `exit_code`.
-    * `< 0` to indicate the call itself failed with the [syscall-error](https://docs.rs/fvm\_sdk/0.6.1/fvm\_sdk/sys/enum.ErrorNumber.html) `-exit_code`.
-  * `return_codec` codec of returned data. This will be one of (for now):
-    * 0x51 or 0x71 - CBOR
-    * 0x55 - raw (the target actor returned raw data)
-    * 0x00 - nothing (the returned data will be empty as well).
+* `method` is the Filecoin method number. The precompile will revert if the method number is not either 0 (bare value transfer) or at least 1024. Methods between 1 and 1023 inclusive are currently restricted (but may be allowed in the future).
+* `value` is the value to transfer in attoFIL.
+* `codec` is the IPLD codec of the parameters. This must either be 0x51 or 0x00 (for now) and will revert if passed an illegal codec:
+  * If the parameters are non-empty, they must be CBOR, and the codec must be 0x51.
+  * If the parameters are empty, the codec must be 0x00.
+* `params` are the CBOR-encoded message parameters, if any.
+* `filAddress` is the Filecoin address of the caller.
+
+### Output: ABI Encoded
+
+```
+(int256 exit_code, uint64 return_codec, bytes return_value)
+```
+
+* `exit_code` is one of:
+  * `= 0` to indicate the call exited successfully.
+  * `> 0` to indicate that the target actor _reverted_ with the specified `exit_code`.
+  * `< 0` to indicate the call itself failed with the [syscall-error](https://docs.rs/fvm\_sdk/0.6.1/fvm\_sdk/sys/enum.ErrorNumber.html) `-exit_code`.
+* `return_codec` codec of returned data. This will be one of (for now):
+  * 0x51 or 0x71 - CBOR
+  * 0x55 - raw (the target actor returned raw data)
+  * 0x00 - nothing (the returned data will be empty as well).
 
 {% hint style="danger" %}
 This precompile only reverts if an input is statically invalid. If the precompile fails to call the target actor for any other reason, it will return a non-zero `exit_code` but will not revert.
@@ -104,15 +99,10 @@ This precompile only reverts if an input is statically invalid. If the precompil
 
 Example:
 
-```
-```
-
 ```solidity
 (bool success, bytes memory data) = address(0xfe00000000000000000000000000000000000003).delegatecall(abi.encode(method, value, flags, codec, params, filAddress));
 (int256 exit, uint64 return_codec, bytes memory return_value) = abi.decode(data, (int256, uint64, bytes));
 ```
-
-[syscall-error](https://docs.rs/fvm\_sdk/0.6.1/fvm\_sdk/sys/enum.ErrorNumber.html)
 
 ## Call Actor By ID
 
@@ -120,17 +110,11 @@ Address: `0xfe00000000000000000000000000000000000005`
 
 This precompile is identical to the “Call Actor By Address” (0xfe00..03) except that it accepts an actor ID (`uint64`) instead of an actor address as the last parameter. That is:
 
-```
-```
-
 ```solidity
 (uint64 method, uint256 value, uint64 flags, uint64 codec, bytes params, uint64 actorId)
 ```
 
 Example:
-
-```
-```
 
 ```solidity
 (bool success, bytes memory data) = address(0xfe00000000000000000000000000000000000005).delegatecall(abi.encode(method, value, flags, codec, params, id));

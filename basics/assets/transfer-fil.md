@@ -9,15 +9,15 @@ description: >-
 
 Etheruem-style addresses start with `0x`. Filecoin addresses start with `f`. There are four paths for transferring funds across the Filecoin network depending on which address type you are transferring from and to:
 
-|   | From an Eth-style address | From a Filecoin address |
-| --- | --- | --- |
-| **To an Eth-style address** | [Eth-style address to Eth-style address](https://docs.filecoin.io/basics/assets/transfer-fil/#eth-style-address-to-eth-style-address) | [Filecoin to Eth-style address](https://docs.filecoin.io/basics/assets/transfer-fil/#filecoin-to-eth-style-address) |
-| **To a Filecoin address**   | [Eth-style address to Filecoin](https://docs.filecoin.io/basics/assets/transfer-fil/#eth-style-address-to-filecoin)                   | [Filecoin to Filecoin](https://docs.filecoin.io/basics/assets/transfer-fil/#filecoin-to-filecoin)                   |
+|                             | From an Eth-style address                                                                        | From a Filecoin address                                                        |
+| --------------------------- | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| **To an Eth-style address** | [Eth-style address to Eth-style address](transfer-fil.md#eth-style-address-to-eth-style-address) | [Filecoin to Eth-style address](transfer-fil.md#filecoin-to-eth-style-address) |
+| **To a Filecoin address**   | [Eth-style address to Filecoin](transfer-fil.md#eth-style-address-to-filecoin)                   | [Filecoin to Filecoin](transfer-fil.md#filecoin-to-filecoin)                   |
 
 {% hint style="warning" %}
 **ASSETS ON THE FILECOIN NETWORK ARE NOT AVAILABLE ON ANY OTHER NETWORK**.
 
-Remember that Filecoin is fully compatible with Ethereum tools, like wallets. But that doesn’t mean you’re using the Ethereum network. These instructions transfer assets only within the Filecoin network. [Learn how to configure your Ethereum wallet on the Filecoin network](https://docs.filecoin.io/basics/assets/metamask-setup/).
+Remember that Filecoin is fully compatible with Ethereum tools, like wallets. But that doesn’t mean you’re using the Ethereum network. These instructions transfer assets only within the Filecoin network. [Learn how to configure your Ethereum wallet on the Filecoin network](metamask-setup.md).
 {% endhint %}
 
 ### Eth-style address to Eth-style address
@@ -26,7 +26,7 @@ There are no special steps or requirements for sending Filecoin from one Eth-sty
 
 ### Eth-style address to Filecoin
 
-Use the [FilForwarder process](https://docs.filecoin.io/smart-contracts/filecoin-evm-runtime/filforwader/).
+Use the [FilForwarder process](../../smart-contracts/filecoin-evm-runtime/filforwarder.md).
 
 ### Filecoin to Eth-style address
 
@@ -34,7 +34,7 @@ Most wallets and exchanges currently only support `f1` or `f3` addresses. The ma
 
 #### Ledger device
 
-Currently, Ledger Live does not support `0x` or `f4` addresses, so you cannot use it to directly send funds to a `0x` address. However, you can connect your Ledger device to the Glif.io wallet and transfer FIL from a Filecoin address to an Etheruem-style `0x` address. This method is more secure than the [Hot wallet](https://docs.filecoin.io/basics/assets/transfer-fil/#hot-wallet) method detailed below since your private keys never leave your Ledger device.
+Currently, Ledger Live does not support `0x` or `f4` addresses, so you cannot use it to directly send funds to a `0x` address. However, you can connect your Ledger device to the Glif.io wallet and transfer FIL from a Filecoin address to an Etheruem-style `0x` address. This method is more secure than the [Hot wallet](transfer-fil.md#hot-wallet) method detailed below since your private keys never leave your Ledger device.
 
 In this method, you will connect your Ledger device to the Glif.io website app and use the app to send FIL from your Ledger to an Eth-style address.
 

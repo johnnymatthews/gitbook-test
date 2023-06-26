@@ -34,12 +34,12 @@ The introduction of IPC enables the following use cases on the Filecoin network:
 
 The IPC project is split into two main components, which we briefly describe here:
 
-* [The hierarchical consensus framework](https://docs.filecoin.io/basics/interplanetary-consensus/hierarchical-consensus/), consisting of the base protocol, the actors, the ipc-agent, and the Eudico node.
-* [The Trantor consensus algorithm](https://docs.filecoin.io/basics/interplanetary-consensus/mir-and-trantor/), implemented atop the Mir framework.
+* The hierarchical consensus framework, consisting of the base protocol, the actors, the ipc-agent, and the Eudico node.
+* The Trantor consensus algorithm, implemented atop the Mir framework.
 
 ### Public testnet
 
-[Spacenet](https://docs.filecoin.io/networks/spacenet/details/) is an early builder testnet for Interplanetary Consensus, Mir, and Trantor. It provides high throughput and low latency with FEVM support.
+[Spacenet](../../networks/spacenet/) is an early builder testnet for Interplanetary Consensus, Mir, and Trantor. It provides high throughput and low latency with FEVM support.
 
 ### Support
 

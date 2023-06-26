@@ -17,16 +17,13 @@ Generally, it is not possible to compute gas costs for a contract invocation wit
 
 The total gas fee of a message is calculated as the following:
 
-```
-```
-
 ```plaintext
   (Gas usage × Base fee)
 + (GasLimit × GasPremium)
 + (OverEstimationBurn × BaseFee)
 ```
 
-Take a look at the [Gas usage section of the How Filecoin works page](https://docs.filecoin.io/smart-contracts/filecoin-evm-runtime/how-gas-works/) for more information on the various gas-related parameters attached to each message.
+Take a look at the [Gas usage section of the How Filecoin works page](how-gas-works.md) for more information on the various gas-related parameters attached to each message.
 
 Let’s take a transaction as an example. Our gas parameters are:
 
@@ -36,9 +33,6 @@ Let’s take a transaction as an example. Our gas parameters are:
 * `Gas premium` = `5` attoFIL
 
 The total fee is `(GasUsage × BaseFee) + (Gaslimit x GasPremium)`:
-
-```
-```
 
 ```plaintext
    1000 
@@ -65,7 +59,7 @@ Filecoin nodes, such as Lotus, have several JSON-API API endpoints designed to h
 * `GasEstimateGasPremium`: estimates what `GasPremium` price you should set to ensure a message will be included in `N` epochs. The smaller `N` is the larger `GasPremium` is likely to be.
 * `GasEstimateFeeCap`: estimate the `GasFeeCap` according to `BaseFee` in the parent blocks.
 
-If you want to learn more about how to use those JSON-RPC APIs for the Filecoin gas model, please check the [JSON RPC API docs for Gas](https://docs.filecoin.io/reference/json-rpc/gas/).
+If you want to learn more about how to use those JSON-RPC APIs for the Filecoin gas model, please check the [JSON RPC API docs for Gas](../../reference/json-rpc/).
 
 Gas estimation varies from network to network. For example, the `BaseFee` on mainnet is different from the `BaseFee` on the Calibration testnet.
 
@@ -75,13 +69,10 @@ If you’d rather not calculate and estimate gas for every message, you can just
 
 Since Filecoin is fully EVM-compatible, Filecoin nodes also provide Ethereum-compatible APIs to support gas estimation:
 
-* [EthEstimateGas](https://docs.filecoin.io/reference/json-rpc/eth/#ethestimategas): generates and returns an estimate of how much gas is necessary to allow the transaction to complete.
-* [EthMaxPriorityFeePerGas](https://docs.filecoin.io/reference/json-rpc/eth/#ethmaxpriorityfeepergas): returns a fee per gas that is an estimate of how much you can pay as a priority fee, or “tip”, to get a transaction included in the current block.
+* [EthEstimateGas](../../reference/json-rpc/eth.md#ethestimategas): generates and returns an estimate of how much gas is necessary to allow the transaction to complete.
+* [EthMaxPriorityFeePerGas](../../reference/json-rpc/eth.md#ethmaxpriorityfeepergas): returns a fee per gas that is an estimate of how much you can pay as a priority fee, or “tip”, to get a transaction included in the current block.
 
 To request the current max priority fee in the network, you can send a request to a public Filecoin endpoint:
-
-```
-```
 
 ```shell
 curl --location --request POST 'https://api.calibration.node.glif.io/rpc/v1' \
@@ -94,6 +85,8 @@ curl --location --request POST 'https://api.calibration.node.glif.io/rpc/v1' \
 }' | jq
 ```
 
+This will output something like:
+
 ```plaintext
 {
   "jsonrpc": "2.0",
@@ -104,15 +97,10 @@ curl --location --request POST 'https://api.calibration.node.glif.io/rpc/v1' \
 
 You can convert the `result` field from hexadecimal to base 10 in your terminal. Take the `result` output and remove the `0x` from the start. Then use `echo` to output the conversion:
 
-```
-```
-
 ```shell
 echo $((16#31157))
-```
 
-```plaintext
-201047
+# 201047
 ```
 
 ## Additional Resources

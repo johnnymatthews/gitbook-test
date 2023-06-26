@@ -32,14 +32,14 @@ Filecoin is a huge project and undertaking, and with lots of code comes the need
 
 Before contributing to the Filecoin docs, please read these quick guides; they’ll save you time and help keep the docs accurate and consistent!
 
-1. [Style and formatting guide](https://docs.filecoin.io/basics/project-and-community/ways-to-contribute/#grammar-and-formatting)
-2. [Writing guide](https://docs.filecoin.io/basics/project-and-community/ways-to-contribute/#writing-guide)
+1. [Style and formatting guide](ways-to-contribute.md#style)
+2. [Writing guide](ways-to-contribute.md#writing-guide)
 
-If you have never contributed to an open-source project before, or just need a refresher, take a look at the [contribution tutorial](https://docs.filecoin.io/basics/project-and-community/ways-to-contribute/#contribution-tutorial).
+If you have never contributed to an open-source project before, or just need a refresher, take a look at the [contribution tutorial](ways-to-contribute.md#contribution-tutorial).
 
 #### Community
 
-If interacting with people is your favorite thing to do in this world, join the [Filecoin chat and discussion forums](https://docs.filecoin.io/basics/project-and-community/chat-and-discussion-forums/) to say hello, meet others who share your goals, and connect with other members of the community. You should also consider joining [Filecoin Slack](https://filecoin.io/slack).
+If interacting with people is your favorite thing to do in this world, join the [Filecoin chat and discussion forums](chat-and-discussion-forums.md) to say hello, meet others who share your goals, and connect with other members of the community. You should also consider joining [Filecoin Slack](https://filecoin.io/slack).
 
 #### Build Applications
 
@@ -63,7 +63,7 @@ Finally, we see Protocol Labs as a research lab, where YOUR ideas can become tec
 
 ### Contribution tutorial
 
-While the [grammar, formatting, and style](https://docs.filecoin.io/basics/project-and-community/ways-to-contribute/#grammar-and-formatting) and the [writing guide](https://docs.filecoin.io/basics/project-and-community/ways-to-contribute/#writing-guide) can both help you write excellent content for the Filecoin documentation project, they don’t delve into how you can actually submit you content changes. This guide will walk you through finding an issue, fixing it, and then submitting your fix to the `filecoin-project/filecoin-docs` project.
+While the [grammar, formatting, and style](ways-to-contribute.md#style) and the [writing guide](ways-to-contribute.md#writing-guide) can both help you write excellent content for the Filecoin documentation project, they don’t delve into how you can actually submit you content changes. This guide will walk you through finding an issue, fixing it, and then submitting your fix to the `filecoin-project/filecoin-docs` project.
 
 There are plenty of small-sized issues around Filecoin documentation that make for easy, helpful contributions to the Filecoin project. Here, we’ll walk through:
 
@@ -162,7 +162,7 @@ So there you have it! You’ve successfully completed your first contribution to
 
 ### Writing guide
 
-This guide explains things to keep in mind when writing for Filecoin’s documentation. While the [grammar, formatting, and style guide](https://docs.filecoin.io/basics/project-and-community/ways-to-contribute/#grammar-and-formatting) lets you know the rules you should follow, this guide will help you to properly structure your writing and choose the correct tone for your audience.
+This guide explains things to keep in mind when writing for Filecoin’s documentation. While the [grammar, formatting, and style guide](ways-to-contribute.md#style) lets you know the rules you should follow, this guide will help you to properly structure your writing and choose the correct tone for your audience.
 
 #### Walkthroughs
 
@@ -265,7 +265,7 @@ The name can also be used as an adjective:
 When referring to the token used as Filecoin’s currency, the name `FIL`, is preferred. It is alternatively denoted by the Unicode symbol for an integral with a double stroke ⨎:
 
 * Unit prefix: **100 FIL**.
-* Symbol prefix: **⨎100**.
+* Symbol prefix: **⨎ 100**.
 
 The smallest and most common denomination of FIL is the `attoFIL` (10^-18 FIL).
 
@@ -307,7 +307,7 @@ How the Markdown syntax looks, and code formatting rules to follow.
 
 #### Syntax
 
-The Filecoin Docs project follows the _GitHub Flavoured Markdown_ syntax for markdown. This way, all articles display properly within GitHub itself. This gives readers the option to view articles on [the docs website](https://docs.filecoin.io) or [its GitHub repo](https://github.com/filecoin-project/filecoin-docs).
+The Filecoin Docs project follows the _GitHub Flavoured Markdown_ syntax for markdown. This way, all articles display properly within GitHub itself. This gives readers the option to view articles on [the docs website](http://localhost:5000/o/NNmD4UvLc26b1TmEYgzE/s/ljEfPn4P3ow2x1OCSoi4/) or [its GitHub repo](https://github.com/filecoin-project/filecoin-docs).
 
 #### Rules
 

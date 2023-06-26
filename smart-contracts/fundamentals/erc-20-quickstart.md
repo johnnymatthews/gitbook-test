@@ -9,7 +9,7 @@ description: >-
 We’re going to install a browser-based wallet called MetaMask, create a new wallet address, supply some test currency to that wallet, and then use a browser-based development environment called Remix to deploy a smart contract to the Filecoin network. We’re going to be creating an ERC-20 token in this quickstart. The ERC-20 contract is used a lot in representing a massive array of tokens across multiple blockchains, primarily the Ethereum blockchain.
 
 {% hint style="info" %}
-If you’re an Ethereum developer, check out the [FEVM Hardhat kit](https://docs.filecoin.io/smart-contracts/developing-contracts/hardhat/).
+If you’re an Ethereum developer, check out the [FEVM Hardhat kit](../developing-contracts/hardhat.md).
 {% endhint %}
 
 ## Accounts and assets
@@ -39,33 +39,23 @@ Before we can interact with the Filecoin network, we need funds. But before we c
 
 ### Switch networks
 
-You may notice that we are currently connected to the **Ethereum Mainnet**. We need to point MetaMask to the Filecoin network, specifically the [Calibration testnet](https://docs.filecoin.io/networks/calibration/details/). We’ll use a website called [chainlist.org](https://chainlist.org/) to give MetaMask the information it needs quickly.
+You may notice that we are currently connected to the **Ethereum Mainnet**. We need to point MetaMask to the Filecoin network, specifically the [Calibration testnet](../../networks/calibration/). We’ll use a website called [chainlist.org](https://chainlist.org/) to give MetaMask the information it needs quickly.
 
 1. Go to [chainlist.org](https://chainlist.org/).
 2.  Enable the **Testnets** toggle and enter `Filecoin` into the search bar.
 
     ![Search for Filecoin testnets in Chainlist.](https://docs.filecoin.io/smart-contracts/fundamentals/erc-20-quickstart/chainlist-search-for-filecoin-testnets\_huc27ede2cc3f9bb9a8b1870794192d0bd\_183995\_1440x0\_resize\_q75\_h2\_box\_3.webp)
-3.  Scroll down to find the **Filecoin – Calibration** testnet:
-
-    ![Find the Calibration testnet.](https://docs.filecoin.io/smart-contracts/fundamentals/erc-20-quickstart/chainlist-select-calibration\_hu6f424abe04a4b9ac75d2382ecc76bd01\_179170\_1440x0\_resize\_q75\_h2\_box\_3.webp)
+3. Scroll down to find the **Filecoin – Calibration** **testnet**.
 4.  In MetaMask click **Next**.
 
     ![Click next in MetaMask.](https://docs.filecoin.io/smart-contracts/fundamentals/erc-20-quickstart/chainlist-connect-with-metamask\_hue5974ce963f74c507793823e9688818a\_74488\_472x0\_resize\_q75\_h2\_box\_3.webp)
-5.  Click **Connect**:
-
-    ![Click connect in MetaMask.](https://docs.filecoin.io/smart-contracts/fundamentals/erc-20-quickstart/chainlist-click-connect-in-metamask\_hu6f3481a61325851aeac60b67d90cb46e\_79692\_472x0\_resize\_q75\_h2\_box\_3.webp)
-6.  Click **Approve** when prompted to _Allow this site to add a network_:
-
-    ![Approve the new network in MetaMask](https://docs.filecoin.io/smart-contracts/fundamentals/erc-20-quickstart/chainlist-approve-new-network\_huc1df138d285499dca6063d2d38b21372\_94664\_472x0\_resize\_q75\_h2\_box\_3.webp)
-7.  Click **Switch network** when prompted by MetaMask:
-
-    ![Switch networks in MetaMask.](https://docs.filecoin.io/smart-contracts/fundamentals/erc-20-quickstart/chainlist-switch-network\_hu98fc8990909e4535a272dcf8a0b5bc81\_91657\_472x0\_resize\_q75\_h2\_box\_3.webp)
+5. Click **Connect.**
+6. Click **Approve** when prompted to _Allow this site to add a network._
+7. Click **Switch network** when prompted by MetaMask.
 8.  Open MetaMask from the browser extensions tab:
 
     ![Open MetaMask from the browser extensions tab.](https://docs.filecoin.io/smart-contracts/fundamentals/erc-20-quickstart/chainlist-open-metamask\_hue2b98da3d87e14ee45292be421d87001\_204364\_1440x0\_resize\_q75\_h2\_box\_3.webp)
-9.  You should see the _Filecoin Calibration_ testnet listed at the top:
-
-    ![MetaMask on the Filecoin Calibration testnet.](https://docs.filecoin.io/smart-contracts/fundamentals/erc-20-quickstart/chainlist-calibration-added\_hu6013835e8aca8ca53aa4b3f261a9493b\_25813\_426x0\_resize\_q75\_h2\_box\_3.webp)
+9. You should see the _Filecoin Calibration_ testnet listed at the top.
 
 Nice! Now we’ve got the Filecoin Calibration testnet set up within MetaMask. You’ll notice that our MetaMask window shows `0 TFIL`. Test-filecoin (`TFIL`) is `FIL` that has no value in the _real world_, and developers use it for testing. We’ll grab some `TFIL` next.
 
@@ -74,21 +64,9 @@ Nice! Now we’ve got the Filecoin Calibration testnet set up within MetaMask. Y
 1.  In your browser, open MetaMask and copy your address to your clipboard:
 
     ![Copy your address to your clipboard.](https://docs.filecoin.io/smart-contracts/fundamentals/erc-20-quickstart/faucet-get-address\_hu511fb870b227f441051bc067b9f419d0\_204132\_441x0\_resize\_q75\_h2\_box\_3.webp)
-2.  Go to [faucet.calibration.fildev.network](https://faucet.calibration.fildev.network/) and click **Faucet** from the menu.
-
-    ![Go to the Faucet section of the website.](https://docs.filecoin.io/smart-contracts/fundamentals/erc-20-quickstart/faucet-click-faucet\_hucd411a0ea04eb18d1b1a0bd763aca72c\_1572753\_1440x0\_resize\_q75\_h2\_box\_3.webp)
-3.  Paste your address into the address field, complete the **I am human** CAPTCHA, and then click **Send**:
-
-    ![Verify you\&rsquo;re a human.](https://docs.filecoin.io/smart-contracts/fundamentals/erc-20-quickstart/faucet-verify\_huf20c2a4bf454bdefc9cb52bafd199d7f\_1516790\_1440x0\_resize\_q75\_h2\_box\_3.webp)
-4.  The faucet should give you a link to the transaction:
-
-    ![Click on the message link.](https://docs.filecoin.io/smart-contracts/fundamentals/erc-20-quickstart/faucet-get-message-link\_hu1d32f6e01b5d8981fc5506fca28ac2cc\_1527414\_1440x0\_resize\_q75\_h2\_box\_3.webp)
-5.  The block explorer will show you the transaction history for your address. After a couple of minutes, you should see 5 `tFIL` transferred to your address.
-
-    ![Show the message confirmation in a block explorer.](https://docs.filecoin.io/smart-contracts/fundamentals/erc-20-quickstart/faucet-show-message-confirmation\_hu8feed5339173096a46c1b426854a47c1\_156184\_1440x0\_resize\_q75\_h2\_box\_3.webp)
-6.  Open MetaMask to confirm that you received the `tFIL`:
-
-    ![MetaMask showing a balance of FIL.](https://docs.filecoin.io/smart-contracts/fundamentals/erc-20-quickstart/faucet-metamask-with-balance\_hu243fdbf61ffe9fb951abf6d2da3277e9\_17000\_382x0\_resize\_q75\_h2\_box\_3.webp)
+2. Go to [faucet.calibration.fildev.network](https://faucet.calibration.fildev.network/) and click **Send Funds.**
+3. Paste your address into the address field, and click **Send Funds**.
+4. The faucet will show a transaction ID. You can copy this ID into a Calibration testnet [block explorer](../../networks/calibration/explorers.md) to view your transaction. After a couple of minutes, you should see some `tFIL` transferred to your address.
 
 That’s all there is to it! Getting `tFil` is easy!
 
@@ -162,9 +140,7 @@ Now that we’ve successfully compiled our contract, we need to deploy it somewh
 8.  Click **Deploy**.
 
     ![Click Deploy in Remix.](https://docs.filecoin.io/smart-contracts/fundamentals/erc-20-quickstart/deploy-remix-deploy\_hu7d78b47d33a9107814817c1ce5c2db9d\_197089\_1440x0\_resize\_q75\_h2\_box\_3.webp)
-9.  MetaMask will open a window and as you to confirm the transaction. Scroll down and click **Confirm** to have MetaMask deploy the contract.
-
-    ![Remix and MetaMask deploying a contract.](https://docs.filecoin.io/smart-contracts/fundamentals/erc-20-quickstart/deploy-metamask-confirm\_hu8f8bebb32e8c0ba30dbbff4c277be15a\_100144\_472x0\_resize\_q75\_h2\_box\_3.webp)
+9. MetaMask will open a window and as you to confirm the transaction. Scroll down and click **Confirm** to have MetaMask deploy the contract.
 10. Back in Remix, a message at the bottom of the screen shows that the creation of your token is pending.
 
     ![Deployment confirmation in Remix.](https://docs.filecoin.io/smart-contracts/fundamentals/erc-20-quickstart/deploy-remix-confirmation\_hu2ce492dd8e8f73d723714a6aeb26c7eb\_196738\_1440x0\_resize\_q75\_h2\_box\_3.webp)
@@ -222,4 +198,4 @@ Currently, MetaMask has no idea what our token is or what it even does. We can f
 
 ### Share your tokens
 
-Having a bunch of tokens in your personal MetaMask is nice, but why not send some tokens to a friend? Your friend needs to create a wallet in MetaMask as we did in the [Create a wallet](https://docs.filecoin.io/smart-contracts/fundamentals/erc-20-quickstart/#create-a-wallet) and [Switch networks](https://docs.filecoin.io/smart-contracts/fundamentals/erc-20-quickstart/#switch-networks) sections. They will also need to import your contract deployment address like you did in the [Add your tokens to MetaMask](https://docs.filecoin.io/smart-contracts/fundamentals/erc-20-quickstart/#add-to-metamask) section. Remember, you need to pay gas for every transaction that you make! If your friend tries to send some of your tokens to someone else but can’t, it might be because they [don’t have any `tFil`](https://docs.filecoin.io/smart-contracts/fundamentals/erc-20-quickstart/#get-some-funds).
+Having a bunch of tokens in your personal MetaMask is nice, but why not send some tokens to a friend? Your friend needs to create a wallet in MetaMask as we did in the [Create a wallet](erc-20-quickstart.md#create-a-wallet) and [Switch networks](erc-20-quickstart.md#switch-networks) sections. They will also need to import your contract deployment address like you did in the [Add your tokens to MetaMask](../../basics/assets/metamask-setup.md) section. Remember, you need to pay gas for every transaction that you make! If your friend tries to send some of your tokens to someone else but can’t, it might be because they don’t have any `tFil`.

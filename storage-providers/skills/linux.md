@@ -18,7 +18,7 @@ Although Lotus also runs on Mac, production systems generally all run on Linux. 
 Install Ubuntu LTS as a **headless server**. This means there is no desktop environment or GUI installed. It requires you to do everything on the command line. Not having a desktop environment on your server(s) has multiple advantages:
 
 * It reduces the attack surface of your systems. Fewer packages installed means fewer patches and updates, but more importantly, fewer potential vulnerabilities.
-* As you will be running several tasks on GPU (see [Reference Architectures](https://docs.filecoin.io/storage-provider/infrastructure/reference-architectures/)), it’s best to avoid running a desktop environment, which might compete for resources on the GPU.
+* As you will be running several tasks on GPU (see [Reference Architectures](../infrastructure/reference-architectures.md)), it’s best to avoid running a desktop environment, which might compete for resources on the GPU.
 
 Exclude the `nvidia-drivers` and `cuda` packages from your updates using [the appropriate command](https://tecadmin.net/exclude-packages-from-apt-upgrade/) set. Once you have a working setup for your specific GPU, you will want to test these packages before you risk breaking them. Many storage providers may need to [install CUDA](https://linux.how2shout.com/how-to-install-cuda-on-ubuntu-20-04-lts-linux/) since some operating systems do not include this package by default.
 
@@ -55,13 +55,13 @@ sudo sysctl -p
 
 ### Performance analysis
 
-Diagnosing performance bottlenecks on a system is vital to keeping a well balanced [sealing pipeline](https://docs.filecoin.io/storage-provider/architecture/sealing-pipeline/).
+Diagnosing performance bottlenecks on a system is vital to keeping a well balanced [sealing pipeline](../architecture/sealing-pipeline.md).
 
 There are many good resources to check out when it comes to Linux performance troubleshooting. Brendan Gregg’s [Linux performance analysis in 60 seconds](https://netflixtechblog.com/linux-performance-analysis-in-60-000-milliseconds-accc10403c55) is an excellent introduction. Each one of these commands deserves a chapter on its own but can be further researched in their man pages.
 
-The commands used are:
-
 {% embed url="https://www.youtube.com/watch?v=ZdVpKx6Wmc8" %}
+
+The commands used are:
 
 ```shell
 uptime

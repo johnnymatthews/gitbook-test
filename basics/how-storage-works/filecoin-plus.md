@@ -10,7 +10,7 @@ description: >-
 
 Filecoin Plus is based on a set of guiding principles, [detailed in Filecoin Improvement Proposal (FIP) 0003](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0003.md), that focus the program on increasing Filecoin’s effectiveness at becoming the decentralized storage network for humanity’s most important information.
 
-Root key-holders, notaries, clients, and storage providers, interact through the allocation and spending of [DataCap](https://docs.filecoin.io/basics/how-storage-works/filecoin-plus/) . Notaries retrieve DataCap in batches and then allocate it to trustworthy clients that spend the DataCap to fund storage deals. Storage providers that receive DataCap receive a 10x boost to their quality-adjusted power for the storage space offered in that deal, which increases their block reward share in the network. This creates a mechanism that incentivizes all participants to make Filecoin more useful.
+Root key-holders, notaries, clients, and storage providers, interact through the allocation and spending of DataCap . Notaries retrieve DataCap in batches and then allocate it to trustworthy clients that spend the DataCap to fund storage deals. Storage providers that receive DataCap receive a 10x boost to their quality-adjusted power for the storage space offered in that deal, which increases their block reward share in the network. This creates a mechanism that incentivizes all participants to make Filecoin more useful.
 
 #### DataCap
 
@@ -50,7 +50,7 @@ _Note: As of network version 12, DataCap allocations are a single-use credit on 
 
 Clients get DataCap by making a request to a notary. For your first DataCap allocation of 32GiB, you can use an auto-verifier such as [Verifier](https://verify.glif.io/). Auto-verifiers exist to grant DataCap immediately to clients that can authenticate themselves via a specific method. For example, the verify.glif.io automatic notary grants DataCap to clients who have a GitHub account that is > 180 days old and has not been used at this site in the past 30 days.
 
-1. Head over to [Verifier](https://verify.glif.io/)
+1. Head over to [Verifier](https://verify.glif.io/).
 2. Connect your GitHub account - click the **Start** button on the top right of the page
 3. Sign in to GitHub if you have not already
 4. Paste in the address to which you’d like to receive DataCap in the box under “Request” and hit **Request**

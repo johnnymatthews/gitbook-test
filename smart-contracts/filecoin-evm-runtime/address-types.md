@@ -46,9 +46,6 @@ All addresses have a short integer assigned to them by `InitActor` sequentially,
 
 The mainnet burn account ID address is `f099` and is structured as follows:
 
-```
-```
-
 ```plaintext
   Protocol Indicator
   |
@@ -88,9 +85,6 @@ Filecoin supports extensible, user-defined actor addresses through the `4` addre
 
 For example, a testnet delegated address using the Ethereum Addressing System is structured as follows:
 
-```
-```
-
 ```plaintext
    Address manager actor ID
    |
@@ -121,9 +115,6 @@ The subaddress of an `f410/t410` address is the original Ethereum address. Ether
 
 **Example**
 
-```
-```
-
 ```plaintext
 # An Ethereum wallet address.
 0xd388ab098ed3e84c0d808776440b48f685198498
@@ -133,9 +124,6 @@ t410f2oekwcmo2pueydmaq53eic2i62crtbeyuzx2gmy
 ```
 
 If you have an Ethereum wallet address starting with `0x`, then the Ethereum Address Manager (EAM) will assign a corresponding `t410` Filecoin address to it. If you send 10 TFIL to `0xd388ab098ed3e84c0d808776440b48f685198498` using a wallet like MetaMask, you will receive 10 TFIL to your `t410f2oekwcmo2pueydmaq53eic2i62crtbeyuzx2gmy` address on Filecoin Calibration testnet.
-
-```
-```
 
 ```plaintext
 # A Filecoin smart contract address.

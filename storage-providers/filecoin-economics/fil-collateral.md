@@ -18,11 +18,11 @@ To satisfy the varied collateral needs of storage providers in a minimally burde
 
 For more detailed information about how collateral requirements are calculated, see the [miner collateral section in the Filecoin spec](https://spec.filecoin.io/systems/filecoin\_mining/miner\_collaterals/).
 
-When a storage provider fails to answer to the WindowsPoSt challenges within the 30-minute deadline (see [Storage Proving](https://docs.filecoin.io/storage-provider/filecoin-economics/storage-proving/)), storage is taken offline, or any storage deal rules are broken, the provider is penalized against the provided collateral. This penalty is called [_slashing_](https://docs.filecoin.io/storage-provider/filecoin-economics/slashing/) and means that a portion of the pledged collateral is forfeited to the `f099` address from your locked or available rewards, and your storage power is reduced. The `f099` address is the address where all burned FIL goes.
+When a storage provider fails to answer to the WindowsPoSt challenges within the 30-minute deadline (see [Storage Proving](storage-proving.md)), storage is taken offline, or any storage deal rules are broken, the provider is penalized against the provided collateral. This penalty is called [_slashing_](slashing.md) and means that a portion of the pledged collateral is forfeited to the `f099` address from your locked or available rewards, and your storage power is reduced. The `f099` address is the address where all burned FIL goes.
 
 ## Commit Pledge
 
-The amount of required collateral depends on the amount of storage pledged to the Filecoin network. The bigger volume you store, the more collateral is required. Additionally, Filecoin Plus uses a [QAP](https://docs.filecoin.io/reference/general/glossary/#quality-adjusted-storage-power) multiplier to increase the collateral requirement. See [Verified Deals with Filecoin Plus](https://docs.filecoin.io/storage-provider/filecoin-deals/verified-deals/) for more information.
+The amount of required collateral depends on the amount of storage pledged to the Filecoin network. The bigger volume you store, the more collateral is required. Additionally, Filecoin Plus uses a [QAP](../../reference/general/glossary.md#quality-adjusted-storage-power) multiplier to increase the collateral requirement. See [Verified Deals with Filecoin Plus](../filecoin-deals/verified-deals.md) for more information.
 
 The formula for the required collateral is as follows:
 
@@ -42,4 +42,4 @@ The gas fees fluctuate over time and can be followed on various websites like [F
 
 ## FIL lending programs
 
-The ecosystem does have [FIL Lenders](https://filecoin-lending.com/read-more) who can provide you FIL (with interest) to get you started, which you can pay back over time and with the help of earned block rewards. Every lender, though, will still require you to supply up to 20% of the required collateral. The [Filecoin Virtual Machine](https://docs.filecoin.io/smart-contracts/fundamentals/the-filecoin-virtual-machine/), introduced in March 2023, enables the creation of new lending mechanisms via smart contracts.
+The ecosystem does have [FIL Lenders](https://filecoin-lending.com/read-more) who can provide you FIL (with interest) to get you started, which you can pay back over time and with the help of earned block rewards. Every lender, though, will still require you to supply up to 20% of the required collateral. The [Filecoin Virtual Machine](../../smart-contracts/fundamentals/the-fvm.md), introduced in March 2023, enables the creation of new lending mechanisms via smart contracts.

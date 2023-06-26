@@ -7,7 +7,7 @@ description: >-
 
 # Spin up a lite-node
 
-In this guide, we’re going to use the [Lotus](https://docs.filecoin.io/nodes/lite-nodes/spin-up-a-lite-node/) Filecoin implementation. We’ll show how to install a lite-node on MacOS and Ubuntu. For other Linux distributions, check out the [Lotus documentation](https://lotus.filecoin.io/lotus/install/linux/#building-from-source). To run a lite-node on Windows, install [WLS with Ubuntu](https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-10#1-overview) on your system and follow the _Ubuntu_ instructions below.
+In this guide, we’re going to use the [Lotus](../implementations/lotus.md) Filecoin implementation. We’ll show how to install a lite-node on MacOS and Ubuntu. For other Linux distributions, check out the [Lotus documentation](https://lotus.filecoin.io/lotus/install/linux/#building-from-source). To run a lite-node on Windows, install [WLS with Ubuntu](https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-10#1-overview) on your system and follow the _Ubuntu_ instructions below.
 
 ### Prerequisites
 
@@ -38,26 +38,24 @@ source "$HOME/.cargo/env"
 {% tab title="Ubuntu" %}
 1. Install the following dependencies:
 
-```
+```sh
 sudo apt update -y
 sudo apt install mesa-opencl-icd ocl-icd-opencl-dev gcc git bzr jq pkg-config curl clang build-essential hwloc libhwloc-dev wget -y
 ```
 
 2. Install Go and add `/usr/local/go/bin` to your `$PATH` variable:
 
-```
+```sh
 wget -c https://golang.org/dl/go1.18.8.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
 echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc && source ~/.bashrc
 ```
 
 3. Install Rust and source the `~/.cargo/env` config file:
 
-```
+```sh
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 source "$HOME/.cargo/env"
 ```
-
-4. Done! You can move on to the [Pre-build](https://docs.filecoin.io/nodes/lite-nodes/spin-up-a-lite-node/#pre-build) section.
 {% endtab %}
 {% endtabs %}
 
@@ -69,12 +67,18 @@ Before we can build the Lotus binaries, there’s some setup we need to do. MacO
 {% tab title="MacOS Intel" %}
 1. Clone the repository, and move into the `lotus` directory:
 
-```
+```sh
+git clone https://github.com/filecoin-project/lotus.git
+cd lotus/
 ```
 
-2. asd
+2. Switch to the branch representing the network you want to use:
 
-```
+```sh
+git checkout releases # Mainnet
+
+# Or to use the Calibration testnet run
+# git checkout ntwk/calibration
 ```
 
 3. Done! You can move on to the [Build](https://docs.filecoin.io/nodes/lite-nodes/spin-up-a-lite-node/#build-the-binary) section.
@@ -83,28 +87,42 @@ Before we can build the Lotus binaries, there’s some setup we need to do. MacO
 {% tab title="MacOS ARM" %}
 1. Clone the repository, and move into the `lotus` directory:
 
-```
-```
-
-2. asd
-
-```
-```
-
-3. Done! You can move on to the [Build](https://docs.filecoin.io/nodes/lite-nodes/spin-up-a-lite-node/#build-the-binary) section.
-{% endtab %}
-
-{% tab title="Ubuntu" %}
-1. Clone the repository, and move into the `lotus` directory:
-
-```
+```sh
 git clone https://github.com/filecoin-project/lotus.git
 cd lotus/
 ```
 
 2. Switch to the branch representing the network you want to use:
 
+```sh
+git checkout releases # Mainnet
+
+# Or to use the Calibration testnet run
+# git checkout ntwk/calibration
 ```
+
+3. Create the necessary environment variables to allow Lotus to run on M1 architecture:
+
+```bash
+export LIBRARY_PATH=/opt/homebrew/lib
+export FFI_BUILD_FROM_SOURCE=1
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
+```
+
+4. Done! You can move on to the [Build](https://docs.filecoin.io/nodes/lite-nodes/spin-up-a-lite-node/#build-the-binary) section.
+{% endtab %}
+
+{% tab title="Ubuntu" %}
+1. Clone the repository, and move into the `lotus` directory:
+
+```sh
+git clone https://github.com/filecoin-project/lotus.git
+cd lotus/
+```
+
+2. Switch to the branch representing the network you want to use:
+
+```sh
 # Checkout to mainnet
 git checkout releases
 
@@ -114,7 +132,7 @@ git checkout releases
 
 3. If your processor was released later than an AMD Zen or Intel Ice Lake CPU, enable the use of SHA extensions by adding these two environment variables. If in doubt, ignore this command and move on to [the next section](https://docs.filecoin.io/nodes/lite-nodes/spin-up-a-lite-node/#build-the-binary).
 
-```
+```sh
 export RUSTFLAGS="-C target-cpu=native -g"
 export FFI_BUILD_FROM_SOURCE=1
 ```

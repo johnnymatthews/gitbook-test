@@ -18,8 +18,6 @@ Follow these steps to begin your storage provider journey:
 3. Make sure you have the right skills
 4. Build the right infrastructure
 
-The documentation you will be reading assumes you are familiar with the documentation in the [Get started](https://docs.filecoin.io/smart-contracts/fundamentals/the-filecoin-virtual-machine/) section, have a general grasp of how Filecoin works and are familiar with Filecoin node software and tooling.
-
 ## Understand Filecoin economics
 
 To understand how you can run a profitable business as a Filecoin storage provider, it is important to make sure you understand the economics of Filecoin. Once you understand all core concepts, you can build out a strategy for your desired ROI.

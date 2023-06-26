@@ -17,7 +17,7 @@ The Filecoin EVM, often just referred to as _FEVM_, is the Ethereum virtual mach
 
 ## FEVM and native FVM
 
-Once [Milestone 2.2 of the FVM roadmap](https://docs.filecoin.io/smart-contracts/fundamentals/roadmap/) is complete, developers will have the option to deploy actors on either the FEVM or native FVM, or both if they really want to. But which should you choose? The decision can be summed up as such: if you want better performance, write actors that are compiled to WASM and deployed to native FVM. If you are familiar with Solidity and want access to the EVM ecosystem of tools, but don’t mind less performance, deploy to the FEVM. See the pros and cons of each below:
+Once [Milestone 2.2 of the FVM roadmap](roadmap.md) is complete, developers will have the option to deploy actors on either the FEVM or native FVM, or both if they really want to. But which should you choose? The decision can be summed up as such: if you want better performance, write actors that are compiled to WASM and deployed to native FVM. If you are familiar with Solidity and want access to the EVM ecosystem of tools, but don’t mind less performance, deploy to the FEVM. See the pros and cons of each below:
 
 |          | FVM                                                                                                                                                                           | FEVM                                                                                  |
 | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |

@@ -8,7 +8,7 @@ description: >-
 
 ## Explore the storage provider documentation
 
-Get ready to dive into the valuable resources of the [storage provider documentation](https://docs.filecoin.io/storage-provider). This comprehensive guide offers a wealth of information about the role of storage providers in the Filecoin ecosystem, including insights into the economic aspects. You’ll also gain knowledge about the software architecture, hardware infrastructure, and the necessary skills for success.
+Get ready to dive into the valuable resources of the [storage provider documentation](broken-reference). This comprehensive guide offers a wealth of information about the role of storage providers in the Filecoin ecosystem, including insights into the economic aspects. You’ll also gain knowledge about the software architecture, hardware infrastructure, and the necessary skills for success.
 
 ## Gain insights into ROI and collateral’s role
 
@@ -24,11 +24,11 @@ Get ready to dive into the heart of the Filecoin network with [Lotus](https://lo
 
 ## Hands-on learning and exploration
 
-It’s time to roll up your sleeves and embark on a hands-on adventure. With a multitude of options at your disposal, setting up a [local devnet](https://lotus.filecoin.io/lotus/developers/local-network/) environment is the easiest and most exciting way to kickstart your Filecoin journey. Immerse yourself in the captivating world of sealing sectors and witness firsthand how this critical process works. Feel the thrill of experimentation as you delve deeper into the inner workings of this remarkable technology.
+It’s time to roll up your sleeves and embark on a hands-on adventure. With a multitude of options at your disposal, setting up a [local devnet](../../networks/local-testnet/) environment is the easiest and most exciting way to kickstart your Filecoin journey. Immerse yourself in the captivating world of sealing sectors and witness firsthand how this critical process works. Feel the thrill of experimentation as you delve deeper into the inner workings of this remarkable technology.
 
 ## Transforming into a storage provider
 
-Congratulations on taking the next leap in becoming a full-fledged storage provider! Now is the time to determine your starting capacity and architect a tailored solution to accommodate it. Equip yourself with the [necessary hardware](https://docs.filecoin.io/storage-provider/infrastructure/reference-architectures/) to kickstart your journey on the mainnet. Test your setup on the calibration testnet to fine-tune your skills and ensure seamless operations. Once you’re ready, brace yourself for the excitement of joining the mainnet.
+Congratulations on taking the next leap in becoming a full-fledged storage provider! Now is the time to determine your starting capacity and architect a tailored solution to accommodate it. Equip yourself with the [necessary hardware](../infrastructure/reference-architectures.md) to kickstart your journey on the mainnet. Test your setup on the calibration testnet to fine-tune your skills and ensure seamless operations. Once you’re ready, brace yourself for the excitement of joining the mainnet.
 
 ## Supercharge your mainnet experience
 
@@ -36,4 +36,4 @@ As you step into the vibrant realm of the mainnet, it’s time to supercharge yo
 
 ## Discover the world of verified deals and tools
 
-Within the Filecoin network there are many [programs and tools](https://docs.filecoin.io/storage-provider/filecoin-deals/filecoin-programs/) designed to enhance your storage provider setup. Explore the Estuary, Slingshot, Spade, and more, each offering unique opportunities to secure verified deals. Uncover the power of these tools as you dive into the documentation, gaining valuable insights and expanding your knowledge. Make the best use of data programs on your path to success.
+Within the Filecoin network there are many [programs and tools](../filecoin-deals/filecoin-programs.md) designed to enhance your storage provider setup. Explore the Estuary, Slingshot, Spade, and more, each offering unique opportunities to secure verified deals. Uncover the power of these tools as you dive into the documentation, gaining valuable insights and expanding your knowledge. Make the best use of data programs on your path to success.

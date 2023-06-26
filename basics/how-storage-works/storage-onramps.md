@@ -8,7 +8,7 @@ description: >-
 
 Here’s how they work: Developers use APIs or libraries to send data to storage helpers. Behind the scenes, storage helpers receive the data and handle the underlying processes to store it in a reliable and decentralized storage way, by saving it [IPFS](https://ipfs.tech) nodes, making deals with Filecoin storage providers – or both. You can use the same APIs or other tools to retrieve data quickly.
 
-Storage helpers are available for NFTs (non-fungible tokens) or general data. If you are storing NFTs, check out [Storing NFTs](https://docs.filecoin.io/basics/how-storage-works/storage-onramps/#storing-nfts). For general data, skip to [General data storage](https://docs.filecoin.io/basics/how-storage-works/storage-onramps/#general-data-storage).
+Storage helpers are available for NFTs (non-fungible tokens) or general data. If you are storing NFTs, check out [Storing NFTs](storage-onramps.md#storing-nfts). For general data, skip to [General data storage](storage-onramps.md#general-data-storage).
 
 #### Storing NFTs
 

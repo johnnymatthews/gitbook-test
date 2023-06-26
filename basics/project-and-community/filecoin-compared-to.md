@@ -8,8 +8,8 @@ description: >-
 
 Filecoin combines many elements of other file storage and distribution systems. What makes Filecoin unique is that it runs on an open, peer-to-peer network while still providing economic incentives and proofs to ensure files are being stored correctly. This page compares Filecoin against other technologies that share some of the same properties.
 
-* [Filecoin vs. Amazon S3, Google Cloud Storage](https://docs.filecoin.io/basics/project-and-community/filecoin-compared-to/#filecoin-vs-amazon-s3-google-cloud-storage)
-* [Filecoin vs. Bitcoin](https://docs.filecoin.io/basics/project-and-community/filecoin-compared-to/#filecoin-tokens-fil-vs-bitcoin-tokens-btc)
+* [Filecoin vs. Amazon S3, Google Cloud Storage](filecoin-compared-to.md#filecoin-vs.-amazon-s3-google-cloud-storage)
+* [Filecoin vs. Bitcoin](filecoin-compared-to.md#filecoin-tokens-fil-vs.-bitcoin-tokens-btc)
 
 #### Filecoin vs. Amazon S3, Google Cloud Storage
 

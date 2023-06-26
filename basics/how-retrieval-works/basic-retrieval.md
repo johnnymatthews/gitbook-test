@@ -14,7 +14,7 @@ Lassie is a simple retrieval client for IPFS and Filecoin. It finds and fetches 
 lassie fetch <CID>
 ```
 
-Lassie also provides an HTTP interface for retrieving IPLD data from IPFS and Filecoin peers. Developers can use this interface directly in their applications to retrieve the data. You can find more details about running a [Lassie HTTP daemon](https://docs.filecoin.io/basics/how-retrieval-works/basic-retrieval/#lassie-http-daemon) below.
+Lassie also provides an HTTP interface for retrieving IPLD data from IPFS and Filecoin peers. Developers can use this interface directly in their applications to retrieve the data.
 
 Lassie fetches content in content-addressed archive (CAR) form, so in most cases you will need additional tooling to deal with CAR files. Lassie can also be used as a library to fetch data from Filecoin from within your application. Due to the diversity of data transport protocols in the IPFS ecosystem, Lassie is able to use the Graphsync or Bitswap protocols, depending on how the requested data is available to be fetched. One prominent use case of Lassie as a library is the **Saturn Network**. Saturn nodes fetch content from Filecoin and IPFS through Lassie in order to serve retrievals.
 

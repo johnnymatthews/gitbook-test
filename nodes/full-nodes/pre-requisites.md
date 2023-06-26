@@ -1,6 +1,10 @@
-# Pre-requisites
+---
+description: >-
+  This page provide details on Lotus installation prerequisites and supported
+  platforms.
+---
 
-This page provide details on Lotus installation prerequisites and supported platforms.
+# Pre-requisites
 
 Before installing Lotus on your computer, you will need to meet the following prerequisites:
 

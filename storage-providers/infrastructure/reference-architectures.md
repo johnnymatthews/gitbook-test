@@ -58,7 +58,7 @@ PoST workers require 128 GiB of memory at the minimum and require a capable GPU 
 
 The sealing workers require the most attention during the design of a solution. Their performance will define the sealing rate of your setup, and hence, how fast you can onboard client deals.
 
-Keep in mind that using [Sealing-as-a-Service](https://docs.filecoin.io/storage-provider/architecture/sealing-as-a-service/) reduces the requirements to have a fast performing sealing setup. In this design, however, we plan for an on-premise sealing setup of maximum 7 TiB/day. This theoretical sealing capacity is based on the entire sealing setup running at full speed for 24 hrs/day.
+Keep in mind that using [Sealing-as-a-Service](../architecture/sealing-as-a-service.md) reduces the requirements to have a fast performing sealing setup. In this design, however, we plan for an on-premise sealing setup of maximum 7 TiB/day. This theoretical sealing capacity is based on the entire sealing setup running at full speed for 24 hrs/day.
 
 **AP / PC1 worker**
 
@@ -71,8 +71,6 @@ Keep in mind that using [Sealing-as-a-Service](https://docs.filecoin.io/storage-
 We put the AddPiece and PreCommit1 tasks together on a first worker. This makes sense because AddPiece prepares the scratch space that will be used by the PC1 tasks thereafter. The first critical hardware component for PC1 is the CPU. This must be a CPU with SHA-256 extensions. Most storage providers opt for AMD Epyc (Rome, Milan or Genova) processors, although Ice Lake and newer Intel Xeon processors also support these extensions.
 
 To verify if your CPU has the necessary extensions, run:
-
-
 
 ```shell
 cat /proc/cpuinfo | grep --color sha_ni
@@ -94,7 +92,7 @@ Every PC1 processes requires approximately 450 GiB of sealing scratch space. Thi
 
 The next step in the sealing pipeline is PreCommit2 (PC2). You could decide to keep it together with PC1, but given the size of our setup (1 PiB) and the likely requirement to scale beyond that later, we split off PC2 in this architecture.
 
-We plan for twice the amount of PC2 workers compared to PC1, as explained under [sealing rate](https://docs.filecoin.io/storage-provider/architecture/sealing-rate/). Apart from the memory requirements this process specifically requires a capable GPU with preferably 24GB of memory and 6000 or more CUDA cores.
+We plan for twice the amount of PC2 workers compared to PC1, as explained under [sealing rate](../architecture/sealing-rate.md). Apart from the memory requirements this process specifically requires a capable GPU with preferably 24GB of memory and 6000 or more CUDA cores.
 
 The scratch space contents from PC1 is copied over to the PC2 worker. This PC2 worker also requires fast NVMe scratch space. Since we plan for 2 PC2 workers against 1 PC1 worker, the capacity of the scratch space per PC2 worker is half of the total scratch space capacity of the PC1 worker, 8 TiB in our case.
 
@@ -106,4 +104,6 @@ Please take a look at the presentation Benjamin Hoejsbo from [PIKNIK](https://ww
 
 {% embed url="https://www.youtube.com/watch?v=LKMjCgo-fkA" %}
 
-calloutWe are working to improve this section. If you would like to share your mining setup, please create an issue in the [Filecoin documentation GitHub repository](https://github.com/filecoin-project/filecoin-docs/issues)!
+{% hint style="info" %}
+We are working to improve this section. If you would like to share your mining setup, please create an issue in the [Filecoin documentation GitHub repository](https://github.com/filecoin-project/filecoin-docs/issues)!
+{% endhint %}

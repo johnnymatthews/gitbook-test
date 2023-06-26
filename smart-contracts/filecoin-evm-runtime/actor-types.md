@@ -9,9 +9,9 @@ description: >-
 
 The Filecoin EVM runtime introduces three new actor types:
 
-1. [Placeholder actors](https://docs.filecoin.io/smart-contracts/filecoin-evm-runtime/actor-types/#placeholder).
-2. [Ethereum-style accounts](https://docs.filecoin.io/smart-contracts/filecoin-evm-runtime/actor-types/#ethereum-style-account), also called `EthAccount`.
-3. [EVM smart contracts](https://docs.filecoin.io/smart-contracts/filecoin-evm-runtime/actor-types/#evm-smart-contract).
+1. [Placeholder actors](actor-types.md#placeholder).
+2. [Ethereum-style accounts](actor-types.md#ethereum-style-account), also called `EthAccount`.
+3. [EVM smart contracts](actor-types.md#evm-smart-contract).
 
 ## Placeholder
 
@@ -40,7 +40,7 @@ An EVM smart contract actor hosts a single EVM smart contract. Every EVM smart c
 An EVM smart contract can be deployed in one of three ways:
 
 1. An existing EVM smart contract can use the EVM’s `CREATE`/`CREATE2` opcode.
-2. Ethereum-native tooling can be used in conjunction with an Ethereum-style account such as [Remix](https://docs.filecoin.io/smart-contracts/developing-contracts/remix/) or [Hardhat](https://docs.filecoin.io/smart-contracts/developing-contracts/hardhat/).
+2. Ethereum-native tooling can be used in conjunction with an Ethereum-style account such as [Remix](../developing-contracts/remix.md) or [Hardhat](../developing-contracts/hardhat.md).
 3. A native account can call method `4` on the Ethereum account manager `f010`, passing the EVM init code as a CBOR-encoded byte-string (major type 2) in the message parameters.
 
 ### Calling
@@ -48,7 +48,7 @@ An EVM smart contract can be deployed in one of three ways:
 An EVM smart contract may be called in one of three ways:
 
 1. An EVM smart contract can use the EVM’s `CALL` opcode.
-2. Ethereum-native tooling, like [MetaMask](https://docs.filecoin.io/basics/assets/wallets/#compatible-wallets), can be used in conjunction with an Ethereum-style account.
+2. Ethereum-native tooling, like [MetaMask](../../basics/assets/metamask-setup.md), can be used in conjunction with an Ethereum-style account.
 3. Finally, a native account can call method `3844450837` (`FRC42(InvokeEVM)`):
    1. The input data should either be empty or encoded as a CBOR byte string.
    2. The return data will either be empty or encoded as a CBOR byte string.

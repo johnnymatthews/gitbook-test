@@ -33,7 +33,7 @@ The FVM is fully EVM-compatible, allowing new ERC-20 tokens to be launched on th
 
 ## Use-cases
 
-The FVM can be used for the creation of a new class of [web3](https://docs.filecoin.io/smart-contracts/fundamentals/the-filecoin-virtual-machine/) [dApps](https://docs.filecoin.io/smart-contracts/fundamentals/the-filecoin-virtual-machine/) , many of which will have the potential to become 10x improvements to the network’s functionality and beyond. The FVM team and members of the Filecoin community have discussed what can be built with the FVM. Some ideas are:
+The FVM can be used for the creation of a new class of web3 dApps , many of which will have the potential to become 10x improvements to the network’s functionality and beyond. The FVM team and members of the Filecoin community have discussed what can be built with the FVM. Some ideas are:
 
 ### Tokenized datasets and Data DAOs
 
@@ -77,7 +77,7 @@ There are many ways to create a Data DAO. This document will only focus on one o
 
 As the [RFS](https://rfs.fvm.dev/) describes, Data DAOs enable groups of people to put together resources to preserve and utilize the data that are useful for their stakeholders. Imaging a Data DAO can mint a token $DATA, and incentivize storage providers to replicate the data it wants to store. The Data DAO can specify the data it wants to replicate and the number of replications it desires. For every replication, the Data DAO will mint some $DATA and send them to the SP as rewards. How datasets are chosen is left up to the governance process of the Data DAO.
 
-**Solution Architecture**
+#### **Solution Architecture**
 
 I highly recommend that you read through the [“Core Idea” section in this README](https://github.com/lotus-web3/client-contract) before continue reading this document.
 
@@ -107,8 +107,6 @@ The Data DAO contract should mint some $DATA and send it to the storage provider
 
 ![Diagram showing the relationship between Market Actor, Client Contracts, and storage providers within the Filecoin network.](https://docs.filecoin.io/smart-contracts/fundamentals/the-filecoin-virtual-machine/client-market-sp-mesh\_hucc40549aa68d56d5807cdcef936ac946\_27690\_676x0\_resize\_q75\_h2\_box\_3.webp)
 
-[Reference](https://github.com/lotus-web3/client-contract)
-
 **Retrieve the information and data from the Data DAO**
 
 * The Data DAO contract should have a method that provides all the deals managed by it.
@@ -116,7 +114,7 @@ The Data DAO contract should mint some $DATA and send it to the storage provider
   * It should have a mechanism to refresh the number of replications based on the `stard_epoch` and `end_epoch` attributes of each deal it manages.
 * Users can retrieve the data of the CID by using the `lotus client retrieve` command.
 
-**Possible future directions**
+#### **Possible future directions**
 
 Instead of letting contract admins decide which CIDs to preserve, the Data DAO contract can implement different mechanisms to decide what to store. For example, the contract can let users vote on what to store, or they can let $DATA holders vote.
 
@@ -128,13 +126,11 @@ There are many use cases in the world that need perpetual storage. For example, 
 
 Filecoin deals have an expiration date attached to them, and after the expiration date, deals expire, and data is lost. With the FVM, uploaders can specify the number of replications they want and the desired expiration date. The expiration date can be a long time in the future or even indefinitely. As long as the uploader still has funds (FIL) in the contract account, the contract will keep incentivizing storage providers to create deals to meet the goal of replication.
 
-**Solution architecture**
+#### **Solution architecture**
 
 I highly recommend that you [read through the “Core Idea” section in this README](https://github.com/lotus-web3/client-contract) before continuing to read this document.
 
 ![Diagram showing the relationship between Market Actor, Client Contracts, and storage providers within the Filecoin network.](https://docs.filecoin.io/smart-contracts/fundamentals/the-filecoin-virtual-machine/client-market-sp-mesh\_hucc40549aa68d56d5807cdcef936ac946\_27690\_676x0\_resize\_q75\_h2\_box\_3.webp)
-
-[Reference](https://github.com/lotus-web3/client-contract)
 
 **Deposit funds**
 
@@ -173,7 +169,7 @@ While important, the need to pledge collateral creates friction and an immediate
 
 Collateral leasing can solve this issue. Storage providers can lease FIL collateral from token holders, and the smart contract will lock the future income (block rewards) until the storage providers have repaid their leased FIL.
 
-**Required addresses**
+#### **Required addresses**
 
 **Owner address**
 
@@ -181,7 +177,7 @@ Collateral leasing can solve this issue. Storage providers can lease FIL collate
 * This address is also allowed to change the worker address for the miner
 * `change_owner_address` method can change the owner address
 
-[**Beneficiary address**](https://github.com/filecoin-project/FIPs/blob/master/FIPS/fip-0029.md)
+**Beneficiary address**
 
 * Beneficiary is an entity the owner can declare that is allowed to withdraw some of the storage providers FIL in available balance (as opposed to locked collateral)
 * There is a [BeneficaryTerm](https://github.com/Zondax/fevm-solidity-mock-api/blob/97d1c578c2787868ac5fdd1de46ed9c4cd11cc97/contracts/v0.8/typeLibraries/CommonTypes.sol#L75) that indicates.
@@ -192,9 +188,9 @@ Collateral leasing can solve this issue. Storage providers can lease FIL collate
 * [Get\_beneficiary method](https://github.com/Zondax/fevm-solidity-mock-api/blob/97d1c578c2787868ac5fdd1de46ed9c4cd11cc97/contracts/v0.8/MinerAPI.sol#L64) can return current beneficiary information.
 * [ChangeBeneficary method](https://github.com/Zondax/fevm-solidity-mock-api/blob/97d1c578c2787868ac5fdd1de46ed9c4cd11cc97/contracts/v0.8/MinerAPI.sol#L52) can specify a new beneficiary.
 
-[**Worker address**](https://lotus.filecoin.io/storage-providers/operate/addresses/#the-worker-address)
+**Worker address**
 
-**Collateral leasing solution architecture**
+#### **Collateral leasing solution architecture**
 
 **Deposit method**
 

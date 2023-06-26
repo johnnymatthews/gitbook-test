@@ -8,7 +8,7 @@ description: >-
 
 ## The problem
 
-Filecoin has multiple [address spaces](https://docs.filecoin.io/smart-contracts/filecoin-evm-runtime/address-types/#delegated-addresses): `f0`, `f1`, `f2`, `f3`, and `f4`. Each address space fits a particular need for the Filecoin network. The `f410` address spaces allow Ethereum addresses to be integrated into the Filecoin network.
+Filecoin has multiple [address spaces](../../basics/the-blockchain/addresses.md): `f0`, `f1`, `f2`, `f3`, and `f4`. Each address space fits a particular need for the Filecoin network. The `f410` address spaces allow Ethereum addresses to be integrated into the Filecoin network.
 
 Users interacting with the Filecoin EVM runtime need to use `f4` addresses, masked to the Ethereum-style `0x` address. These addresses can be created from wallets like MetaMask, Coinbase wallet, or any other EVM-based wallet that allows for custom networks. There are use cases where a user with FIL in an `0x`-style address would want to send FIL to an `f1`, `f2`, or `f3` address. For example, taking FIL out of a smart contract and sending it to a multi-sig account or an exchange.
 
@@ -34,7 +34,7 @@ Before we start, make sure you know the address you’d like to forward your FIL
 
     ![Select the network you want to use.](https://docs.filecoin.io/smart-contracts/filecoin-evm-runtime/filforwader/glif-01-select-network\_hud48bae661a53d2bfb1e4ee5b5886228d\_1412363\_2194x0\_resize\_q75\_h2\_box\_3.webp)
 
-    In this example, we’re using the Calibration testnet.
+    In this example, we’re using the (now depricated) Hyperspace testnet.
 3.  Confirm that you want to connect your wallet to Glif.io. You will only be prompted to do this once.
 
     ![Choose a wallet provider.](https://docs.filecoin.io/smart-contracts/filecoin-evm-runtime/filforwader/glif-02-choose-wallet-provider\_hud48bae661a53d2bfb1e4ee5b5886228d\_1069246\_2194x0\_resize\_q75\_h2\_box\_3.webp)
@@ -62,75 +62,57 @@ It generally takes around two minutes for a transaction to complete and for the 
 
 ### Manually
 
-The FilForwarder contract can be interacted with using standard Ethereum tooling like Hardhat or Remix. In this guide, we’re going to use Hardhat, but these steps can be easily replicated using the [web-based IDE Remix](https://docs.filecoin.io/smart-contracts/developing-contracts/remix/).
+The FilForwarder contract can be interacted with using standard Ethereum tooling like Hardhat or Remix. In this guide, we’re going to use Hardhat, but these steps can be easily replicated using the [web-based IDE Remix](../developing-contracts/remix.md).
 
-**Prerequisites**
+#### **Prerequisites**
 
 This guide assumes you have the following installed:
 
 * [Yarn](https://yarnpkg.com/)
-* A Filecoin address stored in [MetaMask](https://docs.filecoin.io/basics/assets/wallets/#compatible-wallets)
+* A Filecoin address stored in [MetaMask](../../basics/assets/metamask-setup.md)
 
-**Environment setup**
+#### **Environment setup**
 
 First, we need to grab the FilFowarder kit and install the dependencies:
 
-1.  Clone the FilForwarder repository and install the dependencies:
+1. Clone the FilForwarder repository and install the dependencies:
 
-    ```
-    ```
+```
+git clone https://github.com/lotus-web3/FilForwarder
+cd FilForwarder
+```
 
-* ```shell
-  git clone https://github.com/lotus-web3/FilForwarder
-  cd FilForwarder
-  ```
-*   Use Yarn to install the project’s dependencies:
+2. Use Yarn to install the project's dependencies:
 
-    ```
-    ```
-*   ```shell
-    yarn install
-    ```
+```
+yarn install
+[1/4] 🔍  Resolving packages...
+[2/4] 🚚  Fetching packages...
+[3/4] 🔗  Linking dependencies...
 
-    ```plaintext
-    [1/4] 🔍  Resolving packages...
-    [2/4] 🚚  Fetching packages...
-    [3/4] 🔗  Linking dependencies...
+...
 
-    ...
+✨  Done in 16.34s.
+```
 
-    ✨  Done in 16.34s.
-    ```
-*   Create an environment variable for your private key.
-
-    ```
-    ```
+3. Create an environment variable for your private key.
 
 ```shell
 export PRIVATE_KEY='<YOUR PRIVATE KEY>'
-```
 
-For example:
-
+# For example
+# export PRIVATE_KEY='d52cd65a5746ae71cf3d07a8cf392ca29d7acb96deba7d94b19a9cf3c9f63022'l
 ```
-```
-
-1. ```shell
-   export PRIVATE_KEY='d52cd65a5746ae71cf3d07a8cf392ca29d7acb96deba7d94b19a9cf3c9f63022'
-   ```
 
 Always be careful when dealing with your private key. Double-check that you’re not hardcoding it anywhere or committing it to source control like GitHub. Anyone with access to your private key has complete control over your funds.
 
-**Invoke the contract**
+#### **Invoke the contract**
 
 The contract is deterministically deployed on all Filecoin networks at `0x2b3ef6906429b580b7b2080de5ca893bc282c225`. Any contract claiming to be a FilForwarder that does not reside at this address should not be trusted. Any dApp can connect to the wallet and use the ABI in this repository to call this method using any frontend. See the [Glif section](https://docs.filecoin.io/smart-contracts/filecoin-evm-runtime/filforwader/#glifio) above for steps on using a GUI.
 
 Inside this repository is a Hardhat task called `forward`. This task will use the private key to send funds using the contract. This task uses the `fil-forwarder-{CHAIN_ID}.json` file to determine the deployed contract address for a given network. These addresses should always be the same, but these files prevent you from having to specify it each time.
 
 The `forward` command uses the following syntax:
-
-```
-```
 
 ```shell
 yarn hardhat forward \
@@ -143,23 +125,18 @@ yarn hardhat forward \
 * `DESTINATION_ADDRESS`: The address you want to send FIL to. This is a string, like `t01024` or `t3tejq3lb3szsq7spvttqohsfpsju2jof2dbive2qujgz2idqaj2etuolzgbmro3owsmpuebmoghwxgt6ricvq`.
 * `AMOUNT`: The amount of FIL you want to send. The value `3.141` would be 3.141 FIL.
 
-**Examples**
+#### **Examples**
 
-1.  To send 9 FIL to a `t3` address on the Calibration testnet, run:
+1. To send 9 FIL to a `t3` address on the Calibration testnet, run:
 
-    ```
-    ```
+```sh
+yarn hardhat forward \
+    --network calibration \
+    --destination t3tejq3lb3szsq7spvttqohsfpsju2jof2dbive2qujgz2idqaj2etuolzgbmro3owsmpuebmoghwxgt6ricvq \
+    --amount 9.0
+```
 
-* ```shell
-  yarn hardhat forward \
-      --network calibration \
-      --destination t3tejq3lb3szsq7spvttqohsfpsju2jof2dbive2qujgz2idqaj2etuolzgbmro3owsmpuebmoghwxgt6ricvq \
-      --amount 9.0
-  ```
-*   To send 42.5 FIL to a `t1` address on the Calibration testnet, run:
-
-    ```
-    ```
+2. To send 42.5 FIL to a `t1` address on the Calibration testnet, run:
 
 ```shell
 yarn hardhat forward \
