@@ -122,7 +122,6 @@
   * [Hardhat](smart-contracts/developing-contracts/hardhat.md)
   * [Client contract tutorial](smart-contracts/developing-contracts/client-contract-tutorial.md)
   * [Remix](smart-contracts/developing-contracts/remix.md)
-  * [Solidity libraries](smart-contracts/developing-contracts/solidity-libraries-1.md)
   * [Verify a contract](smart-contracts/developing-contracts/verify-a-contract.md)
 
 ## Networks
