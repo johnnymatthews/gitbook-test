@@ -8,11 +8,11 @@ description: >-
 
 **Maintainer**: [ConsensusLab](https://consensuslab.world)
 
-Spacenet is not _just_ another Filecoin testnet. It has been modified to run the high-performance [Trantor BFT consensus](https://github.com/filecoin-project/mir/tree/main/pkg/trantor), implemented atop [Mir](https://github.com/filecoin-project/mir), a framework for implementing distributed protocols. And did we forget to mention Spacenet comes with built-in [Interplanetary Consensus (IPC)](https://docs.filecoin.io/basics/interplanetary-consensus/overview/) support?
+Spacenet is not _just_ another Filecoin testnet. It has been modified to run the high-performance [Trantor BFT consensus](https://github.com/filecoin-project/mir/tree/main/pkg/trantor), implemented atop [Mir](https://github.com/filecoin-project/mir), a framework for implementing distributed protocols. And did we forget to mention Spacenet comes with built-in [Interplanetary Consensus (IPC)](../../basics/interplanetary-consensus/) support?
 
 Spacenet aims to provide developers with a testbed to deploy decentralized applications that can benefit from IPC’s capabilities, particularly the ability to deploy and transact in subnets.
 
-To learn more about what you can do on Spacenet, visit the [Interplanetary Consensus](https://docs.filecoin.io/basics/interplanetary-consensus/overview/) section. For instructions on working with Spacenet, visit the [Spacenet repository](https://github.com/consensus-shipyard/spacenet).
+To learn more about what you can do on Spacenet, visit the [Interplanetary Consensus](../../basics/interplanetary-consensus/) section. For instructions on working with Spacenet, visit the [Spacenet repository](https://github.com/consensus-shipyard/spacenet).
 
 ## Genesis
 

@@ -18,81 +18,58 @@ The [FEVM Hardhat kit](https://github.com/filecoin-project/FEVM-Hardhat-Kit) is 
 This guide assumes you have the following installed:
 
 * [Yarn](https://yarnpkg.com/)
-* A Filecoin address stored in [MetaMask](https://docs.filecoin.io/basics/assets/wallets/)
+* A Filecoin address stored in [MetaMask](../../basics/assets/metamask-setup.md)
 
 ### Environment setup
 
 First, we need to grab the starter kit and install the dependencies.
 
-1.  Clone the Hardhat starter kit and move into the new `fevm-hardhat-kit` directory:
+1. Clone the Hardhat starter kit and move into the new `fevm-hardhat-kit` directory:
 
-    ```
-    ```
+```
+git clone https://github.com/filecoin-project/fevm-hardhat-kit.git
+cd fevm-hardhat-kit
 
-*   ```shell
-    git clone https://github.com/filecoin-project/fevm-hardhat-kit.git
-    cd fevm-hardhat-kit
-    ```
+# Cloning into 'fevm-hardhat-kit'...
+# remote: Enumerating objects: 758, done.
+# remote: Counting objects: 100% (725/725), done.
+#
+# ...
+```
 
-    ```plaintext
-    Cloning into 'fevm-hardhat-kit'...
-    remote: Enumerating objects: 758, done.
-    remote: Counting objects: 100% (725/725), done.
+2. Use Yarn to install the project’s dependencies:
 
-    ...
-    ```
-*   Use Yarn to install the project’s dependencies:
+```
+yarn install
 
-    ```
-    ```
-*   ```shell
-    yarn install
-    ```
+# [1/4] 🔍  Resolving packages...
+# [2/4] 🚚  Fetching packages...
+# [3/4] 🔗  Linking dependencies...
+#
+# ...
+#
+# ✨  Done in 16.34s.
+```
 
-    ```plaintext
-    [1/4] 🔍  Resolving packages...
-    [2/4] 🚚  Fetching packages...
-    [3/4] 🔗  Linking dependencies...
+3. Create an environment variable for your private key. Each wallet has a different process for exporting your private key - check your wallet’s official documentation.
 
-    ...
-
-    ✨  Done in 16.34s.
-    ```
-*   Create an environment variable for your private key. Each wallet has a different process for exporting your private key - check your wallet’s official documentation.
-
-    ```
-    ```
-
-```shell
+```sh
 export PRIVATE_KEY='<YOUR PRIVATE KEY>'
+
+# For example
+# export PRIVATE_KEY='d52cd65a5746ae71cf3d07a8cf392ca29d7acb96deba7d94b19a9cf3c9f63022'
 ```
 
-For example:
+4. Always be careful when dealing with your private key. Double-check that you’re not hardcoding it anywhere or committing it to source control like GitHub. Anyone with access to your private key has complete control over your funds.
+5. Get the addresses associated with the private key from Hardhat:
 
+```sh
+yarn hardhat get-address
+
+# Ethereum address (this addresss should work for most tools): 0x11Fc070e5c0D32024c9B63c136913405e07C8c48
+# f4address (also known as t4 address on testnets): f410fch6aods4buzaete3mpatnejuaxqhzdci3j67vyi
+# ✨  Done in 1.40s.
 ```
-```
-
-*   ```shell
-    export PRIVATE_KEY='d52cd65a5746ae71cf3d07a8cf392ca29d7acb96deba7d94b19a9cf3c9f63022'
-    ```
-
-    Always be careful when dealing with your private key. Double-check that you’re not hardcoding it anywhere or committing it to source control like GitHub. Anyone with access to your private key has complete control over your funds.
-*   Get the addresses associated with the private key from Hardhat:
-
-    ```
-    ```
-
-1.  ```shell
-    yarn hardhat get-address
-    ```
-
-    ```plaintext
-    Ethereum address (this addresss should work for most tools): 0x11Fc070e5c0D32024c9B63c136913405e07C8c48
-    f4address (also known as t4 address on testnets): f410fch6aods4buzaete3mpatnejuaxqhzdci3j67vyi
-    ✨  Done in 1.40s.
-    ```
-
-    This will show you the Ethereum-style address associated with that private key and the Filecoin-style `f4` or `t4` address. The Ethereum address can be used for almost all Ethereum tooling.
 
 Now that we’ve got the kit set up, we can start using it to develop and deploy our contracts.
 
@@ -103,43 +80,32 @@ There are two main types of contracts:
 * Basic Solidity examples: Simple contracts to show off basic Solidity.
 * Filecoin API Examples: Contracts that demo how to use the Filecoin APIs in Solidity to access storage deals and other Filecoin-specific functions.
 
-Make sure that your account has funds. You won’t be able to deploy any contracts without FIL or tFIL.
+Make sure that your account has funds. You won’t be able to deploy any contracts without `FIL` or `tFIL`.
 
-1.  Run `hardhat deploy` to deploy all the contracts. This can take a few minutes:
+1. Run `hardhat deploy` to deploy all the contracts. This can take a few minutes:
 
-    ```
-    ```
+```sh
+yarn hardhat deploy
 
-*   ```shell
-    yarn hardhat deploy
-    ```
+# Compiled 18 Solidity files successfully
+# Wallet Ethereum Address: 0x11Fc070e5c0D32024c9B63c136913405e07C8c48
+# Deploying Simplecoin...
+# 
+# ...
+# 
+# ✨  Done in 211.76s.
+```
 
-    ```plaintext
-    Compiled 18 Solidity files successfully
-    Wallet Ethereum Address: 0x11Fc070e5c0D32024c9B63c136913405e07C8c48
-    Deploying Simplecoin...
+2. Interact with the contracts using the available functions within the `tasks` folder. For example, you can get the balance of the `simple-coin` contract by calling the `get-balance` function:
 
-    ...
+```sh
+yarn hardhat get-balance --contract '0xA855520fcCB6422976F7Ac78534edec2379Be5f6' --account '0x11Fc070e5c0D32024c9B63c136913405e07C8c48'
 
-    ✨  Done in 211.76s.
-    ```
-
-    This will compile all the contracts in the contracts folder and deploy them to the Calibration test network automatically!
-*   Interact with the contracts using the available functions within the `tasks` folder. For example, you can get the balance of the `simple-coin` contract by calling the `get-balance` function:
-
-    ```
-    ```
-
-1.  ```shell
-    yarn hardhat get-balance --contract '0xA855520fcCB6422976F7Ac78534edec2379Be5f6' --account '0x11Fc070e5c0D32024c9B63c136913405e07C8c48'
-    ```
-
-    ```plaintext
-    Reading SimpleCoin owned by 0x11Fc070e5c0D32024c9B63c136913405e07C8c48 on network calibration
-    Amount of Simplecoin owned by 0x11Fc070e5c0D32024c9B63c136913405e07C8c48 is 12000
-    Total amount of minted tokens is 12000
-    ✨  Done in 3.73s.
-    ```
+# Reading SimpleCoin owned by 0x11Fc070e5c0D32024c9B63c136913405e07C8c48 on network calibration
+# Amount of Simplecoin owned by 0x11Fc070e5c0D32024c9B63c136913405e07C8c48 is 12000
+# Total amount of minted tokens is 12000
+# ✨  Done in 3.73s.
+```
 
 ## Hardhat docs
 

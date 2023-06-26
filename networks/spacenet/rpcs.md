@@ -12,7 +12,7 @@ description: Public RPC endpoints are available for the Spacenet testnet.
 
 ## Basic
 
-This endpoint is currently limited to read-only [JSON RPC API calls](https://docs.filecoin.io/reference/json-rpc/introduction/).
+This endpoint is currently limited to read-only [JSON RPC API calls](../../reference/json-rpc/).
 
 * HTTP: `http://api.spacenet.ipc.space:1234/rpc/v1`
 *   Eudico lite-node command:

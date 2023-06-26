@@ -10,7 +10,7 @@ description: >-
 
 As a simple introduction, we’re going to use Remix to create an ERC-20 token on the Filecoin network. In this guide, we’re using the Calibration testnet, but this process is the same for mainnet.
 
-This guide assumes you’ve already connected your MetaMask extension to a Filecoin network. If you haven’t done so yet, [check out this guide to add the Hyperspace testnet to MetaMask](https://docs.filecoin.io/basics/assets/metamask-setup/).
+This guide assumes you’ve already connected your [MetaMask extension to a Filecoin network](../../basics/assets/metamask-setup.md).
 
 ### Create a workspace
 
@@ -56,8 +56,6 @@ That’s all we need to change within this contract. You can see on line 4 that 
 
 Now that we’ve successfully compiled our contract, we need to deploy it somewhere! This is where our previous MetaMask setup comes into play.
 
-This guide assumes you’ve already connected your MetaMask extension to a Filecoin network. If you haven’t done so yet, [check out this guide to add the Hyperspace testnet to MetaMask](https://docs.filecoin.io/basics/assets/metamask-setup/).
-
 1.  Click the **Deploy** tab from the left.
 
     ![Select the deploy tab.](https://docs.filecoin.io/smart-contracts/developing-contracts/remix/deploy-tab\_hud8ad825a3229451eb9f33260cded9c88\_213640\_1440x0\_resize\_q75\_h2\_box\_3.webp)
@@ -80,7 +78,7 @@ This guide assumes you’ve already connected your MetaMask extension to a Filec
 8.  Click **Deploy**.
 
     ![Click Deploy in Remix.](https://docs.filecoin.io/smart-contracts/developing-contracts/remix/deploy-remix-deploy\_hu7d78b47d33a9107814817c1ce5c2db9d\_197089\_1440x0\_resize\_q75\_h2\_box\_3.webp)
-9.  MetaMask will open a window and as you to confirm the transaction. Scroll down and click **Confirm** to have MetaMask deploy the contract. If you’re deploying to mainnet, we advise you to [adjust your gas fees](https://docs.filecoin.io/smart-contracts/developing-contracts/remix/#adjusting-your-gas-fees) for a cheaper deployment.
+9.  MetaMask will open a window and as you to confirm the transaction. Scroll down and click **Confirm** to have MetaMask deploy the contract. If you’re deploying to mainnet, we advise you to [adjust your gas fees](remix.md#adjusting-your-gas-fees) for a cheaper deployment.
 
     ![Remix and MetaMask deploying a contract.](https://docs.filecoin.io/smart-contracts/developing-contracts/remix/deploy-metamask-confirm\_hu8f8bebb32e8c0ba30dbbff4c277be15a\_100144\_472x0\_resize\_q75\_h2\_box\_3.webp)
 10. Back in Remix, a message at the bottom of the screen shows that the creation of your token is pending.

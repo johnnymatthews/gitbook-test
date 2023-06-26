@@ -8,7 +8,7 @@ description: >-
 
 ## OpenZeppelin
 
-[OpenZeppelin](https://www.openzeppelin.com/contracts) provides a library of battle-tested smart contract templates, including widely used implementations of ERC token standards. For a guided example that implements an ERC20 token on the Filecoin network, see [Example using an ERC20 contract](https://docs.filecoin.io/smart-contracts/developing-contracts/ethereum-libraries/#example-using-an-erc20-contract).
+[OpenZeppelin](https://www.openzeppelin.com/contracts) provides a library of battle-tested smart contract templates, including widely used implementations of ERC token standards. For a guided example that implements an ERC20 token on the Filecoin network, see [Example using an ERC20 contract](../fundamentals/erc-20-quickstart.md).
 
 ### Benefits
 
@@ -29,21 +29,20 @@ Token standards, such as [ERC20](https://docs.openzeppelin.com/contracts/4.x/erc
 
 The _general_ procedure for using OpenZeppelin with FVM is as follows:
 
-1.  Install OpenZeppelin. For example, using `npm`:
+1. Install OpenZeppelin. For example, using `npm`:
 
-    ```
-    ```
-2. ```bash
-   npm install @openzeppelin/contracts
-   ```
-3. Import the specific library you want to use.
-4. In your smart contract, inherit the library.
+```
+npm install @openzeppelin/contracts
+```
 
-Thanks to the FVM, your contract can be integrated and deployed on the Filecoin network with OpenZeppelin inheritance. For a guided example that implements an ERC20 token on the Filecoin network, see [Example using an ERC20 contract](https://docs.filecoin.io/smart-contracts/developing-contracts/ethereum-libraries/#example-using-an-erc20-contract).
+2. Import the specific library you want to use.
+3. In your smart contract, inherit the library.
 
-### Example using an ERC20 contract
+Thanks to the FVM, your contract can be integrated and deployed on the Filecoin network with OpenZeppelin inheritance. For a guided example that implements an ERC20 token on the Filecoin network, see [Example using an ERC20 contract](../fundamentals/erc-20-quickstart.md).
 
-In the following tutorial, you’ll write and deploy a smart contract that implements the [ERC20](https://docs.openzeppelin.com/contracts/4.x/erc20) on the Calibration testnet using Remix and MetaMask:
+### Example using an ERC-20 contract
+
+In the following tutorial, you’ll write and deploy a smart contract that implements the [ERC-20](https://docs.openzeppelin.com/contracts/4.x/erc20) on the Calibration testnet using Remix and MetaMask:
 
 **Prerequisites**
 
@@ -51,7 +50,7 @@ Let’s take an ERC20 contract as an example to write and deploy it on the Calib
 
 * Remix.
 * MetaMask.
-* [MetaMask connected to the Calibration testnet](https://docs.filecoin.io/basics/assets/metamask-setup/).
+* [MetaMask connected to the Calibration testnet](../../networks/calibration/).
 * Test tokens (tFIL) [from the faucet](https://faucet.calibration.fildev.network/funds.html).
 
 **Procedure**
@@ -65,25 +64,23 @@ In this procedure, you will create, deploy, mint and send an [ERC20](https://doc
     ![Set workspace details.](https://docs.filecoin.io/smart-contracts/developing-contracts/ethereum-libraries/create-a-workspace-details\_hube86baae893ca7489237727aa1192243\_224220\_1440x0\_resize\_q75\_h2\_box\_3.webp)
 4. Click **OK**.
 5. In the **contract** directory, open **MyToken.sol**.
-6.  Set the token `<name>` and `<symbol>`:
+6. Set the token `<name>` and `<symbol>`:
 
-    ```
-    ```
-7.  ```solidity
-    // contracts/GLDToken.sol
-    // SPDX-License-Identifier: MIT
-    pragma solidity ^0.8.0;
+```solidity
+// contracts/GLDToken.sol
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
 
-    import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
-    contract MyToken is ERC20 {
-       constructor(uint256 initialSupply) ERC20(<name>, <symbol>) {
-          _mint(msg.sender, initialSupply);
-       }
-    }
-    ```
+contract MyToken is ERC20 {
+   constructor(uint256 initialSupply) ERC20(<name>, <symbol>) {
+      _mint(msg.sender, initialSupply);
+   }
+}
+```
 
-    Next, compile and deploy the contract on Filecoin.
+7. Next, compile and deploy the contract on Filecoin.
 8.  At the top of the workspace, click the green play symbol to compile the contract.
 
     ![Compile the contract.](https://docs.filecoin.io/smart-contracts/developing-contracts/ethereum-libraries/compile-compile\_hua008cb1425d8e699523982de82d086e6\_177342\_1440x0\_resize\_q75\_h2\_box\_3.webp)

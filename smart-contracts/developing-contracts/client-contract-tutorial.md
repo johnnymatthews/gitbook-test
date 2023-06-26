@@ -12,9 +12,9 @@ In this tutorial, we will cover the background of creating storage deals via sma
 * NodeJS
 * Yarn or NPM (Yarn is used in this tutorial)
 * A code editor such as VS Code
-* [A wallet with Calibration testnet FIL](https://docs.filecoin.io/networks/calibration/details/)
+* A wallet with [Calibration testnet FIL](../../networks/calibration/)
 
-You can find a video form of this walkthrough on [ETHGlobal’s YouTube Channel](https://www.youtube.com/watch?v=27EV3gQGY9k).
+{% embed url="https://www.youtube.com/watch?v=27EV3gQGY9k" %}
 
 ## Workflows
 
@@ -42,44 +42,34 @@ Let’s now run through how to create storage deals via smart contracts.
 
 First, let’s grab the kit and set up the development environment.
 
-1.  Clone the Filecoin virtual machine deal-making kit, including all submodules:
+1. Clone the Filecoin virtual machine deal-making kit, including all submodules:
 
-    ```
-    ```
+```
+git clone --recurse-submodules https://github.com/filecoin-project/fvm-starter-kit-deal-making.git
+```
 
-*   ```shell
-    git clone --recurse-submodules https://github.com/filecoin-project/fvm-starter-kit-deal-making.git
-    ```
+2. This will copy the fvm deal-making kit into your current directory and initiate the `go-generate-car` submodule.
+3. Moving into the `fvm-starter-kit-deal-making` directory and grab all the dependencies using `yarn`:
 
-    This will copy the fvm deal-making kit into your current directory and initiate the `go-generate-car` submodule.
-*   Moving into the `fvm-starter-kit-deal-making` directory and grab all the dependencies using `yarn`:
+```
+cd fvm-starter-kit-deal-making
+yarn
+```
 
-    ```
-    ```
-* ```shell
-  cd fvm-starter-kit-deal-making
-  yarn
-  ```
-*   Now that all the packages are downloaded, we will need to create a `.env` file with your private key. This is so the hardhat kit knows what wallet to use for transactions. Open up the repo in your code editor of choice and find the file titled `.env.example`. Rename the file to `.env`.
+4. Now that all the packages are downloaded, we will need to create a `.env` file with your private key. This is so the hardhat kit knows what wallet to use for transactions. Open up the repo in your code editor of choice and find the file titled `.env.example`. Rename the file to `.env`.
 
-    ```
-    ```
-* ```bash
-  mv .env.example .env
-  ```
-*   Replace the example private key with your actual private key. If you are using Metamask, follow [this tutorial to get your private key](https://support.metamask.io/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key).
+```sh
+mv .env.example .envll
+```
 
-    Remember to take precautions to never share your private key with anyone or check it into Git! The `.gitignore` of the hardhat kit is already set to ignore `.env` files.
-*   Deploy the contracts with `hardhat`:
+5. Replace the example private key with your actual private key. If you are using Metamask, follow [this tutorial to get your private key](https://support.metamask.io/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key). Remember to take precautions to never share your private key with anyone or check it into Git! The `.gitignore` of the hardhat kit is already set to ignore `.env` files.
+6. Deploy the contracts with `hardhat`:
 
-    ```
-    ```
+```
+yarn hardhat deploy
+```
 
-1.  ```shell
-    yarn hardhat deploy
-    ```
-
-    This should compile and deploy all the contracts, including the client contract, which is the one we will be interacting with. Copy and take note of the address of the deployed contract for later.
+7. This should compile and deploy all the contracts, including the client contract, which is the one we will be interacting with. Copy and take note of the address of the deployed contract for later.
 
 ### Preparing a file for storage
 
@@ -111,9 +101,6 @@ Now that we have the `.car` file prepared in the data depot, we can invoke the M
 
 When calling the `make-deal-proposal` task in Hardhat, your command will look something like this:
 
-```
-```
-
 ```shell
 yarn hardhat make-deal-proposal \ 
     --contract 0x0219eB1740C315fe5e20612D7E13AE2A883dB3f4 \
@@ -137,7 +124,7 @@ Parameters such as the `collateral` and `price-per-epoch` are set to `0`. On mai
 
 ### Storage provider picks up the job
 
-Now if you’ve invoked the task with all the correct parameters, the method will execute on-chain and emit an event that Boost storage providers will be listening to. If the deal is well-formed and the parameters are acceptable, they will download the .car file, double-check to ensure the `piece-cid` and `piece-size` match the deal and publish your storage deal! This could take up to a day. Once the deal is published, you can find it on a [Calibration testnet block explorer](https://docs.filecoin.io/networks/calibration/explorers/). The client in the deal should be the `t4` address of the smart contract we called `MakeStorageDeal` on.
+Now if you’ve invoked the task with all the correct parameters, the method will execute on-chain and emit an event that Boost storage providers will be listening to. If the deal is well-formed and the parameters are acceptable, they will download the .car file, double-check to ensure the `piece-cid` and `piece-size` match the deal and publish your storage deal! This could take up to a day. Once the deal is published, you can find it on a [Calibration testnet block explorer](../../networks/calibration/explorers.md). The client in the deal should be the `t4` address of the smart contract we called `MakeStorageDeal` on.
 
 ## Conclusion
 

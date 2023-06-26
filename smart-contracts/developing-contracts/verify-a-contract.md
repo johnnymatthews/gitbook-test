@@ -23,7 +23,6 @@ The following guide walks you through the process of contract verification using
 
 * A smart contract (`.sol` file)
 * [Remix](https://remix.ethereum.org/)
-* Access to one of the [verification tools](https://docs.filecoin.io/smart-contracts/developing-contracts/verify-contracts/#verification-tools)
 
 ### Procedure
 
