@@ -125,6 +125,7 @@
   * [Verify a contract](smart-contracts/developing-contracts/verify-a-contract.md)
 * [Advanced](smart-contracts/advanced/README.md)
   * [Wrapped FIL](smart-contracts/advanced/wrapped-fil.md)
+  * [Oracles](smart-contracts/advanced/oracles.md)
 
 ## Networks
 
