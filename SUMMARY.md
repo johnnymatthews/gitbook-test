@@ -123,6 +123,8 @@
   * [Client contract tutorial](smart-contracts/developing-contracts/client-contract-tutorial.md)
   * [Remix](smart-contracts/developing-contracts/remix.md)
   * [Verify a contract](smart-contracts/developing-contracts/verify-a-contract.md)
+* [Advanced](smart-contracts/advanced/README.md)
+  * [Wrapped FIL](smart-contracts/advanced/wrapped-fil.md)
 
 ## Networks
 
