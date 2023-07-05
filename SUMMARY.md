@@ -90,12 +90,9 @@
 * [Full-nodes](nodes/full-nodes/README.md)
   * [Pre-requisites](nodes/full-nodes/pre-requisites.md)
   * [Basic setup](nodes/full-nodes/basic-setup.md)
+  * [Node providers](nodes/full-nodes/node-providers.md)
 * [Lite-nodes](nodes/lite-nodes/README.md)
   * [Spin up a lite-node](nodes/lite-nodes/spin-up-a-lite-node.md)
-* [Node providers](nodes/node-providers/README.md)
-  * [Ankr](nodes/node-providers/ankr.md)
-  * [Chainstack](nodes/node-providers/chainstack.md)
-  * [Glif](nodes/node-providers/glif.md)
 
 ## Smart contracts
 
