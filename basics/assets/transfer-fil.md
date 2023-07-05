@@ -1,13 +1,13 @@
 ---
 description: >-
-  Due to the nature of Filecoin and Etheruem having different address types in
+  Due to the nature of Filecoin and Ethereum having different address types in
   the Filecoin network, the process for transfering FIL between addresses can be
   a bit nuanced.
 ---
 
 # Transfer FIL
 
-Etheruem-style addresses start with `0x`. Filecoin addresses start with `f`. There are four paths for transferring funds across the Filecoin network depending on which address type you are transferring from and to:
+Ethereum-style addresses start with `0x`. Filecoin addresses start with `f`. There are four paths for transferring funds across the Filecoin network depending on which address type you are transferring from and to:
 
 |                             | From an Eth-style address                                                                        | From a Filecoin address                                                        |
 | --------------------------- | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
@@ -34,7 +34,7 @@ Most wallets and exchanges currently only support `f1` or `f3` addresses. The ma
 
 #### Ledger device
 
-Currently, Ledger Live does not support `0x` or `f4` addresses, so you cannot use it to directly send funds to a `0x` address. However, you can connect your Ledger device to the Glif.io wallet and transfer FIL from a Filecoin address to an Etheruem-style `0x` address. This method is more secure than the [Hot wallet](transfer-fil.md#hot-wallet) method detailed below since your private keys never leave your Ledger device.
+Currently, Ledger Live does not support `0x` or `f4` addresses, so you cannot use it to directly send funds to a `0x` address. However, you can connect your Ledger device to the Glif.io wallet and transfer FIL from a Filecoin address to an Ethereum-style `0x` address. This method is more secure than the [Hot wallet](transfer-fil.md#hot-wallet) method detailed below since your private keys never leave your Ledger device.
 
 In this method, you will connect your Ledger device to the Glif.io website app and use the app to send FIL from your Ledger to an Eth-style address.
 

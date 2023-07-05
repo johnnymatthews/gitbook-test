@@ -44,14 +44,14 @@ First, let’s grab the kit and set up the development environment.
 
 1. Clone the Filecoin virtual machine deal-making kit, including all submodules:
 
-```
+```sh
 git clone --recurse-submodules https://github.com/filecoin-project/fvm-starter-kit-deal-making.git
 ```
 
 2. This will copy the fvm deal-making kit into your current directory and initiate the `go-generate-car` submodule.
 3. Moving into the `fvm-starter-kit-deal-making` directory and grab all the dependencies using `yarn`:
 
-```
+```sh
 cd fvm-starter-kit-deal-making
 yarn
 ```
@@ -65,7 +65,7 @@ mv .env.example .envll
 5. Replace the example private key with your actual private key. If you are using Metamask, follow [this tutorial to get your private key](https://support.metamask.io/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key). Remember to take precautions to never share your private key with anyone or check it into Git! The `.gitignore` of the hardhat kit is already set to ignore `.env` files.
 6. Deploy the contracts with `hardhat`:
 
-```
+```sh
 yarn hardhat deploy
 ```
 
