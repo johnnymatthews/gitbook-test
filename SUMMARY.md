@@ -139,7 +139,6 @@
   * [RPCs](networks/spacenet/rpcs.md)
   * [Get test tokens](networks/spacenet/get-test-tokens.md)
 * [Local testnet](networks/local-testnet/README.md)
-  * [Setup](networks/local-testnet/setup.md)
   * [Get test tokens](networks/local-testnet/get-test-tokens.md)
 
 ## Reference

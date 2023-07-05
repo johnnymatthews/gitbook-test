@@ -7,9 +7,9 @@ description: >-
 
 # Get test tokens
 
-Before we begin, you must have a local testnet running. Follow the [Run a local network guide](setup.md) if you haven’t got a local testnet set up yet.
+Before we begin, you must have a local testnet running. Follow the [Run a local network guide](./) if you haven’t got a local testnet set up yet.
 
-1.  Change directory to where you created the `lotus` and `lotus-miner` binaries. If you followed the [Run a local network guide](setup.md) these binaries will be in `~/lotus-devnet`:\
+1.  Change directory to where you created the `lotus` and `lotus-miner` binaries. If you followed the [Run a local network guide](./) these binaries will be in `~/lotus-devnet`:\
 
 
     ```shell
